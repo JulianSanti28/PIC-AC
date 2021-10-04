@@ -22,54 +22,6 @@
 #define OCHO_mHz 0x72
 
 
-
-unsigned char temperatura[8] = {
-    0b00100,
-    0b10101,
-    0b01110,
-    0b11111,
-    0b01110,
-    0b10101,
-    0b00100,
-    0b00000,
-};
-
-/*Emoticon a mostrar*/
-unsigned char distancia[8] = {
-    0b00000,
-    0b00000,
-    0b00100,
-    0b00010,
-    0b11111,
-    0b00010,
-    0b00100,
-    0b00000,
-};
-
-unsigned char luz[8] = {
-    0b01010,
-    0b01010,
-    0b01010,
-    0b11111,
-    0b10001,
-    0b01110,
-    0b00100,
-    0b00100,
-};
-
-unsigned char todo_bien[8] = {
-    0b00000,
-    0b01010,
-    0b01010,
-    0b00000,
-    0b11111,
-    0b01110,
-    0b00100,
-    0b00000,
-};
-
-
-
 //void imprimir(int val, char texto[]);
 void imprimir(int val, int val_1, int val_2);
 void iniciar_emoticones();
@@ -78,25 +30,24 @@ void iniciar_pic();
 void main(void) {
 
     iniciar_pic();//Inicializa valores del PIC
-    inicializar_lcd();//Inicializa configuraci髇 del LCD
+    inicializar_lcd();//Inicializa configuraci贸n del LCD
     init_leds();//Inicializa los pines para el manejo d eleds
     iniciar_emoticones();//Carga los emoticones a usar
     
-    int s_dist = 0, s_temp = 0, s_luz = 0;//Variables para carga de informaci髇
+    int s_dist = 0, s_temp = 0, s_luz = 0;//Variables para carga de informaci贸n
     while (1) {
-        s_dist = sensor_distancia(); //Almacenando el valor de distancia retornado por la funci髇
-        s_temp = sensor_temperatura();//Almacenando el valor de temperatura retornado por la funci髇
-        s_luz = sensor_luz();//Almacenando el valor de luz retornado por la funci髇
+        s_dist = sensor_distancia(); //Almacenando el valor de distancia retornado por la funci贸n
+        s_temp = sensor_temperatura();//Almacenando el valor de temperatura retornado por la funci贸n
+        s_luz = sensor_luz();//Almacenando el valor de luz retornado por la funci贸n
         encender_leds(validar(s_temp, s_dist, s_luz));//Enciende o no los leds dependiendo del estado de cada sensor
-        imprimir(s_dist, s_temp, s_luz);//Imprime la informaci髇 capturada en cada instante
+        imprimir(s_dist, s_temp, s_luz);//Imprime la informaci贸n capturada en cada instante
     }
 
 }
 
 /*
- *@bref
- *@param
- *@return 
+ *@bref Inicializa los osciladores y el pull-up con los valores que requerimos para la implementaci贸n.
+ *@return void
  */
 void iniciar_pic() {
     OSCILADOR_INTERNO = OCHO_MHZ;
@@ -106,7 +57,10 @@ void iniciar_pic() {
 }
 
 
-
+/*
+ *@bref Inicializa los arreglos con la informaci贸n de los emoticones, adem谩s los guarda previamente para luego ser consultados.
+ *@return void
+ */
 void iniciar_emoticones() {
 
     unsigned char temperatura[8] = {
