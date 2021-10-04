@@ -1,13 +1,44 @@
+/*!
+\file   funcionalidades.c
+\date   2021-10-04
+\author Andrés Muñoz <andresdmunoz@unicauca.edu.co> 104618021296
+        Paula Peña <ppena@unicauca.edu.co> 104618021314
+		Julián Martinez <juliansmartinez@unicauca.edu.co> 104618021321
+\brief  funcionalidades del proyecto .
+\par Copyright
+Information contained herein is proprietary to and constitutes valuable
+confidential trade secrets of unicauca, and
+is subject to restrictions on use and disclosure.
+\par
+Copyright (c) unicauca 2021. All rights reserved.
+\par
+The copyright notices above do not evidence any actual or
+intended publication of this material.
+ ******************************************************************************
+ */
 #include <xc.h>
 #include <stdio.h>
 #include <pic18f4550.h>
 
+/*
+@iniciar_pic 
+@brief inicializa el pic 18f4550
+@param void
+@return void
+*/
 void iniciar_pic() {
     OSCILADOR_INTERNO = OCHO_MHZ;
     OSCILADOR_DEL_SISTEMA = 0b10; //?
     OSCCON = OCHO_mHz;
     PULL_UP = ACTIVADO;
 }
+
+/*
+@iniciar_emoticones 
+@brief Define y carga en el programa los emoticones a usar para temperatura, distancia, luz.
+@param void
+@return void
+*/
 
 void iniciar_emoticones() {
 
@@ -65,6 +96,14 @@ void iniciar_emoticones() {
 
 }
 
+/*
+@imprimir 
+@brief imprime los valores de la lectura hecha por los sensores en el lcd
+@param dist lectura de la distancia según el sensor de distancia
+@param temp lectura de la temperatura según el sensor de temperatura
+@param luz lectura del porcentaje de luminosidad según el sensor de luz
+@return void
+*/
 void imprimir(int dist, int temp, int luz) {
 
     // imprimir_emoticon();
