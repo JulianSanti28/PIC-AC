@@ -2,8 +2,8 @@
 #include "LCD.h"
 /*
 *@init_leds 
-*@brief 
-*@param void no recibe parametros
+*@brief Inicializa la configuracion de los leds definidos en leds.h
+*@param void 
 *@return void
 */
 void init_leds(void) {
@@ -13,7 +13,12 @@ void init_leds(void) {
     CFG_LED_POWER_R = OUTPUT;
     CFG_LED_POWER_Y = OUTPUT;
 }
-
+/*
+*@encender_leds
+*@brief Enciende los leds designados segun el numero de fallos 0 = green ; 1= yelloww ; 2 o mas = red
+*@param valor 
+*@return void
+*/
 void encender_leds(int valor) {
 
     if (valor == TODOS_BIEN) { //TODOS BIEN
@@ -34,7 +39,14 @@ void encender_leds(int valor) {
         LED_RED = ON;
     }
 }
-// validar los resultados ;
+/*
+*@validar
+*@brief Valida los valores temperatura, distancia, luz segun los indicadores optimos definidos 
+*@param temp Valor de la temperatura según el sensor de temperatura
+*@param distancia Lectura de la distancia según el sensor de distancia
+*@param luz Lectura del porcentaje de luminisidad  según el sensor de luz
+*@return 0 si no hay valores fuera de rango, 1 si existe un valor fuera de rango  , 2 si existe dos valores fuera de rango
+*/
 
 int validar(int temp, int distancia, int luz) {
 
