@@ -1,8 +1,10 @@
 #include "Leds.h"
 #include "LCD.h"
 /*
-*@param
-*
+*@init_leds 
+*@brief 
+*@param void no recibe parametros
+*@return void
 */
 void init_leds(void) {
 
