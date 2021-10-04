@@ -116,6 +116,13 @@ void iniciar_emoticones() {
 
 
 }
+/*
+ *@bref Imprime un título para identificar cada uno de los valores (distancia, luz, temperatura), además muestra los valores en el LCD
+ *@param dist Valor de la distancia capturado en cada iteración del ciclo infinito.
+ *@param temp Valor de la temperatura capturado en cada iteración del ciclo infinito.
+ *@param luz Valor de la luminosidad capturado en cada iteración del ciclo infinito.
+ *@return void
+ */
 
 void imprimir(int dist, int temp, int luz) {
 
