@@ -1,10 +1,10 @@
 /*!
-\file   Principal.c
+\file   fuses.h
 \date   2021-10-04
 \author Andrés Muñoz <andresdmunoz@unicauca.edu.co> 104618021296
         Paula Peña <ppena@unicauca.edu.co> 104618021314
-		Julián Martinez <juliansmartinez@unicauca.edu.co> 104618021321
-\brief  Lanzamiento proyecto .
+	Julián Martinez <juliansmartinez@unicauca.edu.co> 104618021321
+\brief  configuración del proyecto.
 \par Copyright
 Information contained herein is proprietary to and constitutes valuable
 confidential trade secrets of unicauca, and
