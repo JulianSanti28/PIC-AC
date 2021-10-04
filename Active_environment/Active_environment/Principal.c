@@ -21,13 +21,12 @@
 #define ACTIVADO 0
 #define OCHO_mHz 0x72
 
-
-//void imprimir(int val, char texto[]);
-void imprimir(int val, int val_1, int val_2);
+/*Declaración de funciones a usar*/
+void imprimir(int dist, int temp, int luz);
 void iniciar_emoticones();
 void iniciar_pic();
 
-void main(void) {
+void main(void) { //Método main
 
     iniciar_pic();//Inicializa valores del PIC
     inicializar_lcd();//Inicializa configuración del LCD
@@ -35,15 +34,15 @@ void main(void) {
     iniciar_emoticones();//Carga los emoticones a usar
     
     int s_dist = 0, s_temp = 0, s_luz = 0;//Variables para carga de información
-    while (1) {
+    while (1) {//Ciclo infinito
         s_dist = sensor_distancia(); //Almacenando el valor de distancia retornado por la función
         s_temp = sensor_temperatura();//Almacenando el valor de temperatura retornado por la función
         s_luz = sensor_luz();//Almacenando el valor de luz retornado por la función
         encender_leds(validar(s_temp, s_dist, s_luz));//Enciende o no los leds dependiendo del estado de cada sensor
         imprimir(s_dist, s_temp, s_luz);//Imprime la información capturada en cada instante
-    }
+    }//Fin ciclo infinito
 
-}
+}//Fin método main
 
 /*
  *@bref Inicializa los osciladores y el pull-up con los valores que requerimos para la implementación.
@@ -63,7 +62,8 @@ void iniciar_pic() {
  */
 void iniciar_emoticones() {
 
-    unsigned char temperatura[8] = {
+    
+    unsigned char temperatura[8] = { //Emoticon de temperatura
         0b00100,
         0b10101,
         0b01110,
@@ -74,8 +74,7 @@ void iniciar_emoticones() {
         0b00000,
     };
 
-    /*Emoticon a mostrar*/
-    unsigned char distancia[8] = {
+    unsigned char distancia[8] = { //Emoticon de distancia
         0b00000,
         0b00000,
         0b00100,
@@ -86,7 +85,7 @@ void iniciar_emoticones() {
         0b00000,
     };
 
-    unsigned char luz[8] = {
+    unsigned char luz[8] = { //Emoticon de luminosidad
         0b01010,
         0b01010,
         0b01010,
@@ -97,7 +96,7 @@ void iniciar_emoticones() {
         0b00100,
     };
 
-    unsigned char todo_bien[8] = {
+    unsigned char todo_bien[8] = { //Emoticos de un estado óptimo en todos los sensores
         0b00000,
         0b01010,
         0b01010,
@@ -108,8 +107,8 @@ void iniciar_emoticones() {
         0b00000,
     };
 
-
-    LCD_Custom_Char(4, todo_bien);
+    //Agregando los emoticones a una posición distinta del lcd
+    LCD_Custom_Char(4, todo_bien); 
     LCD_Custom_Char(5, temperatura);
     LCD_Custom_Char(6, distancia);
     LCD_Custom_Char(7, luz);
