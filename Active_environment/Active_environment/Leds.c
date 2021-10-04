@@ -1,5 +1,25 @@
+/*!
+\file   Leds.c
+\date   2021-10-04
+\author Andrés Muñoz <andresdmunoz@unicauca.edu.co> 104618021296
+        Paula Peña <ppena@unicauca.edu.co> 104618021314
+		Julián Martinez <juliansmartinez@unicauca.edu.co> 104618021321
+\brief  logica para encender leds .
+\par Copyright
+Information contained herein is proprietary to and constitutes valuable
+confidential trade secrets of unicauca, and
+is subject to restrictions on use and disclosure.
+\par
+Copyright (c) unicauca 2021. All rights reserved.
+\par
+The copyright notices above do not evidence any actual or
+intended publication of this material.
+ ******************************************************************************
+ */
+
 #include "Leds.h"
 #include "LCD.h"
+
 /*
 *@init_leds 
 *@brief Inicializa la configuracion de los leds definidos en leds.h
@@ -13,10 +33,11 @@ void init_leds(void) {
     CFG_LED_POWER_R = OUTPUT;
     CFG_LED_POWER_Y = OUTPUT;
 }
+
 /*
 *@encender_leds
-*@brief Enciende los leds designados segun el numero de fallos 0 = green ; 1= yelloww ; 2 o mas = red
-*@param valor 
+*@brief Enciende los leds designados segun el numero de fallos (valor) 0 = green ; 1= yelloww ; 2 o mas = red
+*@param valor Numero de fallos
 *@return void
 */
 void encender_leds(int valor) {
@@ -41,11 +62,11 @@ void encender_leds(int valor) {
 }
 /*
 *@validar
-*@brief Valida los valores temperatura, distancia, luz segun los indicadores optimos definidos 
-*@param temp Valor de la temperatura según el sensor de temperatura
-*@param distancia Lectura de la distancia según el sensor de distancia
-*@param luz Lectura del porcentaje de luminisidad  según el sensor de luz
-*@return 0 si no hay valores fuera de rango, 1 si existe un valor fuera de rango  , 2 si existe dos valores fuera de rango
+*@brief Valida los valores temperatura, distancia, luz segun los indicadores optimos definidos. Si falla muestra el emoticón correspondiente al fallo.
+*@param temp Valor de la temperatura según el sensor de temperatura.
+*@param distancia Lectura de la distancia según el sensor de distancia.
+*@param luz Lectura del porcentaje de luminisidad  según el sensor de luz.
+*@return 0 si no hay valores fuera de rango, 1 si existe un valor fuera de rango, 2 si existe dos valores fuera de rango.
 */
 
 int validar(int temp, int distancia, int luz) {
