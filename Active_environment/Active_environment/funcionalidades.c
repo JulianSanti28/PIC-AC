@@ -17,7 +17,7 @@ intended publication of this material.
  ******************************************************************************
  */
 
-//Hola mundo
+//Hola mundo desde remoto
 #include <xc.h>
 #include <stdio.h>
 #include <pic18f4550.h>
