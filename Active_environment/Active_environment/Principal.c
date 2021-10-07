@@ -57,8 +57,7 @@ void main(void) { //Método main
     iniciar_pic(); //Inicializa valores del PIC
     inicializar_lcd(); //Inicializa configuración del LCD
     init_leds(); //Inicializa los pines para el manejo d eleds
-    iniciar_emoticones(); //Carga los emoticones a usar
-    
+    estado = 1;  
     while(1){
         if(SELECTOR && estado == 0){
             mostrar_estadisticas(); 
@@ -76,20 +75,20 @@ void main(void) { //Método main
 
 void mostrar_estadisticas(){
     LCD_Clear(); 
-    __delay_ms(50); 
+    iniciar_emoticones(); //Carga los emoticones a usar
     while (1) {
         establecer_valores(); 
         imprimir(s_dist, s_temp, s_luz);
         if(!SELECTOR){ //si el selector es presionado 
             __delay_ms(200);
             estado = 1; 
+            __delay_ms(10); 
             return;
         }
     }
 }
 void mostrar_hora(){
     LCD_Clear(); 
-    __delay_ms(50); 
     while (1) {
         establecer_valores(); 
         configurarHora(); 

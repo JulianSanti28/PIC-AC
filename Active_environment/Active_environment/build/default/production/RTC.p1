@@ -1330,8 +1330,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _pines_ConfigurarHora ]
 [f ]
 "181
-[; ;RTC.c: 181:     ADCON1bits.PCFG =
-[e = . . _ADCON1bits 0 0 = . . _TRISAbits 1 2 -> -> 1 `i `uc ]
+[; ;RTC.c: 181:     ADCON1bits.PCFG = 0b1101;
+[e = . . _ADCON1bits 0 0 -> -> 13 `i `uc ]
+"182
+[; ;RTC.c: 182:     TRISAbits.RA2 = 1;
+[e = . . _TRISAbits 1 2 -> -> 1 `i `uc ]
 "183
 [; ;RTC.c: 183:     TRISAbits.RA3 = 1;
 [e = . . _TRISAbits 1 3 -> -> 1 `i `uc ]

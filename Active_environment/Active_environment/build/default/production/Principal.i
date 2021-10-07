@@ -6105,8 +6105,7 @@ void main(void) {
     iniciar_pic();
     inicializar_lcd();
     init_leds();
-    iniciar_emoticones();
-
+    estado = 1;
     while(1){
         if(PORTAbits.RA4 && estado == 0){
             mostrar_estadisticas();
@@ -6124,20 +6123,20 @@ void main(void) {
 
 void mostrar_estadisticas(){
     LCD_Clear();
-    _delay((unsigned long)((50)*(8000000/4000.0)));
+    iniciar_emoticones();
     while (1) {
         establecer_valores();
         imprimir(s_dist, s_temp, s_luz);
         if(!PORTAbits.RA4){
             _delay((unsigned long)((200)*(8000000/4000.0)));
             estado = 1;
+            _delay((unsigned long)((10)*(8000000/4000.0)));
             return;
         }
     }
 }
 void mostrar_hora(){
     LCD_Clear();
-    _delay((unsigned long)((50)*(8000000/4000.0)));
     while (1) {
         establecer_valores();
         configurarHora();
@@ -6225,7 +6224,7 @@ void iniciar_emoticones() {
 
 
 }
-# 189 "Principal.c"
+# 188 "Principal.c"
 void imprimir(int dist, int temp, int luz) {
 
 

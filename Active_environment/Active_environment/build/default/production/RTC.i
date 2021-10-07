@@ -6223,7 +6223,7 @@ void init_rtc() {
 }
 
 void pines_ConfigurarHora(void) {
-    ADCON1bits.PCFG =
+    ADCON1bits.PCFG = 0b1101;
     TRISAbits.RA2 = 1;
     TRISAbits.RA3 = 1;
     inicializar_lcd();

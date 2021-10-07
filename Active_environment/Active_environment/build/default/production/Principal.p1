@@ -12,9 +12,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59 ./Leds.h
 [; ;./Leds.h: 59: void init_leds(void);
 [v _init_leds `(v ~T0 @X0 0 ef ]
-"49 Principal.c
-[; ;Principal.c: 49: void iniciar_emoticones();
-[v _iniciar_emoticones `(v ~T0 @X0 0 e? ]
 "2320 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2320:     struct {
 [s S101 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -51,16 +48,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47 ./LCD.h
 [; ;./LCD.h: 47: void LCD_Clear();
 [v _LCD_Clear `(v ~T0 @X0 0 e? ]
-[v F3152 `(v ~T0 @X0 1 tf1`ul ]
-"203 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
-[v __delay `JF3152 ~T0 @X0 0 e ]
-[p i __delay ]
-"51 Principal.c
+"49 Principal.c
+[; ;Principal.c: 49: void iniciar_emoticones();
+[v _iniciar_emoticones `(v ~T0 @X0 0 e? ]
+"51
 [; ;Principal.c: 51: void establecer_valores();
 [v _establecer_valores `(v ~T0 @X0 0 e? ]
 "48
 [; ;Principal.c: 48: void imprimir(int dist, int temp, int luz);
 [v _imprimir `(v ~T0 @X0 0 ef3`i`i`i ]
+[v F3152 `(v ~T0 @X0 1 tf1`ul ]
+"203 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
+[v __delay `JF3152 ~T0 @X0 0 e ]
+[p i __delay ]
 "62 ./RTC.h
 [; ;./RTC.h: 62: void configurarHora (void);
 [v _configurarHora `(v ~T0 @X0 0 ef ]
@@ -70,8 +70,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51
 [; ;./sensores.h: 51:     int sensor_temperatura(void);
 [v _sensor_temperatura `(i ~T0 @X0 0 ef ]
-"107 Principal.c
-[; ;Principal.c: 107:     s_luz = sensor_luz();
+"106 Principal.c
+[; ;Principal.c: 106:     s_luz = sensor_luz();
 [v _sensor_luz `(i ~T0 @X0 0 e? ]
 "58 ./Leds.h
 [; ;./Leds.h: 58: void encender_leds(int valor);
@@ -834,76 +834,79 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Principal.c: 59:     init_leds();
 [e ( _init_leds ..  ]
 "60
-[; ;Principal.c: 60:     iniciar_emoticones();
-[e ( _iniciar_emoticones ..  ]
-"62
-[; ;Principal.c: 62:     while(1){
+[; ;Principal.c: 60:     estado = 1;
+[e = _estado -> 1 `i ]
+"61
+[; ;Principal.c: 61:     while(1){
 [e :U 372 ]
 {
-"63
-[; ;Principal.c: 63:         if(PORTAbits.RA4 && estado == 0){
+"62
+[; ;Principal.c: 62:         if(PORTAbits.RA4 && estado == 0){
 [e $ ! && != -> . . _PORTAbits 0 4 `i -> 0 `i == _estado -> 0 `i 374  ]
 {
-"64
-[; ;Principal.c: 64:             mostrar_estadisticas();
+"63
+[; ;Principal.c: 63:             mostrar_estadisticas();
 [e ( _mostrar_estadisticas ..  ]
-"65
-[; ;Principal.c: 65:         }
+"64
+[; ;Principal.c: 64:         }
 }
 [e :U 374 ]
-"66
-[; ;Principal.c: 66:         if(PORTAbits.RA4 && estado == 1){
+"65
+[; ;Principal.c: 65:         if(PORTAbits.RA4 && estado == 1){
 [e $ ! && != -> . . _PORTAbits 0 4 `i -> 0 `i == _estado -> 1 `i 375  ]
 {
-"67
-[; ;Principal.c: 67:             mostrar_hora();
+"66
+[; ;Principal.c: 66:             mostrar_hora();
 [e ( _mostrar_hora ..  ]
-"68
-[; ;Principal.c: 68:         }
+"67
+[; ;Principal.c: 67:         }
 }
 [e :U 375 ]
-"69
-[; ;Principal.c: 69:     }
+"68
+[; ;Principal.c: 68:     }
 }
 [e :U 371 ]
 [e $U 372  ]
 [e :U 373 ]
-"70
-[; ;Principal.c: 70: }
+"69
+[; ;Principal.c: 69: }
 [e :UE 370 ]
 }
-"77
-[; ;Principal.c: 77: void mostrar_estadisticas(){
+"76
+[; ;Principal.c: 76: void mostrar_estadisticas(){
 [v _mostrar_estadisticas `(v ~T0 @X0 1 ef ]
 {
 [e :U _mostrar_estadisticas ]
 [f ]
-"78
-[; ;Principal.c: 78:     LCD_Clear();
+"77
+[; ;Principal.c: 77:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
+"78
+[; ;Principal.c: 78:     iniciar_emoticones();
+[e ( _iniciar_emoticones ..  ]
 "79
-[; ;Principal.c: 79:     _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"80
-[; ;Principal.c: 80:     while (1) {
+[; ;Principal.c: 79:     while (1) {
 [e :U 378 ]
 {
-"81
-[; ;Principal.c: 81:         establecer_valores();
+"80
+[; ;Principal.c: 80:         establecer_valores();
 [e ( _establecer_valores ..  ]
-"82
-[; ;Principal.c: 82:         imprimir(s_dist, s_temp, s_luz);
+"81
+[; ;Principal.c: 81:         imprimir(s_dist, s_temp, s_luz);
 [e ( _imprimir (3 , , _s_dist _s_temp _s_luz ]
-"83
-[; ;Principal.c: 83:         if(!PORTAbits.RA4){
+"82
+[; ;Principal.c: 82:         if(!PORTAbits.RA4){
 [e $ ! ! != -> . . _PORTAbits 0 4 `i -> 0 `i 380  ]
 {
-"84
-[; ;Principal.c: 84:             _delay((unsigned long)((200)*(8000000/4000.0)));
+"83
+[; ;Principal.c: 83:             _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"85
-[; ;Principal.c: 85:             estado = 1;
+"84
+[; ;Principal.c: 84:             estado = 1;
 [e = _estado -> 1 `i ]
+"85
+[; ;Principal.c: 85:             _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "86
 [; ;Principal.c: 86:             return;
 [e $UE 376  ]
@@ -931,103 +934,100 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Principal.c: 91:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
 "92
-[; ;Principal.c: 92:     _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"93
-[; ;Principal.c: 93:     while (1) {
+[; ;Principal.c: 92:     while (1) {
 [e :U 383 ]
 {
-"94
-[; ;Principal.c: 94:         establecer_valores();
+"93
+[; ;Principal.c: 93:         establecer_valores();
 [e ( _establecer_valores ..  ]
-"95
-[; ;Principal.c: 95:         configurarHora();
+"94
+[; ;Principal.c: 94:         configurarHora();
 [e ( _configurarHora ..  ]
-"96
-[; ;Principal.c: 96:         if(!PORTAbits.RA4){
+"95
+[; ;Principal.c: 95:         if(!PORTAbits.RA4){
 [e $ ! ! != -> . . _PORTAbits 0 4 `i -> 0 `i 385  ]
 {
-"97
-[; ;Principal.c: 97:             _delay((unsigned long)((120)*(8000000/4000.0)));
+"96
+[; ;Principal.c: 96:             _delay((unsigned long)((120)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 120 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"98
-[; ;Principal.c: 98:             estado = 0;
+"97
+[; ;Principal.c: 97:             estado = 0;
 [e = _estado -> 0 `i ]
-"99
-[; ;Principal.c: 99:             _delay((unsigned long)((10)*(8000000/4000.0)));
+"98
+[; ;Principal.c: 98:             _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"100
-[; ;Principal.c: 100:             return;
+"99
+[; ;Principal.c: 99:             return;
 [e $UE 381  ]
-"101
-[; ;Principal.c: 101:         }
+"100
+[; ;Principal.c: 100:         }
 }
 [e :U 385 ]
-"102
-[; ;Principal.c: 102:     }
+"101
+[; ;Principal.c: 101:     }
 }
 [e :U 382 ]
 [e $U 383  ]
 [e :U 384 ]
-"103
-[; ;Principal.c: 103: }
+"102
+[; ;Principal.c: 102: }
 [e :UE 381 ]
 }
-"104
-[; ;Principal.c: 104: void establecer_valores(){
+"103
+[; ;Principal.c: 103: void establecer_valores(){
 [v _establecer_valores `(v ~T0 @X0 1 ef ]
 {
 [e :U _establecer_valores ]
 [f ]
-"105
-[; ;Principal.c: 105:     s_dist = sensor_distancia();
+"104
+[; ;Principal.c: 104:     s_dist = sensor_distancia();
 [e = _s_dist ( _sensor_distancia ..  ]
-"106
-[; ;Principal.c: 106:     s_temp = sensor_temperatura();
+"105
+[; ;Principal.c: 105:     s_temp = sensor_temperatura();
 [e = _s_temp ( _sensor_temperatura ..  ]
-"107
-[; ;Principal.c: 107:     s_luz = sensor_luz();
+"106
+[; ;Principal.c: 106:     s_luz = sensor_luz();
 [e = _s_luz ( _sensor_luz ..  ]
-"108
-[; ;Principal.c: 108:     encender_leds(validar(s_temp, s_dist, s_luz));
+"107
+[; ;Principal.c: 107:     encender_leds(validar(s_temp, s_dist, s_luz));
 [e ( _encender_leds (1 ( _validar (3 , , _s_temp _s_dist _s_luz ]
-"109
-[; ;Principal.c: 109: }
+"108
+[; ;Principal.c: 108: }
 [e :UE 386 ]
 }
-"111
-[; ;Principal.c: 111: void iniciar_pic() {
+"110
+[; ;Principal.c: 110: void iniciar_pic() {
 [v _iniciar_pic `(v ~T0 @X0 1 ef ]
 {
 [e :U _iniciar_pic ]
 [f ]
-"112
-[; ;Principal.c: 112:     OSCCONbits.IRCF = 0b111;
+"111
+[; ;Principal.c: 111:     OSCCONbits.IRCF = 0b111;
 [e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
-"113
-[; ;Principal.c: 113:     OSCCONbits.SCS = 0b10;
+"112
+[; ;Principal.c: 112:     OSCCONbits.SCS = 0b10;
 [e = . . _OSCCONbits 0 0 -> -> 2 `i `uc ]
-"114
-[; ;Principal.c: 114:     OSCCON = 0x72;
+"113
+[; ;Principal.c: 113:     OSCCON = 0x72;
 [e = _OSCCON -> -> 114 `i `uc ]
-"115
-[; ;Principal.c: 115:     RBPU = 0;
+"114
+[; ;Principal.c: 114:     RBPU = 0;
 [e = _RBPU -> -> 0 `i `b ]
-"116
-[; ;Principal.c: 116:     init_rtc();
+"115
+[; ;Principal.c: 115:     init_rtc();
 [e ( _init_rtc ..  ]
-"117
-[; ;Principal.c: 117:     pines_ConfigurarHora();
+"116
+[; ;Principal.c: 116:     pines_ConfigurarHora();
 [e ( _pines_ConfigurarHora ..  ]
-"118
-[; ;Principal.c: 118:     TRISBbits.RB4 = 1;
+"117
+[; ;Principal.c: 117:     TRISBbits.RB4 = 1;
 [e = . . _TRISBbits 1 4 -> -> 1 `i `uc ]
-"119
-[; ;Principal.c: 119: }
+"118
+[; ;Principal.c: 118: }
 [e :UE 387 ]
 }
-"125
-[; ;Principal.c: 125: void iniciar_emoticones() {
+"124
+[; ;Principal.c: 124: void iniciar_emoticones() {
 [v _iniciar_emoticones `(v ~T0 @X0 1 ef ]
 {
 [e :U _iniciar_emoticones ]
@@ -1035,8 +1035,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F3817 `uc ~T0 @X0 -> 8 `i s ]
 [i F3817
 :U ..
-"128
-[; ;Principal.c: 128:     unsigned char temperatura[8] = {
+"127
+[; ;Principal.c: 127:     unsigned char temperatura[8] = {
 -> -> 4 `i `uc
 -> -> 21 `i `uc
 -> -> 14 `i `uc
@@ -1052,8 +1052,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F3819 `uc ~T0 @X0 -> 8 `i s ]
 [i F3819
 :U ..
-"139
-[; ;Principal.c: 139:     unsigned char distancia[8] = {
+"138
+[; ;Principal.c: 138:     unsigned char distancia[8] = {
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 4 `i `uc
@@ -1069,8 +1069,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F3821 `uc ~T0 @X0 -> 8 `i s ]
 [i F3821
 :U ..
-"150
-[; ;Principal.c: 150:     unsigned char luz[8] = {
+"149
+[; ;Principal.c: 149:     unsigned char luz[8] = {
 -> -> 10 `i `uc
 -> -> 10 `i `uc
 -> -> 10 `i `uc
@@ -1086,8 +1086,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F3823 `uc ~T0 @X0 -> 8 `i s ]
 [i F3823
 :U ..
-"161
-[; ;Principal.c: 161:     unsigned char todo_bien[8] = {
+"160
+[; ;Principal.c: 160:     unsigned char todo_bien[8] = {
 -> -> 0 `i `uc
 -> -> 10 `i `uc
 -> -> 10 `i `uc
@@ -1100,24 +1100,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _todo_bien `uc ~T0 @X0 -> 8 `i a ]
 [e = _todo_bien F3823 ]
-"173
-[; ;Principal.c: 173:     LCD_Custom_Char(4, todo_bien);
+"172
+[; ;Principal.c: 172:     LCD_Custom_Char(4, todo_bien);
 [e ( _LCD_Custom_Char (2 , -> -> 4 `i `uc &U _todo_bien ]
-"174
-[; ;Principal.c: 174:     LCD_Custom_Char(5, temperatura);
+"173
+[; ;Principal.c: 173:     LCD_Custom_Char(5, temperatura);
 [e ( _LCD_Custom_Char (2 , -> -> 5 `i `uc &U _temperatura ]
-"175
-[; ;Principal.c: 175:     LCD_Custom_Char(6, distancia);
+"174
+[; ;Principal.c: 174:     LCD_Custom_Char(6, distancia);
 [e ( _LCD_Custom_Char (2 , -> -> 6 `i `uc &U _distancia ]
-"176
-[; ;Principal.c: 176:     LCD_Custom_Char(7, luz);
+"175
+[; ;Principal.c: 175:     LCD_Custom_Char(7, luz);
 [e ( _LCD_Custom_Char (2 , -> -> 7 `i `uc &U _luz ]
-"179
-[; ;Principal.c: 179: }
+"178
+[; ;Principal.c: 178: }
 [e :UE 388 ]
 }
-"189
-[; ;Principal.c: 189: void imprimir(int dist, int temp, int luz) {
+"188
+[; ;Principal.c: 188: void imprimir(int dist, int temp, int luz) {
 [v _imprimir `(v ~T0 @X0 1 ef3`i`i`i ]
 {
 [e :U _imprimir ]
@@ -1125,68 +1125,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _temp `i ~T0 @X0 1 r2 ]
 [v _luz `i ~T0 @X0 1 r3 ]
 [f ]
-"192
-[; ;Principal.c: 192:     LCD_String_xy(0, 0, "D:T:L:");
+"191
+[; ;Principal.c: 191:     LCD_String_xy(0, 0, "D:T:L:");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 1C ]
 [v F3829 `uc ~T0 @X0 -> 16 `i s ]
 [i F3829
 :U ..
-"194
-[; ;Principal.c: 194:     char aux_dist[16] = "";
+"193
+[; ;Principal.c: 193:     char aux_dist[16] = "";
 -> 0 `c
 ..
 ]
 [v _aux_dist `uc ~T0 @X0 -> 16 `i a ]
 [e = _aux_dist F3829 ]
-"195
-[; ;Principal.c: 195:     sprintf(aux_dist, "%dcm", dist);
+"194
+[; ;Principal.c: 194:     sprintf(aux_dist, "%dcm", dist);
 [e ( _sprintf (1 , (. , &U _aux_dist :s 2C _dist ]
 [v F3831 `uc ~T0 @X0 -> 16 `i s ]
 [i F3831
 :U ..
-"197
-[; ;Principal.c: 197:     char aux_temp[16] = "";
+"196
+[; ;Principal.c: 196:     char aux_temp[16] = "";
 -> 0 `c
 ..
 ]
 [v _aux_temp `uc ~T0 @X0 -> 16 `i a ]
 [e = _aux_temp F3831 ]
-"198
-[; ;Principal.c: 198:     sprintf(aux_temp, "%dG", temp);
+"197
+[; ;Principal.c: 197:     sprintf(aux_temp, "%dG", temp);
 [e ( _sprintf (1 , (. , &U _aux_temp :s 3C _temp ]
 [v F3833 `uc ~T0 @X0 -> 16 `i s ]
 [i F3833
 :U ..
-"200
-[; ;Principal.c: 200:     char aux_luz[16] = "";
+"199
+[; ;Principal.c: 199:     char aux_luz[16] = "";
 -> 0 `c
 ..
 ]
 [v _aux_luz `uc ~T0 @X0 -> 16 `i a ]
 [e = _aux_luz F3833 ]
-"201
-[; ;Principal.c: 201:     sprintf(aux_luz, "%dP", luz);
+"200
+[; ;Principal.c: 200:     sprintf(aux_luz, "%dP", luz);
 [e ( _sprintf (1 , (. , &U _aux_luz :s 4C _luz ]
-"203
-[; ;Principal.c: 203:     LCD_Command(0xC0);
+"202
+[; ;Principal.c: 202:     LCD_Command(0xC0);
 [e ( _LCD_Command (1 -> -> 192 `i `uc ]
-"204
-[; ;Principal.c: 204:     LCD_String_xy(3, 0, aux_dist);
+"203
+[; ;Principal.c: 203:     LCD_String_xy(3, 0, aux_dist);
 [e ( _LCD_String_xy (3 , , -> -> 3 `i `uc -> -> 0 `i `uc -> &U _aux_dist `*Cuc ]
-"205
-[; ;Principal.c: 205:     LCD_String_xy(3, 6, aux_temp);
+"204
+[; ;Principal.c: 204:     LCD_String_xy(3, 6, aux_temp);
 [e ( _LCD_String_xy (3 , , -> -> 3 `i `uc -> -> 6 `i `uc -> &U _aux_temp `*Cuc ]
-"206
-[; ;Principal.c: 206:     LCD_String_xy(3, 11, aux_luz);
+"205
+[; ;Principal.c: 205:     LCD_String_xy(3, 11, aux_luz);
 [e ( _LCD_String_xy (3 , , -> -> 3 `i `uc -> -> 11 `i `uc -> &U _aux_luz `*Cuc ]
-"207
-[; ;Principal.c: 207:     _delay((unsigned long)((900)*(8000000/4000.0)));
+"206
+[; ;Principal.c: 206:     _delay((unsigned long)((900)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 900 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"208
-[; ;Principal.c: 208:     LCD_Clear();
+"207
+[; ;Principal.c: 207:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"209
-[; ;Principal.c: 209: }
+"208
+[; ;Principal.c: 208: }
 [e :UE 389 ]
 }
 [p f _sprintf 8388736 ]

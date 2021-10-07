@@ -178,7 +178,7 @@ void init_rtc() {
 }
 
 void pines_ConfigurarHora(void) {
-    ADCON1bits.PCFG = 
+    ADCON1bits.PCFG = 0b1101; //Puertos analogicos AN0, AN1
     TRISAbits.RA2 = 1; // Configuramos los pines RA2 y RA3 como entradas digitales.
     TRISAbits.RA3 = 1;
     inicializar_lcd(); // Inicializamos la pantalla LCD 16x2. 
