@@ -26,7 +26,6 @@ intended publication of this material.
 @param void
 @return void
 */
-//Hola mundo
 void iniciar_pic() {
     OSCILADOR_INTERNO = OCHO_MHZ;
     OSCILADOR_DEL_SISTEMA = 0b10; //?
