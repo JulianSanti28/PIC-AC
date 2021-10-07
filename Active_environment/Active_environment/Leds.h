@@ -57,6 +57,8 @@ void delay_ms(unsigned int delay);
 int validar(int temp,int distancia,int luz);
 void encender_leds(int valor);
 void init_leds(void); 
+void mostrar_estadistica(int sensor, char *valor_usart);
+int temp_ant = 0, dist_ant = 0 , lum_ant = 0;
 
 
 #ifdef	__cplusplus

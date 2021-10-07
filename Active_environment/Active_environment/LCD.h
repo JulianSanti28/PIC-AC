@@ -47,7 +47,7 @@ void LCD_String_xy(char, char , const char *);
 void LCD_Clear();/*Limpiar pantalla del LCD*/
 void LCD_Custom_Char(unsigned char loc, unsigned char *msg); /*Función para escribir en el LCD */
 void mostrar_emoticon(char i);/*Función para mostrar un emoticón*/
-
+void LCD_xy(char row, char pos); 
 
 
 #ifdef	__cplusplus

@@ -3,129 +3,260 @@
 [d edition pro ]
 [d chip 18F4550 ]
 [d frameptr 4065 ]
-"18 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\adc_lib.c
+"28 C:\Users\ASUS\Desktop\Active_environment\Active_environment\adc_lib.c
 [v _adc_config adc_config `(v  1 e 1 0 ]
-"27
+"43
 [v _adc_init10Bits adc_init10Bits `(v  1 e 1 0 ]
-"32
+"54
 [v _adc_read10Bits adc_read10Bits `(ui  1 e 2 0 ]
-"1 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
+"1 D:\mplab\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
-"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aodiv.c
+"9 D:\mplab\pic\sources\c99\common\aodiv.c
 [v ___aodiv __aodiv `(o  1 e 8 0 ]
-"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aomod.c
+"9 D:\mplab\pic\sources\c99\common\aomod.c
 [v ___aomod __aomod `(o  1 e 8 0 ]
-"72 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+"7 D:\mplab\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 D:\mplab\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"72 D:\mplab\pic\sources\c99\common\doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
 "287
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
+"568
+[v _stoa stoa `(i  1 s 2 stoa ]
+"645
+[v _xtoa xtoa `(i  1 s 2 xtoa ]
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 "1390
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
+"4 D:\mplab\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
-"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
+"62 D:\mplab\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+"43 D:\mplab\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
-"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftadd.c
+"86 D:\mplab\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
-"54 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftdiv.c
+"54 D:\mplab\pic\sources\c99\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 4 0 ]
-"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftmul.c
+"62 D:\mplab\pic\sources\c99\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
-"19 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftsub.c
+"19 D:\mplab\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
+"5 D:\mplab\pic\sources\c99\common\isalpha.c
+[v _isalpha isalpha `(i  1 e 2 0 ]
+"5 D:\mplab\pic\sources\c99\common\islower.c
+[v _islower islower `(i  1 e 2 0 ]
+"5 D:\mplab\pic\sources\c99\common\isupper.c
+[v _isupper isupper `(i  1 e 2 0 ]
+"7 D:\mplab\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+"8 D:\mplab\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
+"8 D:\mplab\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
-"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+"9 D:\mplab\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
+"7 D:\mplab\pic\sources\c99\common\putch.c
 [v _putch putch `(v  1 e 1 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+"10 D:\mplab\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 4 0 ]
-"11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+"11 D:\mplab\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
+"8 D:\mplab\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
+"3 D:\mplab\pic\sources\c99\common\strcat.c
+[v _strcat strcat `(*.39uc  1 e 2 0 ]
+"3 D:\mplab\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+"5 D:\mplab\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+"4 D:\mplab\pic\sources\c99\common\toupper.c
+[v _toupper toupper `(i  1 e 2 0 ]
+"15 D:\mplab\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+"15 D:\mplab\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
+"91 D:\mplab\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+"10 D:\mplab\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"3 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\LCD.c
+"12 C:\Users\ASUS\Desktop\Active_environment\Active_environment\I2C_Source_File.c
+[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
+"28
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+"40
+[v _I2C_Ready I2C_Ready `(v  1 e 1 0 ]
+"61
+[v _I2C_Start I2C_Start `(uc  1 e 1 0 ]
+"71
+[v _I2C_Repeated_Start I2C_Repeated_Start `(uc  1 e 1 0 ]
+"84
+[v _I2C_Stop I2C_Stop `(uc  1 e 1 0 ]
+"93
+[v _I2C_Write I2C_Write `(uc  1 e 1 0 ]
+"102
+[v _I2C_Ack I2C_Ack `(v  1 e 1 0 ]
+"108
+[v _I2C_Nack I2C_Nack `(v  1 e 1 0 ]
+"30 C:\Users\ASUS\Desktop\Active_environment\Active_environment\LCD.c
 [v _inicializar_lcd inicializar_lcd `(v  1 e 1 0 ]
-"15
-[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
-"29
-[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
-"45
-[v _LCD_String LCD_String `(v  1 e 1 0 ]
-"53
-[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
-"79
-[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
-"83
-[v _mostrar_emoticon mostrar_emoticon `(v  1 e 1 0 ]
-"90
-[v _LCD_Custom_Char LCD_Custom_Char `(v  1 e 1 0 ]
-"4 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\Leds.c
-[v _init_leds init_leds `(v  1 e 1 0 ]
-"12
-[v _encender_leds encender_leds `(v  1 e 1 0 ]
-"34
-[v _validar validar `(i  1 e 2 0 ]
-"78 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\Principal.c
-[v _main main `(v  1 e 1 0 ]
-"101
-[v _iniciar_pic iniciar_pic `(v  1 e 1 0 ]
-"110
-[v _iniciar_emoticones iniciar_emoticones `(v  1 e 1 0 ]
-"166
-[v _imprimir imprimir `(v  1 e 1 0 ]
-"3 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\sensores.c
-[v _sensor_distancia sensor_distancia `(i  1 e 2 0 ]
-"15
-[v _init_ports init_ports `(v  1 e 1 0 ]
-"23
-[v _obtener_distancia obtener_distancia `(ui  1 e 2 0 ]
-"37
-[v _sensor_temperatura sensor_temperatura `(i  1 e 2 0 ]
-"47
-[v _sensor_luz sensor_luz `(i  1 e 2 0 ]
-"19 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\USART_Source_File.c
-[v _USART_TxChar USART_TxChar `(v  1 e 1 0 ]
-"31 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment/sensores.h
-[v _val_distancia val_distancia `ui  1 e 2 0 ]
-"37
-[v _val_temp val_temp `i  1 e 2 0 ]
-"38
-[v _value_adc value_adc `us  1 e 2 0 ]
 "42
-[v _val_intensidad val_intensidad `us  1 e 2 0 ]
-"43
-[v _val_luminosidad val_luminosidad `i  1 e 2 0 ]
-"55 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-[v _flags flags `i  1 s 2 flags ]
-[v _prec prec `i  1 s 2 prec ]
-[v _width width `i  1 s 2 width ]
-"66
-[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
+"61
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
+"83
+[v _LCD_String LCD_String `(v  1 e 1 0 ]
+"98
+[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
+"118
+[v _LCD_xy LCD_xy `(v  1 e 1 0 ]
+"133
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+"142
+[v _mostrar_emoticon mostrar_emoticon `(v  1 e 1 0 ]
+"154
+[v _LCD_Custom_Char LCD_Custom_Char `(v  1 e 1 0 ]
+"32 C:\Users\ASUS\Desktop\Active_environment\Active_environment\Leds.c
+[v _init_leds init_leds `(v  1 e 1 0 ]
+"46
+[v _encender_leds encender_leds `(v  1 e 1 0 ]
+"77
+[v _validar validar `(i  1 e 2 0 ]
+"124
+[v _mostrar_estadistica mostrar_estadistica `(v  1 e 1 0 ]
+"52 C:\Users\ASUS\Desktop\Active_environment\Active_environment\Principal.c
+[v _main main `(v  1 e 1 0 ]
+"68
+[v _principal principal `(v  1 e 1 0 ]
+"90
+[v _iniciar_pic iniciar_pic `(v  1 e 1 0 ]
+"104
+[v _iniciar_emoticones iniciar_emoticones `(v  1 e 1 0 ]
+"168
+[v _imprimir imprimir `(v  1 e 1 0 ]
+"8 C:\Users\ASUS\Desktop\Active_environment\Active_environment\RTC.c
+[v _RTC_Clock_Write RTC_Clock_Write `(v  1 e 1 0 ]
+"19
+[v _RTC_Calendar_Write RTC_Calendar_Write `(v  1 e 1 0 ]
+"30
+[v _RTC_Read_Clock RTC_Read_Clock `(v  1 e 1 0 ]
+"40
+[v _RTC_Read_Calendar RTC_Read_Calendar `(v  1 e 1 0 ]
+"51
+[v _RTC_obtener_hora RTC_obtener_hora `(v  1 e 1 0 ]
 "69
-[v _nout nout `i  1 s 2 nout ]
-[s S476 . 1 `uc 1 RC0 1 0 :1:0 
+[v _RTC_obtener_fecha RTC_obtener_fecha `(v  1 e 1 0 ]
+"74
+[v _obtener_tiempo_fecha obtener_tiempo_fecha `(*.39uc  1 e 2 0 ]
+"81
+[v _BCD_a_Decimal BCD_a_Decimal `(uc  1 e 1 0 ]
+"88
+[v _Decimal_a_BCD Decimal_a_BCD `(uc  1 e 1 0 ]
+"93
+[v _Anti_rebote Anti_rebote `(b  1 e 0 0 ]
+"112
+[v _Parpadeo Parpadeo `(v  1 e 1 0 ]
+"122
+[v _Establecer_Hora_Fecha Establecer_Hora_Fecha `(uc  1 e 1 0 ]
+"176
+[v _init_rtc init_rtc `(v  1 e 1 0 ]
+"180
+[v _pines_ConfigurarHora pines_ConfigurarHora `(v  1 e 1 0 ]
+"217
+[v _Reloj_Calendario Reloj_Calendario `(v  1 e 1 0 ]
+"27 C:\Users\ASUS\Desktop\Active_environment\Active_environment\sensores.c
+[v _sensor_distancia sensor_distancia `(i  1 e 2 0 ]
+"44
+[v _init_ports init_ports `(v  1 e 1 0 ]
+"57
+[v _obtener_distancia obtener_distancia `(ui  1 e 2 0 ]
+"76
+[v _sensor_temperatura sensor_temperatura `(i  1 e 2 0 ]
+"91
+[v _sensor_luz sensor_luz `(i  1 e 2 0 ]
+"8 C:\Users\ASUS\Desktop\Active_environment\Active_environment\USART_Source_File.c
+[v _USART_Init USART_Init `(v  1 e 1 0 ]
+"19
+[v _USART_TxChar USART_TxChar `(v  1 e 1 0 ]
+"38
+[v _USART_SendString USART_SendString `(v  1 e 1 0 ]
+"61 C:\Users\ASUS\Desktop\Active_environment\Active_environment/Leds.h
+[v _temp_ant temp_ant `i  1 e 2 0 ]
+[v _dist_ant dist_ant `i  1 e 2 0 ]
+[v _lum_ant lum_ant `i  1 e 2 0 ]
+"33 C:\Users\ASUS\Desktop\Active_environment\Active_environment/RTC.h
+[v _sec sec `i  1 e 2 0 ]
+[v _min min `i  1 e 2 0 ]
+[v _hour hour `i  1 e 2 0 ]
+"34
+[v _Day Day `i  1 e 2 0 ]
+[v _Date Date `i  1 e 2 0 ]
+[v _Month Month `i  1 e 2 0 ]
+[v _Year Year `i  1 e 2 0 ]
+"36
+[v _date date `[60]uc  1 e 60 0 ]
+"37
+[v _time time `[60]uc  1 e 60 0 ]
+"41
+[v _hours hours `uc  1 e 1 0 ]
+"42
+[v _minutes minutes `uc  1 e 1 0 ]
+"43
+[v _seconds seconds `uc  1 e 1 0 ]
+"44
+[v _year year `uc  1 e 1 0 ]
+"45
+[v _month month `uc  1 e 1 0 ]
+"46
+[v _day day `uc  1 e 1 0 ]
+"47
+[v _i i `uc  1 e 1 0 ]
+"43 C:\Users\ASUS\Desktop\Active_environment\Active_environment/sensores.h
+[v _val_distancia val_distancia `ui  1 e 2 0 ]
+"49
+[v _val_temp val_temp `i  1 e 2 0 ]
+"50
+[v _value_adc value_adc `us  1 e 2 0 ]
+"54
+[v _val_intensidad val_intensidad `us  1 e 2 0 ]
+"55
+[v _val_luminosidad val_luminosidad `i  1 e 2 0 ]
+[s S68 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+]
+"2353 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+[s S76 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+`uc 1 OSC2 1 0 :1:6 
+]
+[s S84 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S90 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S93 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+]
+[u S95 . 1 `S68 1 . 1 0 `S76 1 . 1 0 `S84 1 . 1 0 `S90 1 . 1 0 `S93 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES95  1 e 1 @3968 ]
+[s S622 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -134,31 +265,31 @@
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-"2605 J:/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[s S485 . 1 `uc 1 T1OSO 1 0 :1:0 
+"2605
+[s S631 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S492 . 1 `uc 1 T13CKI 1 0 :1:0 
+[s S638 . 1 `uc 1 T13CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S499 . 1 `uc 1 . 1 0 :1:0 
+[s S645 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[s S503 . 1 `uc 1 . 1 0 :1:0 
+[s S649 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
-[u S506 . 1 `S476 1 . 1 0 `S485 1 . 1 0 `S492 1 . 1 0 `S499 1 . 1 0 `S503 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES506  1 e 1 @3970 ]
-[s S410 . 1 `uc 1 LATC0 1 0 :1:0 
+[u S652 . 1 `S622 1 . 1 0 `S631 1 . 1 0 `S638 1 . 1 0 `S645 1 . 1 0 `S649 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES652  1 e 1 @3970 ]
+[s S556 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -166,18 +297,18 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "3208
-[s S417 . 1 `uc 1 LC0 1 0 :1:0 
+[s S563 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S424 . 1 `S410 1 . 1 0 `S417 1 . 1 0 ]
-[v _LATCbits LATCbits `VES424  1 e 1 @3979 ]
+[u S570 . 1 `S556 1 . 1 0 `S563 1 . 1 0 ]
+[v _LATCbits LATCbits `VES570  1 e 1 @3979 ]
 "3263
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S543 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S689 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -186,17 +317,30 @@
 `uc 1 TRISA6 1 0 :1:6 
 ]
 "3457
-[s S551 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
+[u S705 . 1 `S689 1 . 1 0 `S68 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES705  1 e 1 @3986 ]
+[s S190 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
 ]
-[u S559 . 1 `S543 1 . 1 0 `S551 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES559  1 e 1 @3986 ]
-[s S442 . 1 `uc 1 TRISC0 1 0 :1:0 
+"3657
+[s S199 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+[u S208 . 1 `S190 1 . 1 0 `S199 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES208  1 e 1 @3987 ]
+[s S588 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -204,20 +348,20 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "3875
-[s S449 . 1 `uc 1 RC0 1 0 :1:0 
+[s S595 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S456 . 1 `S442 1 . 1 0 `S449 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES456  1 e 1 @3988 ]
+[u S602 . 1 `S588 1 . 1 0 `S595 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES602  1 e 1 @3988 ]
 "4001
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "4936
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
-[s S653 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S850 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -227,22 +371,22 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "4977
-[s S662 . 1 `uc 1 . 1 0 :3:0 
+[s S859 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S665 . 1 `uc 1 . 1 0 :5:0 
+[s S862 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRENA 1 0 :1:5 
 ]
-[s S668 . 1 `uc 1 . 1 0 :6:0 
+[s S865 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[s S671 . 1 `uc 1 . 1 0 :6:0 
+[s S868 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S674 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S871 . 1 `uc 1 RCD8 1 0 :1:0 
 ]
-[u S676 . 1 `S653 1 . 1 0 `S662 1 . 1 0 `S665 1 . 1 0 `S668 1 . 1 0 `S671 1 . 1 0 `S674 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES676  1 e 1 @4011 ]
+[u S873 . 1 `S850 1 . 1 0 `S859 1 . 1 0 `S862 1 . 1 0 `S865 1 . 1 0 `S868 1 . 1 0 `S871 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES873  1 e 1 @4011 ]
 "5146
 [v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
 "5402
@@ -251,85 +395,175 @@
 [v _RCREG RCREG `VEuc  1 e 1 @4014 ]
 "5426
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
-[s S189 . 1 `uc 1 ADCS 1 0 :3:0 
+[s S440 . 1 `uc 1 ADCS 1 0 :3:0 
 `uc 1 ACQT 1 0 :3:3 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "6531
-[s S194 . 1 `uc 1 ADCS0 1 0 :1:0 
+[s S445 . 1 `uc 1 ADCS0 1 0 :1:0 
 `uc 1 ADCS1 1 0 :1:1 
 `uc 1 ADCS2 1 0 :1:2 
 `uc 1 ACQT0 1 0 :1:3 
 `uc 1 ACQT1 1 0 :1:4 
 `uc 1 ACQT2 1 0 :1:5 
 ]
-[u S201 . 1 `S189 1 . 1 0 `S194 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES201  1 e 1 @4032 ]
-[s S286 . 1 `uc 1 PCFG 1 0 :4:0 
+[u S452 . 1 `S440 1 . 1 0 `S445 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES452  1 e 1 @4032 ]
+"6581
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+[s S337 . 1 `uc 1 PCFG 1 0 :4:0 
 `uc 1 VCFG 1 0 :2:4 
 ]
 "6606
-[s S289 . 1 `uc 1 PCFG0 1 0 :1:0 
+[s S340 . 1 `uc 1 PCFG0 1 0 :1:0 
 `uc 1 PCFG1 1 0 :1:1 
 `uc 1 PCFG2 1 0 :1:2 
 `uc 1 PCFG3 1 0 :1:3 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 ]
-[s S296 . 1 `uc 1 . 1 0 :3:0 
+[s S347 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CHSN3 1 0 :1:3 
 `uc 1 VCFG01 1 0 :1:4 
 `uc 1 VCFG11 1 0 :1:5 
 ]
-[u S301 . 1 `S286 1 . 1 0 `S289 1 . 1 0 `S296 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES301  1 e 1 @4033 ]
-[s S217 . 1 `uc 1 . 1 0 :1:0 
+[u S352 . 1 `S337 1 . 1 0 `S340 1 . 1 0 `S347 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES352  1 e 1 @4033 ]
+[s S372 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "6710
-[s S220 . 1 `uc 1 ADON 1 0 :1:0 
+[s S375 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S224 . 1 `uc 1 . 1 0 :1:0 
+[s S379 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S231 . 1 `uc 1 . 1 0 :1:0 
+[s S386 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S234 . 1 `uc 1 . 1 0 :1:0 
+[s S389 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S237 . 1 `uc 1 . 1 0 :1:0 
+[s S392 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S240 . 1 `uc 1 . 1 0 :1:0 
+[s S395 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S243 . 1 `uc 1 . 1 0 :1:0 
+[s S398 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S246 . 1 `S217 1 . 1 0 `S220 1 . 1 0 `S224 1 . 1 0 `S231 1 . 1 0 `S234 1 . 1 0 `S237 1 . 1 0 `S240 1 . 1 0 `S243 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES246  1 e 1 @4034 ]
+[u S401 . 1 `S372 1 . 1 0 `S375 1 . 1 0 `S379 1 . 1 0 `S386 1 . 1 0 `S389 1 . 1 0 `S392 1 . 1 0 `S395 1 . 1 0 `S398 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES401  1 e 1 @4034 ]
 "6792
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "6799
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"6806
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
+[s S1087 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"6823
+[u S1096 . 1 `S1087 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES1096  1 e 1 @4037 ]
+"6868
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+"6938
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+[s S925 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"7021
+[s S928 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S931 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S940 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S945 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S951 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S956 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S959 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S962 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S967 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S972 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S977 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S983 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S988 . 1 `S925 1 . 1 0 `S928 1 . 1 0 `S931 1 . 1 0 `S940 1 . 1 0 `S945 1 . 1 0 `S951 1 . 1 0 `S956 1 . 1 0 `S959 1 . 1 0 `S962 1 . 1 0 `S967 1 . 1 0 `S972 1 . 1 0 `S977 1 . 1 0 `S983 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES988  1 e 1 @4039 ]
+"7186
+[v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
+"7193
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
 "7986
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S71 . 1 `uc 1 SCS 1 0 :2:0 
+[s S148 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 IOFS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 `uc 1 IDLEN 1 0 :1:7 
 ]
 "8009
-[s S77 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S154 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 FLTS 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -337,8 +571,14 @@
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S85 . 1 `S71 1 . 1 0 `S77 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES85  1 e 1 @4051 ]
+[u S162 . 1 `S148 1 . 1 0 `S154 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES162  1 e 1 @4051 ]
+"8910
+[v _ACKDT ACKDT `VEb  1 e 0 @32301 ]
+"8913
+[v _ACKEN ACKEN `VEb  1 e 0 @32300 ]
+"8916
+[v _ACKSTAT ACKSTAT `VEb  1 e 0 @32302 ]
 "9201
 [v _CREN CREN `VEb  1 e 0 @32092 ]
 "9957
@@ -351,10 +591,24 @@
 [v _LATD0 LATD0 `VEb  1 e 0 @31840 ]
 "9990
 [v _LATD1 LATD1 `VEb  1 e 0 @31841 ]
+"10275
+[v _PEN PEN `VEb  1 e 0 @32298 ]
 "10392
 [v _RBPU RBPU `VEb  1 e 0 @32655 ]
+"10434
+[v _RCEN RCEN `VEb  1 e 0 @32299 ]
 "10443
 [v _RCIF RCIF `VEb  1 e 0 @31989 ]
+"10515
+[v _RSEN RSEN `VEb  1 e 0 @32297 ]
+"10641
+[v _SSPIE SSPIE `VEb  1 e 0 @31979 ]
+"10644
+[v _SSPIF SSPIF `VEb  1 e 0 @31987 ]
+"10902
+[v _TRISB0 TRISB0 `VEb  1 e 0 @31896 ]
+"10905
+[v _TRISB1 TRISB1 `VEb  1 e 0 @31897 ]
 "10911
 [v _TRISB3 TRISB3 `VEb  1 e 0 @31899 ]
 "10914
@@ -369,41 +623,619 @@
 [v _TRISC7 TRISC7 `VEb  1 e 0 @31911 ]
 "11043
 [v _TXIF TXIF `VEb  1 e 0 @31988 ]
-"78 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\Principal.c
+"55 D:\mplab\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"69
+[v _nout nout `i  1 s 2 nout ]
+"45 C:\Users\ASUS\Desktop\Active_environment\Active_environment\Principal.c
+[v _estado estado `i  1 e 2 0 ]
+"52
 [v _main main `(v  1 e 1 0 ]
 {
-"85
-[v main@s_luz s_luz `i  1 a 2 66 ]
-[v main@s_temp s_temp `i  1 a 2 64 ]
-[v main@s_dist s_dist `i  1 a 2 62 ]
-"94
+"63
 } 0
-"34 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\Leds.c
+"68
+[v _principal principal `(v  1 e 1 0 ]
+{
+"70
+[v principal@s_luz s_luz `i  1 a 2 149 ]
+[v principal@s_temp s_temp `i  1 a 2 147 ]
+[v principal@s_dist s_dist `i  1 a 2 145 ]
+"88
+} 0
+"77 C:\Users\ASUS\Desktop\Active_environment\Active_environment\Leds.c
 [v _validar validar `(i  1 e 2 0 ]
 {
-"37
-[v validar@contador contador `i  1 a 2 9 ]
-"34
-[v validar@temp temp `i  1 p 2 3 ]
-[v validar@distancia distancia `i  1 p 2 5 ]
-[v validar@luz luz `i  1 p 2 7 ]
-"59
+"109
+[v validar@valor_usart_831 valor_usart `[30]uc  1 a 30 60 ]
+"95
+[v validar@valor_usart_829 valor_usart `[30]uc  1 a 30 30 ]
+"83
+[v validar@valor_usart valor_usart `[30]uc  1 a 30 0 ]
+"78
+[v validar@contador contador `i  1 a 2 90 ]
+"77
+[v validar@temp temp `i  1 p 2 135 ]
+[v validar@distancia distancia `i  1 p 2 137 ]
+[v validar@luz luz `i  1 p 2 139 ]
+"122
 } 0
-"83 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\LCD.c
+"124
+[v _mostrar_estadistica mostrar_estadistica `(v  1 e 1 0 ]
+{
+"143
+[v mostrar_estadistica@mensaje_usart_840 mensaje_usart `[100]uc  1 a 100 100 ]
+"136
+[v mostrar_estadistica@mensaje_usart_838 mensaje_usart `[100]uc  1 a 100 0 ]
+"129
+[v mostrar_estadistica@mensaje_usart mensaje_usart `[100]uc  1 a 100 33 ]
+"124
+[v mostrar_estadistica@sensor sensor `i  1 p 2 29 ]
+[v mostrar_estadistica@valor_usart valor_usart `*.39uc  1 p 2 31 ]
+"150
+} 0
+"74 C:\Users\ASUS\Desktop\Active_environment\Active_environment\RTC.c
+[v _obtener_tiempo_fecha obtener_tiempo_fecha `(*.39uc  1 e 2 0 ]
+{
+"79
+} 0
+"3 D:\mplab\pic\sources\c99\common\strcat.c
+[v _strcat strcat `(*.39uc  1 e 2 0 ]
+{
+[v strcat@dest dest `*.39uc  1 p 2 12 ]
+[v strcat@src src `*.39Cuc  1 p 2 14 ]
+"7
+} 0
+"3 D:\mplab\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+{
+"6
+[v strcpy@d d `*.39uc  1 a 2 10 ]
+"5
+[v strcpy@s s `*.39Cuc  1 a 2 8 ]
+"3
+[v strcpy@dest dest `*.39uc  1 p 2 4 ]
+[v strcpy@src src `*.39Cuc  1 p 2 6 ]
+"9
+} 0
+"51 C:\Users\ASUS\Desktop\Active_environment\Active_environment\RTC.c
+[v _RTC_obtener_hora RTC_obtener_hora `(v  1 e 1 0 ]
+{
+"53
+[v RTC_obtener_hora@AM_PM AM_PM `uc  1 a 1 26 ]
+"67
+} 0
+"30
+[v _RTC_Read_Clock RTC_Read_Clock `(v  1 e 1 0 ]
+{
+[v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 wreg ]
+[v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 wreg ]
+[v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 3 ]
+"38
+} 0
+"69
+[v _RTC_obtener_fecha RTC_obtener_fecha `(v  1 e 1 0 ]
+{
+"72
+} 0
+"40
+[v _RTC_Read_Calendar RTC_Read_Calendar `(v  1 e 1 0 ]
+{
+[v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 wreg ]
+[v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 wreg ]
+[v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 3 ]
+"49
+} 0
+"84 C:\Users\ASUS\Desktop\Active_environment\Active_environment\I2C_Source_File.c
+[v _I2C_Stop I2C_Stop `(uc  1 e 1 0 ]
+{
+"91
+} 0
+"61
+[v _I2C_Start I2C_Start `(uc  1 e 1 0 ]
+{
+[v I2C_Start@slave_write_address slave_write_address `uc  1 a 1 wreg ]
+[v I2C_Start@slave_write_address slave_write_address `uc  1 a 1 wreg ]
+[v I2C_Start@slave_write_address slave_write_address `uc  1 a 1 1 ]
+"69
+} 0
+"71
+[v _I2C_Repeated_Start I2C_Repeated_Start `(uc  1 e 1 0 ]
+{
+[v I2C_Repeated_Start@slave_read_address slave_read_address `uc  1 a 1 wreg ]
+[v I2C_Repeated_Start@slave_read_address slave_read_address `uc  1 a 1 wreg ]
+[v I2C_Repeated_Start@slave_read_address slave_read_address `uc  1 a 1 1 ]
+"82
+} 0
+"93
+[v _I2C_Write I2C_Write `(uc  1 e 1 0 ]
+{
+[v I2C_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Write@data data `uc  1 a 1 0 ]
+"100
+} 0
+"12
+[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
+{
+[v I2C_Read@flag flag `uc  1 a 1 wreg ]
+"14
+[v I2C_Read@buffer buffer `uc  1 a 1 1 ]
+"12
+[v I2C_Read@flag flag `uc  1 a 1 wreg ]
+"15
+[v I2C_Read@flag flag `uc  1 a 1 0 ]
+"26
+} 0
+"40
+[v _I2C_Ready I2C_Ready `(v  1 e 1 0 ]
+{
+"43
+} 0
+"108
+[v _I2C_Nack I2C_Nack `(v  1 e 1 0 ]
+{
+"112
+} 0
+"102
+[v _I2C_Ack I2C_Ack `(v  1 e 1 0 ]
+{
+"106
+} 0
+"38 C:\Users\ASUS\Desktop\Active_environment\Active_environment\USART_Source_File.c
+[v _USART_SendString USART_SendString `(v  1 e 1 0 ]
+{
+[v USART_SendString@out out `*.39Cuc  1 p 2 1 ]
+"43
+} 0
+"19
+[v _USART_TxChar USART_TxChar `(v  1 e 1 0 ]
+{
+[v USART_TxChar@out out `uc  1 a 1 wreg ]
+[v USART_TxChar@out out `uc  1 a 1 wreg ]
+[v USART_TxChar@out out `uc  1 a 1 0 ]
+"23
+} 0
+"142 C:\Users\ASUS\Desktop\Active_environment\Active_environment\LCD.c
 [v _mostrar_emoticon mostrar_emoticon `(v  1 e 1 0 ]
 {
 [v mostrar_emoticon@i i `uc  1 a 1 wreg ]
 [v mostrar_emoticon@i i `uc  1 a 1 wreg ]
-"85
+"144
 [v mostrar_emoticon@i i `uc  1 a 1 2 ]
-"88
+"147
 } 0
-"37 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\sensores.c
+"76 C:\Users\ASUS\Desktop\Active_environment\Active_environment\sensores.c
 [v _sensor_temperatura sensor_temperatura `(i  1 e 2 0 ]
 {
+"82
+} 0
+"8 D:\mplab\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S1630 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S1635 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1638 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1630 1 fAsBytes 4 0 `S1635 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1638  1 a 4 33 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 27 ]
+[s S1706 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1709 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1706 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1709  1 a 2 37 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 31 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 26 ]
+"8
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
+"205
+} 0
+"91 C:\Users\ASUS\Desktop\Active_environment\Active_environment\sensores.c
+[v _sensor_luz sensor_luz `(i  1 e 2 0 ]
+{
+"102
+} 0
+"54 C:\Users\ASUS\Desktop\Active_environment\Active_environment\adc_lib.c
+[v _adc_read10Bits adc_read10Bits `(ui  1 e 2 0 ]
+{
+"55
+[v adc_read10Bits@value_adc value_adc `ui  1 a 2 4 ]
+"61
+} 0
+"43
+[v _adc_init10Bits adc_init10Bits `(v  1 e 1 0 ]
+{
+[v adc_init10Bits@canal canal `i  1 p 2 2 ]
+"47
+} 0
+"28
+[v _adc_config adc_config `(v  1 e 1 0 ]
+{
+[v adc_config@canal canal `i  1 p 2 0 ]
+"35
+} 0
+"15 D:\mplab\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"7 D:\mplab\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 10 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 12 ]
+"7
+[v ___lwdiv@dividend dividend `ui  1 p 2 6 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 8 ]
+"30
+} 0
+"27 C:\Users\ASUS\Desktop\Active_environment\Active_environment\sensores.c
+[v _sensor_distancia sensor_distancia `(i  1 e 2 0 ]
+{
+"37
+} 0
+"57
+[v _obtener_distancia obtener_distancia `(ui  1 e 2 0 ]
+{
+"58
+[v obtener_distancia@cm cm `ui  1 a 2 2 ]
+"69
+} 0
+"44
+[v _init_ports init_ports `(v  1 e 1 0 ]
+{
+"50
+} 0
+"168 C:\Users\ASUS\Desktop\Active_environment\Active_environment\Principal.c
+[v _imprimir imprimir `(v  1 e 1 0 ]
+{
+"179
+[v imprimir@aux_luz aux_luz `[16]uc  1 a 16 66 ]
+"176
+[v imprimir@aux_temp aux_temp `[16]uc  1 a 16 50 ]
+"173
+[v imprimir@aux_dist aux_dist `[16]uc  1 a 16 34 ]
+"168
+[v imprimir@dist dist `i  1 p 2 26 ]
+[v imprimir@temp temp `i  1 p 2 28 ]
+[v imprimir@luz luz `i  1 p 2 30 ]
+"188
+} 0
+"9 D:\mplab\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[s S1765 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+"13
+[v sprintf@f f `S1765  1 a 6 20 ]
+"12
+[v sprintf@ap ap `[1]*.39v  1 a 2 18 ]
+"9
+[v sprintf@s s `*.39uc  1 p 2 8 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 10 ]
+"23
+} 0
+"1390 D:\mplab\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1393
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 6 ]
+[s S1791 _IO_FILE 0 ]
+"1390
+[v vfprintf@fp fp `*.39S1791  1 p 2 0 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 4 ]
+"1404
+} 0
+"692
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+"697
+[v vfpfcnvrt@llu llu `uo  1 a 8 84 ]
+"696
+[v vfpfcnvrt@ll ll `o  1 a 8 76 ]
+"694
+[v vfpfcnvrt@cp cp `*.39uc  1 a 2 92 ]
+[v vfpfcnvrt@c c `uc  1 a 1 94 ]
+[s S1791 _IO_FILE 0 ]
+"692
+[v vfpfcnvrt@fp fp `*.39S1791  1 p 2 66 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 68 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 70 ]
+"1387
+} 0
+"645
+[v _xtoa xtoa `(i  1 s 2 xtoa ]
+{
+"648
+[v xtoa@n n `uo  1 a 8 54 ]
+"647
+[v xtoa@c c `i  1 a 2 64 ]
+[v xtoa@i i `i  1 a 2 62 ]
+[v xtoa@w w `i  1 a 2 52 ]
+[v xtoa@p p `i  1 a 2 50 ]
+[s S1791 _IO_FILE 0 ]
+"645
+[v xtoa@fp fp `*.39S1791  1 p 2 27 ]
+[v xtoa@d d `uo  1 p 8 29 ]
+[v xtoa@x x `uc  1 p 1 37 ]
+"687
+} 0
+"4 D:\mplab\pic\sources\c99\common\toupper.c
+[v _toupper toupper `(i  1 e 2 0 ]
+{
+[v toupper@c c `i  1 p 2 6 ]
+"8
+} 0
+"5 D:\mplab\pic\sources\c99\common\islower.c
+[v _islower islower `(i  1 e 2 0 ]
+{
+[v islower@c c `i  1 p 2 0 ]
+"8
+} 0
+"5 D:\mplab\pic\sources\c99\common\isupper.c
+[v _isupper isupper `(i  1 e 2 0 ]
+{
+[v isupper@c c `i  1 p 2 0 ]
+"8
+} 0
+"5 D:\mplab\pic\sources\c99\common\isalpha.c
+[v _isalpha isalpha `(i  1 e 2 0 ]
+{
+[v isalpha@c c `i  1 p 2 0 ]
+"8
+} 0
+"568 D:\mplab\pic\sources\c99\common\doprnt.c
+[v _stoa stoa `(i  1 s 2 stoa ]
+{
+"570
+[v stoa@nuls nuls `[7]uc  1 a 7 14 ]
+"571
+[v stoa@l l `i  1 a 2 29 ]
+[v stoa@p p `i  1 a 2 27 ]
+"570
+[v stoa@cp cp `*.39uc  1 a 2 25 ]
+"571
+[v stoa@w w `i  1 a 2 23 ]
+[v stoa@i i `i  1 a 2 21 ]
+[s S1791 _IO_FILE 0 ]
+"568
+[v stoa@fp fp `*.39S1791  1 p 2 9 ]
+[v stoa@s s `*.39uc  1 p 2 11 ]
+"570
+[v stoa@F1141 F1141 `[7]uc  1 s 7 F1141 ]
+"611
+} 0
+"287
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+{
+"290
+[v dtoa@n n `o  1 a 8 53 ]
+"289
+[v dtoa@i i `i  1 a 2 61 ]
+[v dtoa@s s `i  1 a 2 51 ]
+[v dtoa@w w `i  1 a 2 49 ]
+[v dtoa@p p `i  1 a 2 47 ]
+[s S1791 _IO_FILE 0 ]
+"287
+[v dtoa@fp fp `*.39S1791  1 p 2 27 ]
+[v dtoa@d d `o  1 p 8 29 ]
+"328
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+"74
+[v pad@w w `i  1 a 2 25 ]
+[v pad@i i `i  1 a 2 23 ]
+[s S1791 _IO_FILE 0 ]
+"72
+[v pad@fp fp `*.39S1791  1 p 2 16 ]
+[v pad@buf buf `*.39uc  1 p 2 18 ]
+[v pad@p p `i  1 p 2 20 ]
+"95
+} 0
+"5 D:\mplab\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"7
+[v strlen@a a `*.39Cuc  1 a 2 2 ]
+"5
+[v strlen@s s `*.39Cuc  1 p 2 0 ]
+"12
+} 0
+"8 D:\mplab\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 14 ]
+"10
+[v fputs@c c `uc  1 a 1 13 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 9 ]
+[s S1765 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.39S1765  1 p 2 11 ]
+"19
+} 0
+"8 D:\mplab\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 0 ]
+[s S1765 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.39S1765  1 p 2 2 ]
+"24
+} 0
+"7 D:\mplab\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 D:\mplab\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 18 ]
+"4
+} 0
+"9 D:\mplab\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+{
+"12
+[v ___aomod@sign sign `uc  1 a 1 17 ]
+[v ___aomod@counter counter `uc  1 a 1 16 ]
+"9
+[v ___aomod@dividend dividend `o  1 p 8 0 ]
+[v ___aomod@divisor divisor `o  1 p 8 8 ]
+"36
+} 0
+"9 D:\mplab\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+{
+"12
+[v ___aodiv@quotient quotient `o  1 a 8 18 ]
+"13
+[v ___aodiv@sign sign `uc  1 a 1 17 ]
+[v ___aodiv@counter counter `uc  1 a 1 16 ]
+"9
+[v ___aodiv@dividend dividend `o  1 p 8 0 ]
+[v ___aodiv@divisor divisor `o  1 p 8 8 ]
 "43
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+"98 C:\Users\ASUS\Desktop\Active_environment\Active_environment\LCD.c
+[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
+{
+[v LCD_String_xy@row row `uc  1 a 1 wreg ]
+"99
+[v LCD_String_xy@location location `uc  1 a 1 8 ]
+"98
+[v LCD_String_xy@row row `uc  1 a 1 wreg ]
+[v LCD_String_xy@pos pos `uc  1 p 1 4 ]
+[v LCD_String_xy@msg msg `*.35Cuc  1 p 2 5 ]
+[v LCD_String_xy@row row `uc  1 a 1 7 ]
+"110
+} 0
+"83
+[v _LCD_String LCD_String `(v  1 e 1 0 ]
+{
+[v LCD_String@msg msg `*.35Cuc  1 p 2 2 ]
+"89
+} 0
+"133
+[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
+{
+"135
+} 0
+"46 C:\Users\ASUS\Desktop\Active_environment\Active_environment\Leds.c
+[v _encender_leds encender_leds `(v  1 e 1 0 ]
+{
+[v encender_leds@valor valor `i  1 p 2 141 ]
+"65
+} 0
+"32
+[v _init_leds init_leds `(v  1 e 1 0 ]
+{
+"38
+} 0
+"90 C:\Users\ASUS\Desktop\Active_environment\Active_environment\Principal.c
+[v _iniciar_pic iniciar_pic `(v  1 e 1 0 ]
+{
+"98
+} 0
+"180 C:\Users\ASUS\Desktop\Active_environment\Active_environment\RTC.c
+[v _pines_ConfigurarHora pines_ConfigurarHora `(v  1 e 1 0 ]
+{
+"185
+} 0
+"30 C:\Users\ASUS\Desktop\Active_environment\Active_environment\LCD.c
+[v _inicializar_lcd inicializar_lcd `(v  1 e 1 0 ]
+{
+"40
+} 0
+"176 C:\Users\ASUS\Desktop\Active_environment\Active_environment\RTC.c
+[v _init_rtc init_rtc `(v  1 e 1 0 ]
+{
+"178
+} 0
+"28 C:\Users\ASUS\Desktop\Active_environment\Active_environment\I2C_Source_File.c
+[v _I2C_Init I2C_Init `(v  1 e 1 0 ]
+{
+"38
+} 0
+"104 C:\Users\ASUS\Desktop\Active_environment\Active_environment\Principal.c
+[v _iniciar_emoticones iniciar_emoticones `(v  1 e 1 0 ]
+{
+"140
+[v iniciar_emoticones@todo_bien todo_bien `[8]uc  1 a 8 30 ]
+"129
+[v iniciar_emoticones@luz luz `[8]uc  1 a 8 22 ]
+"118
+[v iniciar_emoticones@distancia distancia `[8]uc  1 a 8 14 ]
+"107
+[v iniciar_emoticones@temperatura temperatura `[8]uc  1 a 8 6 ]
+"104
+[v iniciar_emoticones@F3813 F3813 `[8]uc  1 s 8 F3813 ]
+"107
+[v iniciar_emoticones@F3815 F3815 `[8]uc  1 s 8 F3815 ]
+"118
+[v iniciar_emoticones@F3817 F3817 `[8]uc  1 s 8 F3817 ]
+"129
+[v iniciar_emoticones@F3819 F3819 `[8]uc  1 s 8 F3819 ]
+"158
+} 0
+"154 C:\Users\ASUS\Desktop\Active_environment\Active_environment\LCD.c
+[v _LCD_Custom_Char LCD_Custom_Char `(v  1 e 1 0 ]
+{
+[v LCD_Custom_Char@loc loc `uc  1 a 1 wreg ]
+"156
+[v LCD_Custom_Char@i i `uc  1 a 1 5 ]
+"154
+[v LCD_Custom_Char@loc loc `uc  1 a 1 wreg ]
+[v LCD_Custom_Char@msg msg `*.39uc  1 p 2 2 ]
+"157
+[v LCD_Custom_Char@loc loc `uc  1 a 1 4 ]
+"163
+} 0
+"42
+[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
+{
+[v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
+[v LCD_Command@cmd cmd `uc  1 a 1 1 ]
+"54
+} 0
+"61
+[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
+{
+[v LCD_Char@dat dat `uc  1 a 1 wreg ]
+[v LCD_Char@dat dat `uc  1 a 1 wreg ]
+"63
+[v LCD_Char@dat dat `uc  1 a 1 1 ]
+"76
+} 0
+"8 C:\Users\ASUS\Desktop\Active_environment\Active_environment\USART_Source_File.c
+[v _USART_Init USART_Init `(v  1 e 1 0 ]
+{
+"9
+[v USART_Init@temp temp `f  1 a 4 59 ]
+"8
+[v USART_Init@baud_rate baud_rate `l  1 p 4 55 ]
+"16
+} 0
+"10 D:\mplab\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -418,7 +1250,7 @@
 [v ___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
 } 0
-"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+"43 D:\mplab\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
@@ -428,332 +1260,39 @@
 [v ___fltol@f1 f1 `d  1 p 4 39 ]
 "70
 } 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S1029 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S1034 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1037 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1029 1 fAsBytes 4 0 `S1034 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1037  1 a 4 33 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 27 ]
-[s S1105 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S1108 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1105 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1108  1 a 2 37 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 32 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 31 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 26 ]
-"8
-[v ___flmul@b b `d  1 p 4 14 ]
-[v ___flmul@a a `d  1 p 4 18 ]
-"205
-} 0
-"47 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\sensores.c
-[v _sensor_luz sensor_luz `(i  1 e 2 0 ]
-{
-"58
-} 0
-"32 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\adc_lib.c
-[v _adc_read10Bits adc_read10Bits `(ui  1 e 2 0 ]
-{
-"33
-[v adc_read10Bits@value_adc value_adc `ui  1 a 2 4 ]
-"39
-} 0
-"27
-[v _adc_init10Bits adc_init10Bits `(v  1 e 1 0 ]
-{
-[v adc_init10Bits@canal canal `i  1 p 2 2 ]
-"31
-} 0
-"18
-[v _adc_config adc_config `(v  1 e 1 0 ]
-{
-[v adc_config@canal canal `i  1 p 2 0 ]
-"25
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-{
-"17
-[v ___wmul@product product `ui  1 a 2 4 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
-"53
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
-[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-{
-"10
-[v ___lwdiv@quotient quotient `ui  1 a 2 10 ]
-"11
-[v ___lwdiv@counter counter `uc  1 a 1 12 ]
-"7
-[v ___lwdiv@dividend dividend `ui  1 p 2 6 ]
-[v ___lwdiv@divisor divisor `ui  1 p 2 8 ]
-"30
-} 0
-"3 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\sensores.c
-[v _sensor_distancia sensor_distancia `(i  1 e 2 0 ]
-{
-"13
-} 0
-"23
-[v _obtener_distancia obtener_distancia `(ui  1 e 2 0 ]
-{
-"24
-[v obtener_distancia@cm cm `ui  1 a 2 2 ]
-"35
-} 0
-"15
-[v _init_ports init_ports `(v  1 e 1 0 ]
+"11 D:\mplab\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-} 0
-"4 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\Leds.c
-[v _init_leds init_leds `(v  1 e 1 0 ]
-{
-"10
-} 0
-"101 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\Principal.c
-[v _iniciar_pic iniciar_pic `(v  1 e 1 0 ]
-{
-"106
-} 0
-"110
-[v _iniciar_emoticones iniciar_emoticones `(v  1 e 1 0 ]
-{
-"146
-[v iniciar_emoticones@todo_bien todo_bien `[8]uc  1 a 8 30 ]
-"135
-[v iniciar_emoticones@luz luz `[8]uc  1 a 8 22 ]
-"124
-[v iniciar_emoticones@distancia distancia `[8]uc  1 a 8 14 ]
-"112
-[v iniciar_emoticones@temperatura temperatura `[8]uc  1 a 8 6 ]
-"110
-[v iniciar_emoticones@F3571 F3571 `[8]uc  1 s 8 F3571 ]
-"112
-[v iniciar_emoticones@F3573 F3573 `[8]uc  1 s 8 F3573 ]
-"124
-[v iniciar_emoticones@F3575 F3575 `[8]uc  1 s 8 F3575 ]
-"135
-[v iniciar_emoticones@F3577 F3577 `[8]uc  1 s 8 F3577 ]
-"164
-} 0
-"90 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\LCD.c
-[v _LCD_Custom_Char LCD_Custom_Char `(v  1 e 1 0 ]
-{
-[v LCD_Custom_Char@loc loc `uc  1 a 1 wreg ]
-"92
-[v LCD_Custom_Char@i i `uc  1 a 1 5 ]
-"90
-[v LCD_Custom_Char@loc loc `uc  1 a 1 wreg ]
-[v LCD_Custom_Char@msg msg `*.39uc  1 p 2 2 ]
-"93
-[v LCD_Custom_Char@loc loc `uc  1 a 1 4 ]
-"99
-} 0
-"3
-[v _inicializar_lcd inicializar_lcd `(v  1 e 1 0 ]
-{
-"13
-} 0
-"166 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\Principal.c
-[v _imprimir imprimir `(v  1 e 1 0 ]
-{
-"177
-[v imprimir@aux_luz aux_luz `[16]uc  1 a 16 46 ]
-"174
-[v imprimir@aux_temp aux_temp `[16]uc  1 a 16 30 ]
-"171
-[v imprimir@aux_dist aux_dist `[16]uc  1 a 16 14 ]
-"166
-[v imprimir@dist dist `i  1 p 2 8 ]
-[v imprimir@temp temp `i  1 p 2 10 ]
-[v imprimir@luz luz `i  1 p 2 12 ]
-"186
-} 0
-"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
-{
-[s S1164 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-"13
-[v sprintf@f f `S1164  1 a 6 2 ]
-"12
-[v sprintf@ap ap `[1]*.39v  1 a 2 0 ]
-"9
-[v sprintf@s s `*.39uc  1 p 2 87 ]
-[v sprintf@fmt fmt `*.25Cuc  1 p 2 89 ]
-"23
-} 0
-"1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
-{
-"1393
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 85 ]
-[s S1190 _IO_FILE 0 ]
-"1390
-[v vfprintf@fp fp `*.39S1190  1 p 2 79 ]
-[v vfprintf@fmt fmt `*.25Cuc  1 p 2 81 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 83 ]
-"1404
-} 0
-"692
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-{
-"696
-[v vfpfcnvrt@ll ll `o  1 a 8 71 ]
-[s S1190 _IO_FILE 0 ]
-"692
-[v vfpfcnvrt@fp fp `*.39S1190  1 p 2 63 ]
-[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 65 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 67 ]
-"1387
-} 0
-"287
-[v _dtoa dtoa `(i  1 s 2 dtoa ]
-{
-"290
-[v dtoa@n n `o  1 a 8 53 ]
-"289
-[v dtoa@i i `i  1 a 2 61 ]
-[v dtoa@s s `i  1 a 2 51 ]
-[v dtoa@w w `i  1 a 2 49 ]
-[v dtoa@p p `i  1 a 2 47 ]
-[s S1190 _IO_FILE 0 ]
-"287
-[v dtoa@fp fp `*.39S1190  1 p 2 27 ]
-[v dtoa@d d `o  1 p 8 29 ]
-"328
-} 0
-"72
-[v _pad pad `(i  1 s 2 pad ]
-{
-"74
-[v pad@w w `i  1 a 2 25 ]
-[v pad@i i `i  1 a 2 23 ]
-[s S1190 _IO_FILE 0 ]
-"72
-[v pad@fp fp `*.39S1190  1 p 2 16 ]
-[v pad@buf buf `*.39uc  1 p 2 18 ]
-[v pad@p p `i  1 p 2 20 ]
-"95
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
-{
-"7
-[v strlen@a a `*.39Cuc  1 a 2 2 ]
-"5
-[v strlen@s s `*.39Cuc  1 p 2 0 ]
-"12
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-{
-"11
-[v fputs@i i `i  1 a 2 14 ]
-"10
-[v fputs@c c `uc  1 a 1 13 ]
-"8
-[v fputs@s s `*.39Cuc  1 p 2 9 ]
-[s S1164 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.39S1164  1 p 2 11 ]
+[v ___fldiv@grs grs `ul  1 a 4 33 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 26 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 31 ]
 "19
+[v ___fldiv@aexp aexp `uc  1 a 1 38 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 37 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 30 ]
+"11
+[v ___fldiv@b b `d  1 p 4 14 ]
+[v ___fldiv@a a `d  1 p 4 18 ]
+"185
 } 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
+"10 D:\mplab\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
 {
-[v fputc@c c `i  1 p 2 0 ]
-[s S1164 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.39S1164  1 p 2 2 ]
-"24
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-"9
-} 0
-"1 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
-{
-[v abs@a a `i  1 p 2 18 ]
-"4
-} 0
-"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aomod.c
-[v ___aomod __aomod `(o  1 e 8 0 ]
-{
-"12
-[v ___aomod@sign sign `uc  1 a 1 17 ]
-[v ___aomod@counter counter `uc  1 a 1 16 ]
-"9
-[v ___aomod@dividend dividend `o  1 p 8 0 ]
-[v ___aomod@divisor divisor `o  1 p 8 8 ]
-"36
-} 0
-"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aodiv.c
-[v ___aodiv __aodiv `(o  1 e 8 0 ]
-{
-"12
-[v ___aodiv@quotient quotient `o  1 a 8 18 ]
-"13
-[v ___aodiv@sign sign `uc  1 a 1 17 ]
-[v ___aodiv@counter counter `uc  1 a 1 16 ]
-"9
-[v ___aodiv@dividend dividend `o  1 p 8 0 ]
-[v ___aodiv@divisor divisor `o  1 p 8 8 ]
-"43
-} 0
-"53 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\LCD.c
-[v _LCD_String_xy LCD_String_xy `(v  1 e 1 0 ]
-{
-[v LCD_String_xy@row row `uc  1 a 1 wreg ]
-"54
-[v LCD_String_xy@location location `uc  1 a 1 8 ]
-"53
-[v LCD_String_xy@row row `uc  1 a 1 wreg ]
-[v LCD_String_xy@pos pos `uc  1 p 1 4 ]
-[v LCD_String_xy@msg msg `*.35Cuc  1 p 2 5 ]
-[v LCD_String_xy@row row `uc  1 a 1 7 ]
-"66
-} 0
-"45
-[v _LCD_String LCD_String `(v  1 e 1 0 ]
-{
-[v LCD_String@msg msg `*.35Cuc  1 p 2 2 ]
-"51
-} 0
-"29
-[v _LCD_Char LCD_Char `(v  1 e 1 0 ]
-{
-[v LCD_Char@dat dat `uc  1 a 1 wreg ]
-[v LCD_Char@dat dat `uc  1 a 1 wreg ]
-[v LCD_Char@dat dat `uc  1 a 1 1 ]
-"43
-} 0
-"79
-[v _LCD_Clear LCD_Clear `(v  1 e 1 0 ]
-{
-"81
-} 0
+"17
+[v ___fladd@grs grs `uc  1 a 1 54 ]
 "15
-[v _LCD_Command LCD_Command `(v  1 e 1 0 ]
-{
-[v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
-[v LCD_Command@cmd cmd `uc  1 a 1 wreg ]
-[v LCD_Command@cmd cmd `uc  1 a 1 1 ]
-"27
-} 0
-"12 C:\Users\57322\Desktop\Nueva carpeta (2)\Active_environment\Active_environment\Leds.c
-[v _encender_leds encender_leds `(v  1 e 1 0 ]
-{
-[v encender_leds@valor valor `i  1 p 2 11 ]
-"31
+[v ___fladd@bexp bexp `uc  1 a 1 53 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 52 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 51 ]
+"10
+[v ___fladd@b b `d  1 p 4 39 ]
+[v ___fladd@a a `d  1 p 4 43 ]
+"237
 } 0

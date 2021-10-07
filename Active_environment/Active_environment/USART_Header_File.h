@@ -10,6 +10,8 @@
 
 #include <pic18f4550.h>
 #include <xc.h>
+#include <string.h>
+
 void USART_Init(long);
 void USART_TxChar(char);
 void USART_SendString(const char *);
@@ -20,3 +22,4 @@ char USART_RxChar();
 #define Baud_value (((float)(F_CPU)/(float)baud_rate)-1)
 
 #endif	/* USART_HEADER_FILE_H */
+

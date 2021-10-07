@@ -42,9 +42,9 @@ int sensor_distancia(void) {
 @return void
 */
 void init_ports() {
-    ADCON1bits.PCFG = 0xF;
-    ESC_ECHO = 0;
-    ESC_TRIG = 0;
+    ADCON1bits.PCFG = 0xF; //
+    ESC_ECHO = 0;//
+    ESC_TRIG = 0;//
     ECHO = 1; //Echo
     TRIG = 0; //Trigger
 }

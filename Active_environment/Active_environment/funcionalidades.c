@@ -16,8 +16,6 @@ The copyright notices above do not evidence any actual or
 intended publication of this material.
  ******************************************************************************
  */
-
-//Hola mundo desde remoto
 #include <xc.h>
 #include <stdio.h>
 #include <pic18f4550.h>

@@ -1,4 +1,4 @@
-# 1 "sensores.c"
+# 1 "RTC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,14 @@
 # 1 "<built-in>" 2
 # 1 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "sensores.c" 2
-# 19 "sensores.c"
-# 1 "./sensores.h" 1
-# 27 "./sensores.h"
+# 1 "RTC.c" 2
+
+
+
+
+
+# 1 "./RTC.h" 1
+# 15 "./RTC.h"
 # 1 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5626,71 +5630,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 28 "./sensores.h" 2
+# 15 "./RTC.h" 2
 
-# 1 "./fuses.h" 1
-# 30 "./fuses.h"
-#pragma config PLLDIV = 1
-#pragma config CPUDIV = OSC1_PLL2
-#pragma config USBDIV = 1
-
-
-#pragma config FOSC = INTOSCIO_EC
-#pragma config FCMEN = OFF
-#pragma config IESO = OFF
-
-
-#pragma config PWRT = OFF
-#pragma config BOR = ON
-#pragma config BORV = 3
-#pragma config VREGEN = OFF
-
-
-#pragma config WDT = OFF
-#pragma config WDTPS = 32768
-
-
-#pragma config CCP2MX = ON
-#pragma config PBADEN = OFF
-#pragma config LPT1OSC = OFF
-#pragma config MCLRE = ON
-
-
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config ICPRT = OFF
-#pragma config XINST = OFF
-
-
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
-
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-
-#pragma config EBTRB = OFF
-# 30 "./sensores.h" 2
 # 1 "D:\\mplab\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "D:\\mplab\\pic\\include\\c99\\stdio.h" 3
 # 1 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5829,7 +5770,66 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 31 "./sensores.h" 2
+# 16 "./RTC.h" 2
+
+
+# 1 "D:\\mplab\\pic\\include\\c99\\string.h" 1 3
+# 25 "D:\\mplab\\pic\\include\\c99\\string.h" 3
+# 1 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "D:\\mplab\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "D:\\mplab\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 18 "./RTC.h" 2
+
 # 1 "D:\\mplab\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "D:\\mplab\\pic\\include\\c99\\stdint.h" 3
 # 1 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5915,102 +5915,377 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "D:\\mplab\\pic\\include\\c99\\stdint.h" 2 3
-# 32 "./sensores.h" 2
-# 1 "./adc_lib.h" 1
-# 47 "./adc_lib.h"
-    void adc_init10Bits(int canal);
-    unsigned int adc_read10Bits();
-    void adc_config();
-# 33 "./sensores.h" 2
-# 43 "./sensores.h"
-unsigned int val_distancia = 0;
-int sensor_distancia(void);
-unsigned int obtener_distancia(void);
-void init_ports(void);
+# 19 "./RTC.h" 2
+
+# 1 "./I2C_Master_File.h" 1
+# 19 "./I2C_Master_File.h"
+void I2C_Ready();
+void I2C_Init();
+char I2C_Start(char);
+void I2C_Start_Wait(char);
+
+char I2C_Repeated_Start(char);
+char I2C_Stop();
+char I2C_Write(unsigned char);
+void I2C_Ack();
+void I2C_Nack();
+char I2C_Read(char flag);
+# 20 "./RTC.h" 2
+
+# 1 "./fuses.h" 1
+# 30 "./fuses.h"
+#pragma config PLLDIV = 1
+#pragma config CPUDIV = OSC1_PLL2
+#pragma config USBDIV = 1
 
 
-    int val_temp = 0;
-    uint16_t value_adc;
-    int sensor_temperatura(void);
+#pragma config FOSC = INTOSCIO_EC
+#pragma config FCMEN = OFF
+#pragma config IESO = OFF
 
 
-    uint16_t val_intensidad;
-    int val_luminosidad = 0;
-    int sensor_Luz(void);
-# 20 "sensores.c" 2
+#pragma config PWRT = OFF
+#pragma config BOR = ON
+#pragma config BORV = 3
+#pragma config VREGEN = OFF
 
 
+#pragma config WDT = OFF
+#pragma config WDTPS = 32768
 
 
+#pragma config CCP2MX = ON
+#pragma config PBADEN = OFF
+#pragma config LPT1OSC = OFF
+#pragma config MCLRE = ON
 
 
+#pragma config STVREN = ON
+#pragma config LVP = OFF
+#pragma config ICPRT = OFF
+#pragma config XINST = OFF
 
-int sensor_distancia(void) {
-    init_ports();
-    val_distancia = obtener_distancia();
-    if (val_distancia <= 38 && val_distancia > 12)
-        val_distancia += 2;
-    else if (val_distancia > 38)
-        val_distancia += 3;
-    else if (val_distancia <= 12)
-        val_distancia--;
-    return (int) val_distancia;
+
+#pragma config CP0 = OFF
+#pragma config CP1 = OFF
+#pragma config CP2 = OFF
+#pragma config CP3 = OFF
+
+
+#pragma config CPB = OFF
+#pragma config CPD = OFF
+
+
+#pragma config WRT0 = OFF
+#pragma config WRT1 = OFF
+#pragma config WRT2 = OFF
+#pragma config WRT3 = OFF
+
+
+#pragma config WRTC = OFF
+#pragma config WRTB = OFF
+#pragma config WRTD = OFF
+
+
+#pragma config EBTR0 = OFF
+#pragma config EBTR1 = OFF
+#pragma config EBTR2 = OFF
+#pragma config EBTR3 = OFF
+
+
+#pragma config EBTRB = OFF
+# 21 "./RTC.h" 2
+
+# 1 "./LCD.h" 1
+# 32 "./LCD.h"
+# 1 "./fuses.h" 1
+# 33 "./LCD.h" 2
+# 42 "./LCD.h"
+void inicializar_lcd();
+void LCD_Command(unsigned char );
+void LCD_Char(unsigned char x);
+void LCD_String(const char * );
+void LCD_String_xy(char, char , const char *);
+void LCD_Clear();
+void LCD_Custom_Char(unsigned char loc, unsigned char *msg);
+void mostrar_emoticon(char i);
+void LCD_xy(char row, char pos);
+# 22 "./RTC.h" 2
+# 33 "./RTC.h"
+int sec, min, hour;
+int Day, Date, Month, Year;
+
+char date[60];
+char time[60];
+
+unsigned char var[120];
+
+uint8_t hours;
+uint8_t minutes;
+uint8_t seconds;
+uint8_t year;
+uint8_t month;
+uint8_t day;
+uint8_t i;
+
+void init_rtc();
+void pines_ConfigurarHora(void);
+
+void RTC_Clock_Write(char sec, char min, char hour, char AM_PM);
+void RTC_Calendar_Write(char day, char date, char month, char year);
+char * obtener_tiempo_fecha();
+void RTC_Read_Clock(char read_clock_address);
+void RTC_Read_Calendar(char read_calendar_address);
+void RTC_obtener_hora();
+void RTC_obtener_fecha();
+
+
+void Reloj_Calendario (void);
+void configurarHora (void);
+uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro);
+uint8_t BCD_a_Decimal (uint8_t numero);
+uint8_t Decimal_a_BCD (uint8_t numero);
+void Parpadeo (void);
+__bit Anti_rebote (void);
+# 6 "RTC.c" 2
+
+
+void RTC_Clock_Write(char sec, char min, char hour, char AM_PM)
+                         {
+    hour = (hour | AM_PM);
+    I2C_Start(0xD0);
+    I2C_Write(0);
+    I2C_Write(sec);
+    I2C_Write(min);
+    I2C_Write(hour);
+    I2C_Stop();
 }
 
+void RTC_Calendar_Write(char day, char date, char month, char year) {
+    I2C_Start(0xD0);
+    I2C_Write(3);
+    I2C_Write(day);
+    I2C_Write(date);
+    I2C_Write(month);
+    I2C_Write(year);
+    I2C_Stop();
 
-
-
-
-
-void init_ports() {
-    ADCON1bits.PCFG = 0xF;
-    LATCbits.LATC1 = 0;
-    LATCbits.LATC0 = 0;
-    TRISCbits.RC1 = 1;
-    TRISCbits.RC0 = 0;
 }
 
+void RTC_Read_Clock(char read_clock_address) {
+    I2C_Start(0xD0);
+    I2C_Write(read_clock_address);
+    I2C_Repeated_Start(0xD1);
+    sec = I2C_Read(0);
+    min = I2C_Read(0);
+    hour = I2C_Read(1);
+    I2C_Stop();
+}
 
+void RTC_Read_Calendar(char read_calendar_address) {
+    I2C_Start(0xD0);
+    I2C_Write(read_calendar_address);
+    I2C_Repeated_Start(0xD1);
+    Day = I2C_Read(0);
+    Date = I2C_Read(0);
+    Month = I2C_Read(0);
+    Year = I2C_Read(1);
+    I2C_Stop();
+}
 
-
-
-
-unsigned int obtener_distancia(void) {
-    unsigned int cm = 0;
-    LATCbits.LATC0 = 1;
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
-    LATCbits.LATC0 = 0;
-    while (PORTCbits.RC1 == 0) {
-    };
-    while (PORTCbits.RC1 == 1) {
-        cm++;
-        _delay((unsigned long)((58)*(8000000/4000000.0)));
+void RTC_obtener_hora() {
+    char Clock_type = 0x06;
+    char AM_PM = 0x05;
+    RTC_Read_Clock(0);
+    I2C_Stop();
+    if (hour & (1 << Clock_type)) {
+        if (hour & (1 << AM_PM)) {
+            hour = hour & (0x1f);
+            sprintf(time, "Time: %x:%x:%x PM", hour, min, sec);
+        } else {
+            sprintf(time, "Time: %x:%x:%x AM", hour, min, sec);
+        }
+    } else {
+        hour = hour & (0x3f);
+        sprintf(time, "Time: %x:%x:%x ", hour, min, sec);
     }
-    return cm;
+}
+
+void RTC_obtener_fecha() {
+    RTC_Read_Calendar(3);
+    sprintf(date, "Date: %x/%x/%x ", Date, Month, Year);
+}
+
+char * obtener_tiempo_fecha() {
+    I2C_Init();
+    RTC_obtener_hora();
+    RTC_obtener_fecha();
+    return strcat(date, time);
+}
+
+uint8_t BCD_a_Decimal(uint8_t numero)
+{
+    return ((numero >> 4) * 10 + (numero & 0x0F));
 }
 
 
 
-
-
-
-int sensor_temperatura(void) {
-    TRISAbits.RA0 = 1;
-    adc_init10Bits(0);
-    value_adc = adc_read10Bits();
-    val_temp = (int) value_adc * 0.4887;
-    return val_temp;
+uint8_t Decimal_a_BCD(uint8_t numero)
+{
+    return (((numero / 10) << 4) + (numero % 10));
 }
-# 91 "sensores.c"
-int sensor_luz(void) {
 
-    TRISAbits.TRISA1 = 1;
+__bit Anti_rebote(void)
+{
+    uint8_t contador = 0;
+    for (uint8_t i = 0; i < 5; i++)
+    {
+        if ((PORTAbits.RA2) == 0)
+            contador++;
+        _delay((unsigned long)((10)*(8000000/4000.0)));
+    }
+    if (contador > 2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 
-    adc_init10Bits(1);
+void Parpadeo(void)
+{
+    uint8_t j = 0;
+    while (j < 100 && (PORTAbits.RA2) && (PORTAbits.RA3))
+    {
+        j++;
+        _delay((unsigned long)((5)*(8000000/4000.0)));
+    }
+}
 
-    val_intensidad = adc_read10Bits();
-    val_intensidad = (val_intensidad * 5) / 1024;
-    val_luminosidad = (val_intensidad * 100) / 5;
+uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro)
+{
+    while (Anti_rebote());
+    while (1)
+    {
+        while (!(PORTAbits.RA3))
+        {
+            parametro++;
+            if (i == 0 && parametro > 23)
+            {
+                parametro = 0;
+            }
+            if (i == 1 && parametro > 59)
+            {
+                parametro = 0;
+            }
+            if (i == 2 && parametro > 31)
+            {
+                parametro = 1;
+            }
+            if (i == 3 && parametro > 12)
+            {
+                parametro = 1;
+            }
+            if (i == 4 && parametro > 99)
+            {
+                parametro = 0;
+            }
+            LCD_xy(x, y);
+            LCD_Char(parametro / 10 + '0');
+            LCD_Char(parametro % 10 + '0');
+            _delay((unsigned long)((300)*(8000000/4000.0)));
+        }
 
-    return val_luminosidad;
+        LCD_xy(x, y);
+        LCD_Char("  ");
+        LCD_xy(x, y+1);
+        LCD_Char("  ");
+        Parpadeo();
+
+        LCD_xy(x, y);
+        LCD_Char(parametro / 10 + '0');
+        LCD_Char(parametro % 10 + '0');
+        Parpadeo();
+
+        if (!(PORTAbits.RA2))
+            if (Anti_rebote())
+            {
+                i++;
+                return parametro;
+            }
+    }
+}
+
+void init_rtc() {
+    I2C_Init();
+}
+
+void pines_ConfigurarHora(void) {
+    ADCON1bits.PCFG =
+    TRISAbits.RA2 = 1;
+    TRISAbits.RA3 = 1;
+    inicializar_lcd();
+}
+
+void configurarHora(void) {
+
+    if (!(PORTAbits.RA2))
+        if (Anti_rebote())
+        {
+            i = 0;
+            hours = Establecer_Hora_Fecha(1, 6, hours);
+            minutes = Establecer_Hora_Fecha(1, 9, minutes);
+            day = Establecer_Hora_Fecha(2, 6, day);
+            month = Establecer_Hora_Fecha(2, 9, month);
+            year = Establecer_Hora_Fecha(2,14, year);
+            while (Anti_rebote());
+            minutes = Decimal_a_BCD(minutes);
+            hours = Decimal_a_BCD(hours);
+            day = Decimal_a_BCD(day);
+            month = Decimal_a_BCD(month);
+            year = Decimal_a_BCD(year);
+
+            RTC_Clock_Write(0x00, minutes, hours, 0x05);
+            RTC_Calendar_Write(0x01, day, month, year);
+            _delay((unsigned long)((200)*(8000000/4000.0)));
+        }
+
+    RTC_Read_Clock(0);
+    RTC_Read_Calendar(3);
+
+    Reloj_Calendario();
+    _delay((unsigned long)((50)*(8000000/4000.0)));
+}
+
+void Reloj_Calendario(void)
+{
+    static char Time[] = "TIME: 00:00:00";
+    static char Date[] = "DATE: 00/00/2000";
+
+    seconds = BCD_a_Decimal(sec);
+    minutes = BCD_a_Decimal(min);
+    hours = BCD_a_Decimal(hour);
+    day = BCD_a_Decimal(Date);
+    month = BCD_a_Decimal(Month);
+    year = BCD_a_Decimal(Year);
+
+    Time[6] = hours / 10 + '0';
+    Time[7] = hours % 10 + '0';
+    Time[9] = minutes / 10 + '0';
+    Time[10] = minutes % 10 + '0';
+    Time[12] = seconds / 10 + '0';
+    Time[13] = seconds % 10 + '0';
+
+    Date[6] = day / 10 + '0';
+    Date[7] = day % 10 + '0';
+    Date[9] = month / 10 + '0';
+    Date[10] = month % 10 + '0';
+    Date[14] = year / 10 + '0';
+    Date[15] = year % 10 + '0';
+
+    LCD_String_xy(1, 0, Time);
+
+    LCD_String_xy(2, 0, Date);
 }

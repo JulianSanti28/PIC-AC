@@ -34,11 +34,11 @@ extern "C" {
 // CONFIG1H
 #pragma config FOSC = INTOSCIO_EC// Oscillator Selection bits (Internal oscillator, port function on RA6, EC used by USB (INTIO))
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor disabled)
-#pragma config IESO = ON        // Internal/External Oscillator Switchover bit (Oscillator Switchover mode enabled)
+#pragma config IESO = OFF        // Internal/External Oscillator Switchover bit (Oscillator Switchover mode enabled)
 
 // CONFIG2L
-#pragma config PWRT = ON        // Power-up Timer Enable bit (PWRT enabled)
-#pragma config BOR = OFF        // Brown-out Reset Enable bits (Brown-out Reset disabled in hardware and software)
+#pragma config PWRT = OFF        // Power-up Timer Enable bit (PWRT enabled)
+#pragma config BOR = ON        // Brown-out Reset Enable bits (Brown-out Reset disabled in hardware and software)
 #pragma config BORV = 3         // Brown-out Reset Voltage bits (Minimum setting 2.05V)
 #pragma config VREGEN = OFF     // USB Voltage Regulator Enable bit (USB voltage regulator disabled)
 

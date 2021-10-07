@@ -1,4 +1,4 @@
-# 1 "sensores.c"
+# 1 "I2C_Source_File.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,17 @@
 # 1 "<built-in>" 2
 # 1 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "sensores.c" 2
-# 19 "sensores.c"
-# 1 "./sensores.h" 1
-# 27 "./sensores.h"
+# 1 "I2C_Source_File.c" 2
+
+
+
+
+
+
+
+
+# 1 "./I2C_Master_File.h" 1
+# 12 "./I2C_Master_File.h"
 # 1 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5626,391 +5633,127 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 28 "./sensores.h" 2
+# 12 "./I2C_Master_File.h" 2
 
-# 1 "./fuses.h" 1
-# 30 "./fuses.h"
-#pragma config PLLDIV = 1
-#pragma config CPUDIV = OSC1_PLL2
-#pragma config USBDIV = 1
 
 
-#pragma config FOSC = INTOSCIO_EC
-#pragma config FCMEN = OFF
-#pragma config IESO = OFF
 
 
-#pragma config PWRT = OFF
-#pragma config BOR = ON
-#pragma config BORV = 3
-#pragma config VREGEN = OFF
 
 
-#pragma config WDT = OFF
-#pragma config WDTPS = 32768
+void I2C_Ready();
+void I2C_Init();
+char I2C_Start(char);
+void I2C_Start_Wait(char);
 
+char I2C_Repeated_Start(char);
+char I2C_Stop();
+char I2C_Write(unsigned char);
+void I2C_Ack();
+void I2C_Nack();
+char I2C_Read(char flag);
+# 9 "I2C_Source_File.c" 2
 
-#pragma config CCP2MX = ON
-#pragma config PBADEN = OFF
-#pragma config LPT1OSC = OFF
-#pragma config MCLRE = ON
 
 
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config ICPRT = OFF
-#pragma config XINST = OFF
+char I2C_Read(char flag) {
 
+    char buffer;
+    RCEN = 1;
+    while (!SSPSTATbits.BF);
 
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
+    buffer = SSPBUF;
 
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-
-#pragma config EBTRB = OFF
-# 30 "./sensores.h" 2
-# 1 "D:\\mplab\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "D:\\mplab\\pic\\include\\c99\\stdio.h" 3
-# 1 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "D:\\mplab\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "D:\\mplab\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 31 "./sensores.h" 2
-# 1 "D:\\mplab\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "D:\\mplab\\pic\\include\\c99\\stdint.h" 3
-# 1 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
-
-
-
-
-typedef short int16_t;
-# 173 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "D:\\mplab\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "D:\\mplab\\pic\\include\\c99\\stdint.h" 3
-# 1 "D:\\mplab\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 144 "D:\\mplab\\pic\\include\\c99\\stdint.h" 2 3
-# 32 "./sensores.h" 2
-# 1 "./adc_lib.h" 1
-# 47 "./adc_lib.h"
-    void adc_init10Bits(int canal);
-    unsigned int adc_read10Bits();
-    void adc_config();
-# 33 "./sensores.h" 2
-# 43 "./sensores.h"
-unsigned int val_distancia = 0;
-int sensor_distancia(void);
-unsigned int obtener_distancia(void);
-void init_ports(void);
-
-
-    int val_temp = 0;
-    uint16_t value_adc;
-    int sensor_temperatura(void);
-
-
-    uint16_t val_intensidad;
-    int val_luminosidad = 0;
-    int sensor_Luz(void);
-# 20 "sensores.c" 2
-
-
-
-
-
-
-
-int sensor_distancia(void) {
-    init_ports();
-    val_distancia = obtener_distancia();
-    if (val_distancia <= 38 && val_distancia > 12)
-        val_distancia += 2;
-    else if (val_distancia > 38)
-        val_distancia += 3;
-    else if (val_distancia <= 12)
-        val_distancia--;
-    return (int) val_distancia;
+    if (flag == 0)
+        I2C_Ack();
+    else
+        I2C_Nack();
+    I2C_Ready();
+    return (buffer);
 }
 
+void I2C_Init() {
+    TRISB0 = 1;
+    TRISB1 = 1;
+    SSPSTAT = 80;
+    SSPCON1 = 0x28;
 
-
-
-
-
-void init_ports() {
-    ADCON1bits.PCFG = 0xF;
-    LATCbits.LATC1 = 0;
-    LATCbits.LATC0 = 0;
-    TRISCbits.RC1 = 1;
-    TRISCbits.RC0 = 0;
+    SSPCON2 = 0;
+    SSPADD = ((8000000/(4*100000))-1);
+    SSPIE = 1;
+    SSPIF = 0;
 }
 
+void I2C_Ready() {
+    while (!SSPIF);
+    SSPIF = 0;
+}
 
-
-
-
-
-unsigned int obtener_distancia(void) {
-    unsigned int cm = 0;
-    LATCbits.LATC0 = 1;
-    _delay((unsigned long)((10)*(8000000/4000000.0)));
-    LATCbits.LATC0 = 0;
-    while (PORTCbits.RC1 == 0) {
-    };
-    while (PORTCbits.RC1 == 1) {
-        cm++;
-        _delay((unsigned long)((58)*(8000000/4000000.0)));
+void I2C_Start_Wait(char slave_write_address) {
+    while (1) {
+        SSPCON2bits.SEN = 1;
+        while (SSPCON2bits.SEN);
+        SSPIF = 0;
+        if (!SSPSTATbits.S)
+            continue;
+        I2C_Write(slave_write_address);
+        if (ACKSTAT) {
+            I2C_Stop();
+            continue;
+        }
+        break;
     }
-    return cm;
 }
 
+char I2C_Start(char slave_write_address) {
+    SSPCON2bits.SEN = 1;
+    while (SSPCON2bits.SEN);
+    SSPIF = 0;
+    if (!SSPSTATbits.S)
+        return 0;
+    return (I2C_Write(slave_write_address));
 
-
-
-
-
-int sensor_temperatura(void) {
-    TRISAbits.RA0 = 1;
-    adc_init10Bits(0);
-    value_adc = adc_read10Bits();
-    val_temp = (int) value_adc * 0.4887;
-    return val_temp;
 }
-# 91 "sensores.c"
-int sensor_luz(void) {
 
-    TRISAbits.TRISA1 = 1;
+char I2C_Repeated_Start(char slave_read_address) {
+    RSEN = 1;
+    while (RSEN);
+    SSPIF = 0;
+    if (!SSPSTATbits.S)
+        return 0;
+    I2C_Write(slave_read_address);
+    if (ACKSTAT)
+        return 1;
+    else
+        return 2;
+}
 
-    adc_init10Bits(1);
+char I2C_Stop() {
+    PEN = 1;
+    while (PEN) {
+    };
+    if (!SSPSTATbits.P) {
+    };
+    return 0;
+}
 
-    val_intensidad = adc_read10Bits();
-    val_intensidad = (val_intensidad * 5) / 1024;
-    val_luminosidad = (val_intensidad * 100) / 5;
+char I2C_Write(unsigned char data) {
+    SSPBUF = data;
+    I2C_Ready();
+    if (ACKSTAT)
+        return 1;
+    else
+        return 2;
+}
 
-    return val_luminosidad;
+void I2C_Ack() {
+    ACKDT = 0;
+    ACKEN = 1;
+    while (ACKEN);
+}
+
+void I2C_Nack() {
+    ACKDT = 1;
+    ACKEN = 1;
+    while (ACKEN);
 }
