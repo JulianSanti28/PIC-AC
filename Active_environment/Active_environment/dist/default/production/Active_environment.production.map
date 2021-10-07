@@ -2,10 +2,10 @@ Microchip MPLAB XC8 Compiler V2.32
 
 Linker command line:
 
--W-3 --edf=D:\mplab\pic\dat\en_msgs.txt -cn \
+-W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Active_environment.production.sym \
   --cmf=dist/default/production\Active_environment.production.cmf -z \
-  -Q18F4550 -oC:\Users\ASUS\AppData\Local\Temp\xcAsiko.4 \
+  -Q18F4550 -oC:\Users\57322\AppData\Local\Temp\xcAsgpg.4 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Active_environment.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=03F0h-07FFh -pstack=STACK \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ASUS\AppData\Local\Temp\xcAsiko.o \
+  C:\Users\57322\AppData\Local\Temp\xcAsgpg.o \
   dist/default/production\Active_environment.production.o 
 
 Object code version is 3.11
@@ -33,7 +33,7 @@ Machine type is 18F4550
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ASUS\AppData\Local\Temp\xcAsiko.o
+C:\Users\57322\AppData\Local\Temp\xcAsgpg.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  0        0        4        0       0
@@ -1347,7 +1347,22 @@ xtoa@x                                  cstackCOMRAM 000026
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-D:\mplab\pic\sources\c99\common\doprnt.c
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+		___awdiv       		CODE           	300E	0000	196
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c estimated size: 196
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+		_sprintf       		CODE           	384C	0000	82
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c estimated size: 82
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+		___fladd       		CODE           	08CE	0000	1216
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c estimated size: 1216
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 		_vfpfcnvrt     		CODE           	1552	0000	788
 		_pad           		CODE           	2F48	0000	198
 		_dtoa          		CODE           	1866	0000	740
@@ -1355,12 +1370,7 @@ D:\mplab\pic\sources\c99\common\doprnt.c
 		_stoa          		CODE           	26BA	0000	390
 		_xtoa          		CODE           	1B4A	0000	730
 
-D:\mplab\pic\sources\c99\common\doprnt.c estimated size: 2944
-
-D:\mplab\pic\sources\c99\common\aomod.c
-		___aomod       		CODE           	2840	0000	356
-
-D:\mplab\pic\sources\c99\common\aomod.c estimated size: 356
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c estimated size: 2944
 
 USART_Source_File.c
 		_USART_TxChar  		CODE           	407A	0000	22
@@ -1369,37 +1379,12 @@ USART_Source_File.c
 
 USART_Source_File.c estimated size: 218
 
-D:\mplab\pic\sources\c99\common\Umul16.c
-		___wmul        		CODE           	3FC6	0000	38
-
-D:\mplab\pic\sources\c99\common\Umul16.c estimated size: 38
-
 adc_lib.c
 		_adc_read10Bits		CODE           	3F46	0000	44
 		_adc_init10Bits		CODE           	4106	0000	16
 		_adc_config    		CODE           	3B42	0000	66
 
 adc_lib.c estimated size: 126
-
-D:\mplab\pic\sources\c99\common\sprcadd.c
-		___fladd       		CODE           	08CE	0000	1216
-
-D:\mplab\pic\sources\c99\common\sprcadd.c estimated size: 1216
-
-D:\mplab\pic\sources\c99\common\awmod.c
-		___awmod       		CODE           	30D2	0000	176
-
-D:\mplab\pic\sources\c99\common\awmod.c estimated size: 176
-
-D:\mplab\pic\sources\c99\common\putch.c
-		_putch         		CODE           	413C	0000	2
-
-D:\mplab\pic\sources\c99\common\putch.c estimated size: 2
-
-D:\mplab\pic\sources\c99\common\nf_fputc.c
-		_fputc         		CODE           	2E7E	0000	202
-
-D:\mplab\pic\sources\c99\common\nf_fputc.c estimated size: 202
 
 Principal.c
 		_mostrar_hora  		CODE           	389E	0000	80
@@ -1420,60 +1405,75 @@ Leds.c
 
 Leds.c estimated size: 888
 
-D:\mplab\pic\sources\c99\common\abs.c
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
+		_fputs         		CODE           	3AFE	0000	68
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c estimated size: 68
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
+		_putch         		CODE           	413C	0000	2
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c estimated size: 2
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\isupper.c
+		_isupper       		CODE           	3D28	0000	56
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\isupper.c estimated size: 56
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+		___wmul        		CODE           	3FC6	0000	38
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c estimated size: 38
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
 		_abs           		CODE           	3BC4	0000	64
 
-D:\mplab\pic\sources\c99\common\abs.c estimated size: 64
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c estimated size: 64
 
-D:\mplab\pic\sources\c99\common\aodiv.c
-		___aodiv       		CODE           	2532	0000	392
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aomod.c
+		___aomod       		CODE           	2840	0000	356
 
-D:\mplab\pic\sources\c99\common\aodiv.c estimated size: 392
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aomod.c estimated size: 356
 
-D:\mplab\pic\sources\c99\common\nf_sprintf.c
-		_sprintf       		CODE           	384C	0000	82
-
-D:\mplab\pic\sources\c99\common\nf_sprintf.c estimated size: 82
-
-D:\mplab\pic\sources\c99\common\islower.c
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\islower.c
 		_islower       		CODE           	3CF0	0000	56
 
-D:\mplab\pic\sources\c99\common\islower.c estimated size: 56
-
-D:\mplab\pic\sources\c99\common\lwdiv.c
-		___lwdiv       		CODE           	35A0	0000	116
-
-D:\mplab\pic\sources\c99\common\lwdiv.c estimated size: 116
-
-D:\mplab\pic\sources\c99\common\awdiv.c
-		___awdiv       		CODE           	300E	0000	196
-
-D:\mplab\pic\sources\c99\common\awdiv.c estimated size: 196
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\islower.c estimated size: 56
 
 shared
 		__initialization		CODE           	3526	0000	112
 
 shared estimated size: 112
 
-D:\mplab\pic\sources\c99\common\fltol.c
-		___fltol       		CODE           	2AC6	0000	262
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
+		___flmul       		CODE           	0D8E	0000	1066
 
-D:\mplab\pic\sources\c99\common\fltol.c estimated size: 262
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c estimated size: 1066
 
-D:\mplab\pic\sources\c99\common\isupper.c
-		_isupper       		CODE           	3D28	0000	56
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+		___awmod       		CODE           	30D2	0000	176
 
-D:\mplab\pic\sources\c99\common\isupper.c estimated size: 56
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c estimated size: 176
 
-D:\mplab\pic\sources\c99\common\toupper.c
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+		___fldiv       		CODE           	11B8	0000	922
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c estimated size: 922
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\toupper.c
 		_toupper       		CODE           	3740	0000	94
 
-D:\mplab\pic\sources\c99\common\toupper.c estimated size: 94
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\toupper.c estimated size: 94
 
-D:\mplab\pic\sources\c99\common\strcat.c
-		_strcat        		CODE           	3E64	0000	46
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\isalpha.c
+		_isalpha       		CODE           	3C42	0000	60
 
-D:\mplab\pic\sources\c99\common\strcat.c estimated size: 46
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\isalpha.c estimated size: 60
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
+		___lwdiv       		CODE           	35A0	0000	116
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c estimated size: 116
 
 I2C_Source_File.c
 		_I2C_Write     		CODE           	3FEC	0000	34
@@ -1488,10 +1488,15 @@ I2C_Source_File.c
 
 I2C_Source_File.c estimated size: 288
 
-D:\mplab\pic\sources\c99\common\xxtofl.c
-		___xxtofl      		CODE           	21DA	0000	436
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strcat.c
+		_strcat        		CODE           	3E64	0000	46
 
-D:\mplab\pic\sources\c99\common\xxtofl.c estimated size: 436
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strcat.c estimated size: 46
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+		___fltol       		CODE           	2AC6	0000	262
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c estimated size: 262
 
 sensores.c
 		_sensor_temperatura		CODE           	34AA	0000	124
@@ -1502,25 +1507,20 @@ sensores.c
 
 sensores.c estimated size: 486
 
-D:\mplab\pic\sources\c99\common\sprcmul.c
-		___flmul       		CODE           	0D8E	0000	1066
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+		___xxtofl      		CODE           	21DA	0000	436
 
-D:\mplab\pic\sources\c99\common\sprcmul.c estimated size: 1066
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c estimated size: 436
 
-D:\mplab\pic\sources\c99\common\nf_fputs.c
-		_fputs         		CODE           	3AFE	0000	68
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+		_fputc         		CODE           	2E7E	0000	202
 
-D:\mplab\pic\sources\c99\common\nf_fputs.c estimated size: 68
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c estimated size: 202
 
-D:\mplab\pic\sources\c99\common\strlen.c
-		_strlen        		CODE           	3D96	0000	54
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aodiv.c
+		___aodiv       		CODE           	2532	0000	392
 
-D:\mplab\pic\sources\c99\common\strlen.c estimated size: 54
-
-D:\mplab\pic\sources\c99\common\sprcdiv.c
-		___fldiv       		CODE           	11B8	0000	922
-
-D:\mplab\pic\sources\c99\common\sprcdiv.c estimated size: 922
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aodiv.c estimated size: 392
 
 RTC.c
 		_pines_ConfigurarHora		CODE           	40F4	0000	18
@@ -1542,15 +1542,15 @@ RTC.c
 
 RTC.c estimated size: 1972
 
-D:\mplab\pic\sources\c99\common\strcpy.c
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
+		_strlen        		CODE           	3D96	0000	54
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c estimated size: 54
+
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strcpy.c
 		_strcpy        		CODE           	3C04	0000	62
 
-D:\mplab\pic\sources\c99\common\strcpy.c estimated size: 62
-
-D:\mplab\pic\sources\c99\common\isalpha.c
-		_isalpha       		CODE           	3C42	0000	60
-
-D:\mplab\pic\sources\c99\common\isalpha.c estimated size: 60
+C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strcpy.c estimated size: 62
 
 LCD.c
 		_LCD_String    		CODE           	36E2	0000	94
