@@ -217,7 +217,7 @@ void configurarHora(void) {
 void Reloj_Calendario(void) //Función de visualización de HORA Y FECHA.
 {
     static char Time[] = "TIME: 00:00:00"; // Arreglo estático char "Time". 
-    static char Date[] = "DATE: 00/00/2000"; // Arreglo estático char "Date".
+    static char Date_var[] = "DATE: 00/00/2000"; // Arreglo estático char "Date".
 
     seconds = BCD_a_Decimal(sec); // Llamamos a la función de conversión de BCD a Decimal.
     minutes = BCD_a_Decimal(min); // Llamamos a la función de conversión de BCD a Decimal.
@@ -233,16 +233,16 @@ void Reloj_Calendario(void) //Función de visualización de HORA Y FECHA.
     Time[12] = seconds / 10 + '0'; // Guardamos las decenas de la variable "seconds" en la posición 12 del arreglo "Time".
     Time[13] = seconds % 10 + '0'; // Guardamos las unidades de la variable "secods" en la posición 13 del arreglo "Time".
 
-    Date[6] = day / 10 + '0'; // Guardamos las decenas de la variable "day" en la posición 6 del arreglo "Date".
-    Date[7] = day % 10 + '0'; // Guardamos las unidades de la variable "day" en la posición 7 del arreglo "Date".
-    Date[9] = month / 10 + '0'; // Guardamos las decenas de la variable "month" en la posición 9 del arreglo "Date".
-    Date[10] = month % 10 + '0'; // Guardamos las unidades de la variable "month" en la posición 10 del arreglo "Date".
-    Date[14] = year / 10 + '0'; // Guardamos las decenas de la variable "year" en la posición 14 del arreglo "Date".
-    Date[15] = year % 10 + '0'; // Guardamos las unidades de la variable "year" en la posición 15 del arreglo "Date".
+    Date_var[6] = day / 10 + '0'; // Guardamos las decenas de la variable "day" en la posición 6 del arreglo "Date".
+    Date_var[7] = day % 10 + '0'; // Guardamos las unidades de la variable "day" en la posición 7 del arreglo "Date".
+    Date_var[9] = month / 10 + '0'; // Guardamos las decenas de la variable "month" en la posición 9 del arreglo "Date".
+    Date_var[10] = month % 10 + '0'; // Guardamos las unidades de la variable "month" en la posición 10 del arreglo "Date".
+    Date_var[14] = year / 10 + '0'; // Guardamos las decenas de la variable "year" en la posición 14 del arreglo "Date".
+    Date_var[15] = year % 10 + '0'; // Guardamos las unidades de la variable "year" en la posición 15 del arreglo "Date".
     
     LCD_String_xy(1, 0, Time);
     
-    LCD_String_xy(2, 0, Date); 
+    LCD_String_xy(2, 0, Date_var); 
 }
 
 

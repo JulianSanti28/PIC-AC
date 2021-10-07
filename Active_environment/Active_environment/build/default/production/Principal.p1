@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./USART_Header_File.h
 [; ;./USART_Header_File.h: 15: void USART_Init(long);
 [v _USART_Init `(v ~T0 @X0 0 ef1`l ]
-"49 Principal.c
-[; ;Principal.c: 49: void iniciar_pic();
+"50 Principal.c
+[; ;Principal.c: 50: void iniciar_pic();
 [v _iniciar_pic `(v ~T0 @X0 0 e? ]
 "42 ./LCD.h
 [; ;./LCD.h: 42: void inicializar_lcd();
@@ -12,28 +12,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59 ./Leds.h
 [; ;./Leds.h: 59: void init_leds(void);
 [v _init_leds `(v ~T0 @X0 0 ef ]
-"48 Principal.c
-[; ;Principal.c: 48: void iniciar_emoticones();
+"49 Principal.c
+[; ;Principal.c: 49: void iniciar_emoticones();
 [v _iniciar_emoticones `(v ~T0 @X0 0 e? ]
-"6581 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[; ;D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6581: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
-[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
-"50 Principal.c
-[; ;Principal.c: 50: void principal();
-[v _principal `(v ~T0 @X0 0 e? ]
-"44 ./sensores.h
-[; ;./sensores.h: 44: int sensor_distancia(void);
-[v _sensor_distancia `(i ~T0 @X0 0 ef ]
-"51
-[; ;./sensores.h: 51:     int sensor_temperatura(void);
-[v _sensor_temperatura `(i ~T0 @X0 0 ef ]
-"73 Principal.c
-[; ;Principal.c: 73:     s_luz = sensor_luz();
-[v _sensor_luz `(i ~T0 @X0 0 e? ]
-[v F3152 `(v ~T0 @X0 1 tf1`ul ]
-"203 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
-[v __delay `JF3152 ~T0 @X0 0 e ]
-[p i __delay ]
 "2320 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2320:     struct {
 [s S101 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -61,9 +42,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2353
 [; ;D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2353: extern volatile PORTAbits_t PORTAbits __attribute__((address(0xF80)));
 [v _PORTAbits `VS100 ~T0 @X0 0 e@3968 ]
-"47 Principal.c
-[; ;Principal.c: 47: void imprimir(int dist, int temp, int luz);
+"53 Principal.c
+[; ;Principal.c: 53: void mostrar_estadisticas();
+[v _mostrar_estadisticas `(v ~T0 @X0 0 e? ]
+"52
+[; ;Principal.c: 52: void mostrar_hora();
+[v _mostrar_hora `(v ~T0 @X0 0 e? ]
+"47 ./LCD.h
+[; ;./LCD.h: 47: void LCD_Clear();
+[v _LCD_Clear `(v ~T0 @X0 0 e? ]
+[v F3152 `(v ~T0 @X0 1 tf1`ul ]
+"203 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
+[v __delay `JF3152 ~T0 @X0 0 e ]
+[p i __delay ]
+"51 Principal.c
+[; ;Principal.c: 51: void establecer_valores();
+[v _establecer_valores `(v ~T0 @X0 0 e? ]
+"48
+[; ;Principal.c: 48: void imprimir(int dist, int temp, int luz);
 [v _imprimir `(v ~T0 @X0 0 ef3`i`i`i ]
+"62 ./RTC.h
+[; ;./RTC.h: 62: void configurarHora (void);
+[v _configurarHora `(v ~T0 @X0 0 ef ]
+"44 ./sensores.h
+[; ;./sensores.h: 44: int sensor_distancia(void);
+[v _sensor_distancia `(i ~T0 @X0 0 ef ]
+"51
+[; ;./sensores.h: 51:     int sensor_temperatura(void);
+[v _sensor_temperatura `(i ~T0 @X0 0 ef ]
+"107 Principal.c
+[; ;Principal.c: 107:     s_luz = sensor_luz();
+[v _sensor_luz `(i ~T0 @X0 0 e? ]
 "58 ./Leds.h
 [; ;./Leds.h: 58: void encender_leds(int valor);
 [v _encender_leds `(v ~T0 @X0 0 ef1`i ]
@@ -123,9 +132,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43 ./LCD.h
 [; ;./LCD.h: 43: void LCD_Command(unsigned char );
 [v _LCD_Command `(v ~T0 @X0 0 ef1`uc ]
-"47
-[; ;./LCD.h: 47: void LCD_Clear();
-[v _LCD_Clear `(v ~T0 @X0 0 e? ]
 "54 D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -794,164 +800,243 @@ Version 4.0 HI-TECH Software Intermediate Code
 "45 Principal.c
 [; ;Principal.c: 45: int estado;
 [v _estado `i ~T0 @X0 1 e ]
+"46
+[; ;Principal.c: 46: int s_dist = 0, s_temp = 0, s_luz = 0;
+[v _s_dist `i ~T0 @X0 1 e ]
+[i _s_dist
+-> 0 `i
+]
+[v _s_temp `i ~T0 @X0 1 e ]
+[i _s_temp
+-> 0 `i
+]
+[v _s_luz `i ~T0 @X0 1 e ]
+[i _s_luz
+-> 0 `i
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"52
-[; ;Principal.c: 52: void main(void) {
+"55
+[; ;Principal.c: 55: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"53
-[; ;Principal.c: 53:     USART_Init(9600);
-[e ( _USART_Init (1 -> -> 9600 `i `l ]
-"54
-[; ;Principal.c: 54:     iniciar_pic();
-[e ( _iniciar_pic ..  ]
-"55
-[; ;Principal.c: 55:     inicializar_lcd();
-[e ( _inicializar_lcd ..  ]
 "56
-[; ;Principal.c: 56:     init_leds();
-[e ( _init_leds ..  ]
+[; ;Principal.c: 56:     USART_Init(9600);
+[e ( _USART_Init (1 -> -> 9600 `i `l ]
 "57
-[; ;Principal.c: 57:     iniciar_emoticones();
-[e ( _iniciar_emoticones ..  ]
+[; ;Principal.c: 57:     iniciar_pic();
+[e ( _iniciar_pic ..  ]
 "58
-[; ;Principal.c: 58:     ADCON1 = 0b1101;
-[e = _ADCON1 -> -> 13 `i `uc ]
+[; ;Principal.c: 58:     inicializar_lcd();
+[e ( _inicializar_lcd ..  ]
 "59
-[; ;Principal.c: 59:     estado = 1;
-[e = _estado -> 1 `i ]
+[; ;Principal.c: 59:     init_leds();
+[e ( _init_leds ..  ]
 "60
-[; ;Principal.c: 60:     while(1){
+[; ;Principal.c: 60:     iniciar_emoticones();
+[e ( _iniciar_emoticones ..  ]
+"62
+[; ;Principal.c: 62:     while(1){
 [e :U 372 ]
 {
-"61
-[; ;Principal.c: 61:         principal();
-[e ( _principal ..  ]
-"62
-[; ;Principal.c: 62:     }
+"63
+[; ;Principal.c: 63:         if(PORTAbits.RA4 && estado == 0){
+[e $ ! && != -> . . _PORTAbits 0 4 `i -> 0 `i == _estado -> 0 `i 374  ]
+{
+"64
+[; ;Principal.c: 64:             mostrar_estadisticas();
+[e ( _mostrar_estadisticas ..  ]
+"65
+[; ;Principal.c: 65:         }
+}
+[e :U 374 ]
+"66
+[; ;Principal.c: 66:         if(PORTAbits.RA4 && estado == 1){
+[e $ ! && != -> . . _PORTAbits 0 4 `i -> 0 `i == _estado -> 1 `i 375  ]
+{
+"67
+[; ;Principal.c: 67:             mostrar_hora();
+[e ( _mostrar_hora ..  ]
+"68
+[; ;Principal.c: 68:         }
+}
+[e :U 375 ]
+"69
+[; ;Principal.c: 69:     }
 }
 [e :U 371 ]
 [e $U 372  ]
 [e :U 373 ]
-"63
-[; ;Principal.c: 63: }
+"70
+[; ;Principal.c: 70: }
 [e :UE 370 ]
 }
-"68
-[; ;Principal.c: 68: void principal() {
-[v _principal `(v ~T0 @X0 1 ef ]
-{
-[e :U _principal ]
-[f ]
-"70
-[; ;Principal.c: 70:     int s_dist = 0, s_temp = 0, s_luz = 0;
-[v _s_dist `i ~T0 @X0 1 a ]
-[e = _s_dist -> 0 `i ]
-[v _s_temp `i ~T0 @X0 1 a ]
-[e = _s_temp -> 0 `i ]
-[v _s_luz `i ~T0 @X0 1 a ]
-[e = _s_luz -> 0 `i ]
-"71
-[; ;Principal.c: 71:     s_dist = sensor_distancia();
-[e = _s_dist ( _sensor_distancia ..  ]
-"72
-[; ;Principal.c: 72:     s_temp = sensor_temperatura();
-[e = _s_temp ( _sensor_temperatura ..  ]
-"73
-[; ;Principal.c: 73:     s_luz = sensor_luz();
-[e = _s_luz ( _sensor_luz ..  ]
-"74
-[; ;Principal.c: 74:     while(PORTAbits.RA4 == 1) {
-[e $U 375  ]
-[e :U 376 ]
-{
-"75
-[; ;Principal.c: 75:         estado++;
-[e ++ _estado -> 1 `i ]
-"76
-[; ;Principal.c: 76:         _delay((unsigned long)((200)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "77
-[; ;Principal.c: 77:     }
-}
-[e :U 375 ]
-"74
-[; ;Principal.c: 74:     while(PORTAbits.RA4 == 1) {
-[e $ == -> . . _PORTAbits 0 4 `i -> 1 `i 376  ]
-[e :U 377 ]
+[; ;Principal.c: 77: void mostrar_estadisticas(){
+[v _mostrar_estadisticas `(v ~T0 @X0 1 ef ]
+{
+[e :U _mostrar_estadisticas ]
+[f ]
 "78
-[; ;Principal.c: 78:     if(estado > 2){
-[e $ ! > _estado -> 2 `i 378  ]
-{
+[; ;Principal.c: 78:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
 "79
-[; ;Principal.c: 79:             estado = 1;
-[e = _estado -> 1 `i ]
+[; ;Principal.c: 79:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "80
-[; ;Principal.c: 80:     }
-}
+[; ;Principal.c: 80:     while (1) {
 [e :U 378 ]
-"81
-[; ;Principal.c: 81:     if (estado == 1){
-[e $ ! == _estado -> 1 `i 379  ]
 {
+"81
+[; ;Principal.c: 81:         establecer_valores();
+[e ( _establecer_valores ..  ]
 "82
-[; ;Principal.c: 82:           imprimir(s_dist, s_temp, s_luz);
+[; ;Principal.c: 82:         imprimir(s_dist, s_temp, s_luz);
 [e ( _imprimir (3 , , _s_dist _s_temp _s_luz ]
 "83
-[; ;Principal.c: 83:     }
-}
-[e :U 379 ]
+[; ;Principal.c: 83:         if(!PORTAbits.RA4){
+[e $ ! ! != -> . . _PORTAbits 0 4 `i -> 0 `i 380  ]
+{
 "84
-[; ;Principal.c: 84:     encender_leds(validar(s_temp, s_dist, s_luz));
-[e ( _encender_leds (1 ( _validar (3 , , _s_temp _s_dist _s_luz ]
+[; ;Principal.c: 84:             _delay((unsigned long)((200)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"85
+[; ;Principal.c: 85:             estado = 1;
+[e = _estado -> 1 `i ]
+"86
+[; ;Principal.c: 86:             return;
+[e $UE 376  ]
+"87
+[; ;Principal.c: 87:         }
+}
+[e :U 380 ]
 "88
-[; ;Principal.c: 88: }
-[e :UE 374 ]
+[; ;Principal.c: 88:     }
+}
+[e :U 377 ]
+[e $U 378  ]
+[e :U 379 ]
+"89
+[; ;Principal.c: 89: }
+[e :UE 376 ]
 }
 "90
-[; ;Principal.c: 90: void iniciar_pic() {
+[; ;Principal.c: 90: void mostrar_hora(){
+[v _mostrar_hora `(v ~T0 @X0 1 ef ]
+{
+[e :U _mostrar_hora ]
+[f ]
+"91
+[; ;Principal.c: 91:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"92
+[; ;Principal.c: 92:     _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"93
+[; ;Principal.c: 93:     while (1) {
+[e :U 383 ]
+{
+"94
+[; ;Principal.c: 94:         establecer_valores();
+[e ( _establecer_valores ..  ]
+"95
+[; ;Principal.c: 95:         configurarHora();
+[e ( _configurarHora ..  ]
+"96
+[; ;Principal.c: 96:         if(!PORTAbits.RA4){
+[e $ ! ! != -> . . _PORTAbits 0 4 `i -> 0 `i 385  ]
+{
+"97
+[; ;Principal.c: 97:             _delay((unsigned long)((120)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 120 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"98
+[; ;Principal.c: 98:             estado = 0;
+[e = _estado -> 0 `i ]
+"99
+[; ;Principal.c: 99:             _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"100
+[; ;Principal.c: 100:             return;
+[e $UE 381  ]
+"101
+[; ;Principal.c: 101:         }
+}
+[e :U 385 ]
+"102
+[; ;Principal.c: 102:     }
+}
+[e :U 382 ]
+[e $U 383  ]
+[e :U 384 ]
+"103
+[; ;Principal.c: 103: }
+[e :UE 381 ]
+}
+"104
+[; ;Principal.c: 104: void establecer_valores(){
+[v _establecer_valores `(v ~T0 @X0 1 ef ]
+{
+[e :U _establecer_valores ]
+[f ]
+"105
+[; ;Principal.c: 105:     s_dist = sensor_distancia();
+[e = _s_dist ( _sensor_distancia ..  ]
+"106
+[; ;Principal.c: 106:     s_temp = sensor_temperatura();
+[e = _s_temp ( _sensor_temperatura ..  ]
+"107
+[; ;Principal.c: 107:     s_luz = sensor_luz();
+[e = _s_luz ( _sensor_luz ..  ]
+"108
+[; ;Principal.c: 108:     encender_leds(validar(s_temp, s_dist, s_luz));
+[e ( _encender_leds (1 ( _validar (3 , , _s_temp _s_dist _s_luz ]
+"109
+[; ;Principal.c: 109: }
+[e :UE 386 ]
+}
+"111
+[; ;Principal.c: 111: void iniciar_pic() {
 [v _iniciar_pic `(v ~T0 @X0 1 ef ]
 {
 [e :U _iniciar_pic ]
 [f ]
-"91
-[; ;Principal.c: 91:     OSCCONbits.IRCF = 0b111;
+"112
+[; ;Principal.c: 112:     OSCCONbits.IRCF = 0b111;
 [e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
-"92
-[; ;Principal.c: 92:     OSCCONbits.SCS = 0b10;
+"113
+[; ;Principal.c: 113:     OSCCONbits.SCS = 0b10;
 [e = . . _OSCCONbits 0 0 -> -> 2 `i `uc ]
-"93
-[; ;Principal.c: 93:     OSCCON = 0x72;
+"114
+[; ;Principal.c: 114:     OSCCON = 0x72;
 [e = _OSCCON -> -> 114 `i `uc ]
-"94
-[; ;Principal.c: 94:     RBPU = 0;
+"115
+[; ;Principal.c: 115:     RBPU = 0;
 [e = _RBPU -> -> 0 `i `b ]
-"95
-[; ;Principal.c: 95:     init_rtc();
+"116
+[; ;Principal.c: 116:     init_rtc();
 [e ( _init_rtc ..  ]
-"96
-[; ;Principal.c: 96:     pines_ConfigurarHora();
+"117
+[; ;Principal.c: 117:     pines_ConfigurarHora();
 [e ( _pines_ConfigurarHora ..  ]
-"97
-[; ;Principal.c: 97:     TRISBbits.RB4 = 1;
+"118
+[; ;Principal.c: 118:     TRISBbits.RB4 = 1;
 [e = . . _TRISBbits 1 4 -> -> 1 `i `uc ]
-"98
-[; ;Principal.c: 98: }
-[e :UE 380 ]
+"119
+[; ;Principal.c: 119: }
+[e :UE 387 ]
 }
-"104
-[; ;Principal.c: 104: void iniciar_emoticones() {
+"125
+[; ;Principal.c: 125: void iniciar_emoticones() {
 [v _iniciar_emoticones `(v ~T0 @X0 1 ef ]
 {
 [e :U _iniciar_emoticones ]
 [f ]
-[v F3813 `uc ~T0 @X0 -> 8 `i s ]
-[i F3813
+[v F3817 `uc ~T0 @X0 -> 8 `i s ]
+[i F3817
 :U ..
-"107
-[; ;Principal.c: 107:     unsigned char temperatura[8] = {
+"128
+[; ;Principal.c: 128:     unsigned char temperatura[8] = {
 -> -> 4 `i `uc
 -> -> 21 `i `uc
 -> -> 14 `i `uc
@@ -963,12 +1048,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _temperatura `uc ~T0 @X0 -> 8 `i a ]
-[e = _temperatura F3813 ]
-[v F3815 `uc ~T0 @X0 -> 8 `i s ]
-[i F3815
+[e = _temperatura F3817 ]
+[v F3819 `uc ~T0 @X0 -> 8 `i s ]
+[i F3819
 :U ..
-"118
-[; ;Principal.c: 118:     unsigned char distancia[8] = {
+"139
+[; ;Principal.c: 139:     unsigned char distancia[8] = {
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 4 `i `uc
@@ -980,12 +1065,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _distancia `uc ~T0 @X0 -> 8 `i a ]
-[e = _distancia F3815 ]
-[v F3817 `uc ~T0 @X0 -> 8 `i s ]
-[i F3817
+[e = _distancia F3819 ]
+[v F3821 `uc ~T0 @X0 -> 8 `i s ]
+[i F3821
 :U ..
-"129
-[; ;Principal.c: 129:     unsigned char luz[8] = {
+"150
+[; ;Principal.c: 150:     unsigned char luz[8] = {
 -> -> 10 `i `uc
 -> -> 10 `i `uc
 -> -> 10 `i `uc
@@ -997,12 +1082,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _luz `uc ~T0 @X0 -> 8 `i a ]
-[e = _luz F3817 ]
-[v F3819 `uc ~T0 @X0 -> 8 `i s ]
-[i F3819
+[e = _luz F3821 ]
+[v F3823 `uc ~T0 @X0 -> 8 `i s ]
+[i F3823
 :U ..
-"140
-[; ;Principal.c: 140:     unsigned char todo_bien[8] = {
+"161
+[; ;Principal.c: 161:     unsigned char todo_bien[8] = {
 -> -> 0 `i `uc
 -> -> 10 `i `uc
 -> -> 10 `i `uc
@@ -1014,25 +1099,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _todo_bien `uc ~T0 @X0 -> 8 `i a ]
-[e = _todo_bien F3819 ]
-"152
-[; ;Principal.c: 152:     LCD_Custom_Char(4, todo_bien);
+[e = _todo_bien F3823 ]
+"173
+[; ;Principal.c: 173:     LCD_Custom_Char(4, todo_bien);
 [e ( _LCD_Custom_Char (2 , -> -> 4 `i `uc &U _todo_bien ]
-"153
-[; ;Principal.c: 153:     LCD_Custom_Char(5, temperatura);
+"174
+[; ;Principal.c: 174:     LCD_Custom_Char(5, temperatura);
 [e ( _LCD_Custom_Char (2 , -> -> 5 `i `uc &U _temperatura ]
-"154
-[; ;Principal.c: 154:     LCD_Custom_Char(6, distancia);
+"175
+[; ;Principal.c: 175:     LCD_Custom_Char(6, distancia);
 [e ( _LCD_Custom_Char (2 , -> -> 6 `i `uc &U _distancia ]
-"155
-[; ;Principal.c: 155:     LCD_Custom_Char(7, luz);
+"176
+[; ;Principal.c: 176:     LCD_Custom_Char(7, luz);
 [e ( _LCD_Custom_Char (2 , -> -> 7 `i `uc &U _luz ]
-"158
-[; ;Principal.c: 158: }
-[e :UE 381 ]
+"179
+[; ;Principal.c: 179: }
+[e :UE 388 ]
 }
-"168
-[; ;Principal.c: 168: void imprimir(int dist, int temp, int luz) {
+"189
+[; ;Principal.c: 189: void imprimir(int dist, int temp, int luz) {
 [v _imprimir `(v ~T0 @X0 1 ef3`i`i`i ]
 {
 [e :U _imprimir ]
@@ -1040,69 +1125,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _temp `i ~T0 @X0 1 r2 ]
 [v _luz `i ~T0 @X0 1 r3 ]
 [f ]
-"171
-[; ;Principal.c: 171:     LCD_String_xy(0, 0, "D:T:L:");
+"192
+[; ;Principal.c: 192:     LCD_String_xy(0, 0, "D:T:L:");
 [e ( _LCD_String_xy (3 , , -> -> 0 `i `uc -> -> 0 `i `uc :s 1C ]
-[v F3825 `uc ~T0 @X0 -> 16 `i s ]
-[i F3825
+[v F3829 `uc ~T0 @X0 -> 16 `i s ]
+[i F3829
 :U ..
-"173
-[; ;Principal.c: 173:     char aux_dist[16] = "";
+"194
+[; ;Principal.c: 194:     char aux_dist[16] = "";
 -> 0 `c
 ..
 ]
 [v _aux_dist `uc ~T0 @X0 -> 16 `i a ]
-[e = _aux_dist F3825 ]
-"174
-[; ;Principal.c: 174:     sprintf(aux_dist, "%dcm", dist);
+[e = _aux_dist F3829 ]
+"195
+[; ;Principal.c: 195:     sprintf(aux_dist, "%dcm", dist);
 [e ( _sprintf (1 , (. , &U _aux_dist :s 2C _dist ]
-[v F3827 `uc ~T0 @X0 -> 16 `i s ]
-[i F3827
+[v F3831 `uc ~T0 @X0 -> 16 `i s ]
+[i F3831
 :U ..
-"176
-[; ;Principal.c: 176:     char aux_temp[16] = "";
+"197
+[; ;Principal.c: 197:     char aux_temp[16] = "";
 -> 0 `c
 ..
 ]
 [v _aux_temp `uc ~T0 @X0 -> 16 `i a ]
-[e = _aux_temp F3827 ]
-"177
-[; ;Principal.c: 177:     sprintf(aux_temp, "%dG", temp);
+[e = _aux_temp F3831 ]
+"198
+[; ;Principal.c: 198:     sprintf(aux_temp, "%dG", temp);
 [e ( _sprintf (1 , (. , &U _aux_temp :s 3C _temp ]
-[v F3829 `uc ~T0 @X0 -> 16 `i s ]
-[i F3829
+[v F3833 `uc ~T0 @X0 -> 16 `i s ]
+[i F3833
 :U ..
-"179
-[; ;Principal.c: 179:     char aux_luz[16] = "";
+"200
+[; ;Principal.c: 200:     char aux_luz[16] = "";
 -> 0 `c
 ..
 ]
 [v _aux_luz `uc ~T0 @X0 -> 16 `i a ]
-[e = _aux_luz F3829 ]
-"180
-[; ;Principal.c: 180:     sprintf(aux_luz, "%dP", luz);
+[e = _aux_luz F3833 ]
+"201
+[; ;Principal.c: 201:     sprintf(aux_luz, "%dP", luz);
 [e ( _sprintf (1 , (. , &U _aux_luz :s 4C _luz ]
-"182
-[; ;Principal.c: 182:     LCD_Command(0xC0);
+"203
+[; ;Principal.c: 203:     LCD_Command(0xC0);
 [e ( _LCD_Command (1 -> -> 192 `i `uc ]
-"183
-[; ;Principal.c: 183:     LCD_String_xy(3, 0, aux_dist);
+"204
+[; ;Principal.c: 204:     LCD_String_xy(3, 0, aux_dist);
 [e ( _LCD_String_xy (3 , , -> -> 3 `i `uc -> -> 0 `i `uc -> &U _aux_dist `*Cuc ]
-"184
-[; ;Principal.c: 184:     LCD_String_xy(3, 6, aux_temp);
+"205
+[; ;Principal.c: 205:     LCD_String_xy(3, 6, aux_temp);
 [e ( _LCD_String_xy (3 , , -> -> 3 `i `uc -> -> 6 `i `uc -> &U _aux_temp `*Cuc ]
-"185
-[; ;Principal.c: 185:     LCD_String_xy(3, 11, aux_luz);
+"206
+[; ;Principal.c: 206:     LCD_String_xy(3, 11, aux_luz);
 [e ( _LCD_String_xy (3 , , -> -> 3 `i `uc -> -> 11 `i `uc -> &U _aux_luz `*Cuc ]
-"186
-[; ;Principal.c: 186:     _delay((unsigned long)((900)*(8000000/4000.0)));
+"207
+[; ;Principal.c: 207:     _delay((unsigned long)((900)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 900 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"187
-[; ;Principal.c: 187:     LCD_Clear();
+"208
+[; ;Principal.c: 208:     LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"188
-[; ;Principal.c: 188: }
-[e :UE 382 ]
+"209
+[; ;Principal.c: 209: }
+[e :UE 389 ]
 }
 [p f _sprintf 8388736 ]
 [a 2C 37 100 99 109 0 ]

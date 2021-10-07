@@ -1458,8 +1458,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "220
-[; ;RTC.c: 220:     static char Date[] = "DATE: 00/00/2000";
-[v F3797 `uc ~T0 @X0 -> 17 `i s Date ]
+[; ;RTC.c: 220:     static char Date_var[] = "DATE: 00/00/2000";
+[v F3797 `uc ~T0 @X0 -> 17 `i s Date_var ]
 [i F3797
 :U ..
 -> 68 `c
@@ -1492,7 +1492,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _hours ( _BCD_a_Decimal (1 -> _hour `uc ]
 "225
 [; ;RTC.c: 225:     day = BCD_a_Decimal(Date);
-[e = _day ( _BCD_a_Decimal (1 -> &U F3797 `uc ]
+[e = _day ( _BCD_a_Decimal (1 -> _Date `uc ]
 "226
 [; ;RTC.c: 226:     month = BCD_a_Decimal(Month);
 [e = _month ( _BCD_a_Decimal (1 -> _Month `uc ]
@@ -1518,28 +1518,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;RTC.c: 234:     Time[13] = seconds % 10 + '0';
 [e = *U + &U F3796 * -> -> -> 13 `i `ui `ux -> -> # *U &U F3796 `ui `ux -> + -> % -> _seconds `i -> 10 `i `ui -> 48 `ui `uc ]
 "236
-[; ;RTC.c: 236:     Date[6] = day / 10 + '0';
+[; ;RTC.c: 236:     Date_var[6] = day / 10 + '0';
 [e = *U + &U F3797 * -> -> -> 6 `i `ui `ux -> -> # *U &U F3797 `ui `ux -> + -> / -> _day `i -> 10 `i `ui -> 48 `ui `uc ]
 "237
-[; ;RTC.c: 237:     Date[7] = day % 10 + '0';
+[; ;RTC.c: 237:     Date_var[7] = day % 10 + '0';
 [e = *U + &U F3797 * -> -> -> 7 `i `ui `ux -> -> # *U &U F3797 `ui `ux -> + -> % -> _day `i -> 10 `i `ui -> 48 `ui `uc ]
 "238
-[; ;RTC.c: 238:     Date[9] = month / 10 + '0';
+[; ;RTC.c: 238:     Date_var[9] = month / 10 + '0';
 [e = *U + &U F3797 * -> -> -> 9 `i `ui `ux -> -> # *U &U F3797 `ui `ux -> + -> / -> _month `i -> 10 `i `ui -> 48 `ui `uc ]
 "239
-[; ;RTC.c: 239:     Date[10] = month % 10 + '0';
+[; ;RTC.c: 239:     Date_var[10] = month % 10 + '0';
 [e = *U + &U F3797 * -> -> -> 10 `i `ui `ux -> -> # *U &U F3797 `ui `ux -> + -> % -> _month `i -> 10 `i `ui -> 48 `ui `uc ]
 "240
-[; ;RTC.c: 240:     Date[14] = year / 10 + '0';
+[; ;RTC.c: 240:     Date_var[14] = year / 10 + '0';
 [e = *U + &U F3797 * -> -> -> 14 `i `ui `ux -> -> # *U &U F3797 `ui `ux -> + -> / -> _year `i -> 10 `i `ui -> 48 `ui `uc ]
 "241
-[; ;RTC.c: 241:     Date[15] = year % 10 + '0';
+[; ;RTC.c: 241:     Date_var[15] = year % 10 + '0';
 [e = *U + &U F3797 * -> -> -> 15 `i `ui `ux -> -> # *U &U F3797 `ui `ux -> + -> % -> _year `i -> 10 `i `ui -> 48 `ui `uc ]
 "243
 [; ;RTC.c: 243:     LCD_String_xy(1, 0, Time);
 [e ( _LCD_String_xy (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> &U F3796 `*Cuc ]
 "245
-[; ;RTC.c: 245:     LCD_String_xy(2, 0, Date);
+[; ;RTC.c: 245:     LCD_String_xy(2, 0, Date_var);
 [e ( _LCD_String_xy (3 , , -> -> 2 `i `uc -> -> 0 `i `uc -> &U F3797 `*Cuc ]
 "246
 [; ;RTC.c: 246: }

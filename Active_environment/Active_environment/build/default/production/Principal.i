@@ -6091,11 +6091,14 @@ __bit Anti_rebote (void);
 # 34 "Principal.c" 2
 # 45 "Principal.c"
 int estado;
+int s_dist = 0, s_temp = 0, s_luz = 0;
 
 void imprimir(int dist, int temp, int luz);
 void iniciar_emoticones();
 void iniciar_pic();
-void principal();
+void establecer_valores();
+void mostrar_hora();
+void mostrar_estadisticas();
 
 void main(void) {
     USART_Init(9600);
@@ -6103,36 +6106,54 @@ void main(void) {
     inicializar_lcd();
     init_leds();
     iniciar_emoticones();
-    ADCON1 = 0b1101;
-    estado = 1;
+
     while(1){
-        principal();
+        if(PORTAbits.RA4 && estado == 0){
+            mostrar_estadisticas();
+        }
+        if(PORTAbits.RA4 && estado == 1){
+            mostrar_hora();
+        }
     }
 }
 
 
 
 
-void principal() {
 
-    int s_dist = 0, s_temp = 0, s_luz = 0;
+
+void mostrar_estadisticas(){
+    LCD_Clear();
+    _delay((unsigned long)((50)*(8000000/4000.0)));
+    while (1) {
+        establecer_valores();
+        imprimir(s_dist, s_temp, s_luz);
+        if(!PORTAbits.RA4){
+            _delay((unsigned long)((200)*(8000000/4000.0)));
+            estado = 1;
+            return;
+        }
+    }
+}
+void mostrar_hora(){
+    LCD_Clear();
+    _delay((unsigned long)((50)*(8000000/4000.0)));
+    while (1) {
+        establecer_valores();
+        configurarHora();
+        if(!PORTAbits.RA4){
+            _delay((unsigned long)((120)*(8000000/4000.0)));
+            estado = 0;
+            _delay((unsigned long)((10)*(8000000/4000.0)));
+            return;
+        }
+    }
+}
+void establecer_valores(){
     s_dist = sensor_distancia();
     s_temp = sensor_temperatura();
     s_luz = sensor_luz();
-    while(PORTAbits.RA4 == 1) {
-        estado++;
-        _delay((unsigned long)((200)*(8000000/4000.0)));
-    }
-    if(estado > 2){
-            estado = 1;
-    }
-    if (estado == 1){
-          imprimir(s_dist, s_temp, s_luz);
-    }
     encender_leds(validar(s_temp, s_dist, s_luz));
-
-
-
 }
 
 void iniciar_pic() {
@@ -6204,7 +6225,7 @@ void iniciar_emoticones() {
 
 
 }
-# 168 "Principal.c"
+# 189 "Principal.c"
 void imprimir(int dist, int temp, int luz) {
 
 

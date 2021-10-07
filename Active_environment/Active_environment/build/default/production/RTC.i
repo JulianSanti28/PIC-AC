@@ -6262,7 +6262,7 @@ void configurarHora(void) {
 void Reloj_Calendario(void)
 {
     static char Time[] = "TIME: 00:00:00";
-    static char Date[] = "DATE: 00/00/2000";
+    static char Date_var[] = "DATE: 00/00/2000";
 
     seconds = BCD_a_Decimal(sec);
     minutes = BCD_a_Decimal(min);
@@ -6278,14 +6278,14 @@ void Reloj_Calendario(void)
     Time[12] = seconds / 10 + '0';
     Time[13] = seconds % 10 + '0';
 
-    Date[6] = day / 10 + '0';
-    Date[7] = day % 10 + '0';
-    Date[9] = month / 10 + '0';
-    Date[10] = month % 10 + '0';
-    Date[14] = year / 10 + '0';
-    Date[15] = year % 10 + '0';
+    Date_var[6] = day / 10 + '0';
+    Date_var[7] = day % 10 + '0';
+    Date_var[9] = month / 10 + '0';
+    Date_var[10] = month % 10 + '0';
+    Date_var[14] = year / 10 + '0';
+    Date_var[15] = year % 10 + '0';
 
     LCD_String_xy(1, 0, Time);
 
-    LCD_String_xy(2, 0, Date);
+    LCD_String_xy(2, 0, Date_var);
 }

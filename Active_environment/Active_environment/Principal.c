@@ -43,11 +43,14 @@ intended publication of this material.
 #define clt_selector TRISBbits.RB4
 /*Declaración de funciones a usar*/
 int estado; 
+int s_dist = 0, s_temp = 0, s_luz = 0; //Variables para carga de información
 
 void imprimir(int dist, int temp, int luz);
 void iniciar_emoticones();
 void iniciar_pic();
-void principal(); 
+void establecer_valores(); 
+void mostrar_hora(); 
+void mostrar_estadisticas(); 
 
 void main(void) { //Método main
     USART_Init(9600); //Inicializar el USART
@@ -55,36 +58,54 @@ void main(void) { //Método main
     inicializar_lcd(); //Inicializa configuración del LCD
     init_leds(); //Inicializa los pines para el manejo d eleds
     iniciar_emoticones(); //Carga los emoticones a usar
-    ADCON1 = 0b1101;
-    estado = 1; 
+    
     while(1){
-        principal(); 
+        if(SELECTOR && estado == 0){
+            mostrar_estadisticas(); 
+        }
+        if(SELECTOR && estado == 1){
+            mostrar_hora(); 
+        }
     }
 }//Fin método main
+
 /*
  *@bref Inicializa los osciladores y el pull-up con los valores que requerimos para la implementación.
  *@return void
  */
-void principal() {
 
-    int s_dist = 0, s_temp = 0, s_luz = 0; //Variables para carga de información
+void mostrar_estadisticas(){
+    LCD_Clear(); 
+    __delay_ms(50); 
+    while (1) {
+        establecer_valores(); 
+        imprimir(s_dist, s_temp, s_luz);
+        if(!SELECTOR){ //si el selector es presionado 
+            __delay_ms(200);
+            estado = 1; 
+            return;
+        }
+    }
+}
+void mostrar_hora(){
+    LCD_Clear(); 
+    __delay_ms(50); 
+    while (1) {
+        establecer_valores(); 
+        configurarHora(); 
+        if(!SELECTOR){ //si el selector es presionado 
+            __delay_ms(120);
+            estado = 0; 
+            __delay_ms(10); 
+            return;
+        }
+    }
+}
+void establecer_valores(){
     s_dist = sensor_distancia(); //Almacenando el valor de distancia retornado por la función
     s_temp = sensor_temperatura(); //Almacenando el valor de temperatura retornado por la función
     s_luz = sensor_luz(); //Almacenando el valor de luz retornado por la función
-    while(SELECTOR == 1) {
-        estado++;
-        __delay_ms(200); 
-    }
-    if(estado > 2){
-            estado = 1; 
-    }
-    if (estado == 1){
-          imprimir(s_dist, s_temp, s_luz);  
-    }
     encender_leds(validar(s_temp, s_dist, s_luz)); //Enciende o no los leds dependiendo del estado de cada sensor
-    /*/else if(estado == 2){
-          configurarHora();   
-    }*/
 }
 
 void iniciar_pic() {
@@ -186,25 +207,3 @@ void imprimir(int dist, int temp, int luz) {
     __delay_ms(900);
     LCD_Clear();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
