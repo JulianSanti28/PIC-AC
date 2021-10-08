@@ -5970,7 +5970,14 @@ int temp_ant = 0, dist_ant = 0 , lum_ant = 0;
 # 31 "Principal.c" 2
 
 # 1 "./USART_Header_File.h" 1
-# 13 "./USART_Header_File.h"
+
+
+
+
+
+
+
+
 # 1 "D:\\mplab\\pic\\include\\c99\\string.h" 1 3
 # 25 "D:\\mplab\\pic\\include\\c99\\string.h" 3
 # 1 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -6026,7 +6033,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 14 "./USART_Header_File.h" 2
+# 10 "./USART_Header_File.h" 2
 
 void USART_Init(long);
 void USART_TxChar(char);
@@ -6072,7 +6079,7 @@ uint8_t i;
 void init_rtc();
 void pines_ConfigurarHora(void);
 
-void RTC_Clock_Write(char sec, char min, char hour, char AM_PM);
+void RTC_Clock_Write(char v_sec, char v_min, char v_hour, char AM_PM);
 void RTC_Calendar_Write(char day, char date, char month, char year);
 char * obtener_tiempo_fecha();
 void RTC_Read_Clock(char read_clock_address);

@@ -5,14 +5,15 @@
 
 #include "RTC.h"
 
-void RTC_Clock_Write(char sec, char min, char hour, char AM_PM)
+
+void RTC_Clock_Write(char v_sec, char v_min, char v_hour, char AM_PM)
 /* function for clock */ {
     hour = (hour | AM_PM); /* whether it is AM or PM */
     I2C_Start(device_id_write); /* start I2C comm. with device slave address*/
     I2C_Write(0); /* write 0 location for sec value */
-    I2C_Write(sec); /* write second value on 00 location */
-    I2C_Write(min); /* write min value on 01 location */
-    I2C_Write(hour); /* write hour value on 02 location */
+    I2C_Write(v_sec); /* write second value on 00 location */
+    I2C_Write(v_min); /* write min value on 01 location */
+    I2C_Write(v_hour); /* write hour value on 02 location */
     I2C_Stop(); /* stop I2C communication */
 }
 
@@ -190,11 +191,11 @@ void configurarHora(void) {
         if (Anti_rebote()) // Si la función Anti_rebote() devuelve un 1.
         {
             i = 0; // La variable i = 0.          
-            hours = Establecer_Hora_Fecha(1, 6, hours); //  Llamamos a la función Establecer_Hora_Fecha con x=7; y=1; parametro=hours.
-            minutes = Establecer_Hora_Fecha(1, 9, minutes); //  Llamamos a la función Establecer_Hora_Fecha con x=10; y=1; parametro=minutes.
-            day = Establecer_Hora_Fecha(2, 6, day); //  Llamamos a la función Establecer_Hora_Fecha con x=7; y=2; parametro=day.
-            month = Establecer_Hora_Fecha(2, 9, month); //  Llamamos a la función Establecer_Hora_Fecha con x=10; y=2; parametro=month.
-            year = Establecer_Hora_Fecha(2,14, year); //  Llamamos a la función Establecer_Hora_Fecha con x=15; y=2; parametro=year..
+            hours = Establecer_Hora_Fecha(1, 6, hours); //  Llamamos a la función Establecer_Hora_Fecha con x=1; y=6; parametro=hours.
+            minutes = Establecer_Hora_Fecha(1, 9, minutes); //  Llamamos a la función Establecer_Hora_Fecha con x=1; y=9; parametro=minutes.
+            day = Establecer_Hora_Fecha(2, 6, day); //  Llamamos a la función Establecer_Hora_Fecha con x=2; y=6; parametro=day.
+            month = Establecer_Hora_Fecha(2, 9, month); //  Llamamos a la función Establecer_Hora_Fecha con x=2; y=9; parametro=month.
+            year = Establecer_Hora_Fecha(2,14, year); //  Llamamos a la función Establecer_Hora_Fecha con x=2; y=14; parametro=year..
             while (Anti_rebote()); // Esperamos mientras Anti_rebote() sea 1.
             minutes = Decimal_a_BCD(minutes); // Llamamos a la función Decimal_a_BCD(numero=minutes).
             hours = Decimal_a_BCD(hours); // Llamamos a la función Decimal_a_BCD(numero=hours).

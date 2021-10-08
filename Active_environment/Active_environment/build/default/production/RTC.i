@@ -6031,7 +6031,7 @@ uint8_t i;
 void init_rtc();
 void pines_ConfigurarHora(void);
 
-void RTC_Clock_Write(char sec, char min, char hour, char AM_PM);
+void RTC_Clock_Write(char v_sec, char v_min, char v_hour, char AM_PM);
 void RTC_Calendar_Write(char day, char date, char month, char year);
 char * obtener_tiempo_fecha();
 void RTC_Read_Clock(char read_clock_address);
@@ -6050,14 +6050,15 @@ __bit Anti_rebote (void);
 # 6 "RTC.c" 2
 
 
-void RTC_Clock_Write(char sec, char min, char hour, char AM_PM)
+
+void RTC_Clock_Write(char v_sec, char v_min, char v_hour, char AM_PM)
                          {
     hour = (hour | AM_PM);
     I2C_Start(0xD0);
     I2C_Write(0);
-    I2C_Write(sec);
-    I2C_Write(min);
-    I2C_Write(hour);
+    I2C_Write(v_sec);
+    I2C_Write(v_min);
+    I2C_Write(v_hour);
     I2C_Stop();
 }
 

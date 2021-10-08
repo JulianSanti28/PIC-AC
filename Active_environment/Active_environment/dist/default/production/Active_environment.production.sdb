@@ -143,37 +143,37 @@
 [v _iniciar_emoticones iniciar_emoticones `(v  1 e 1 0 ]
 "188
 [v _imprimir imprimir `(v  1 e 1 0 ]
-"8 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
+"9 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
 [v _RTC_Clock_Write RTC_Clock_Write `(v  1 e 1 0 ]
-"19
+"20
 [v _RTC_Calendar_Write RTC_Calendar_Write `(v  1 e 1 0 ]
-"30
+"31
 [v _RTC_Read_Clock RTC_Read_Clock `(v  1 e 1 0 ]
-"40
+"41
 [v _RTC_Read_Calendar RTC_Read_Calendar `(v  1 e 1 0 ]
-"51
+"52
 [v _RTC_obtener_hora RTC_obtener_hora `(v  1 e 1 0 ]
-"69
+"70
 [v _RTC_obtener_fecha RTC_obtener_fecha `(v  1 e 1 0 ]
-"74
+"75
 [v _obtener_tiempo_fecha obtener_tiempo_fecha `(*.39uc  1 e 2 0 ]
-"81
+"82
 [v _BCD_a_Decimal BCD_a_Decimal `(uc  1 e 1 0 ]
-"88
+"89
 [v _Decimal_a_BCD Decimal_a_BCD `(uc  1 e 1 0 ]
-"93
+"94
 [v _Anti_rebote Anti_rebote `(b  1 e 0 0 ]
-"112
+"113
 [v _Parpadeo Parpadeo `(v  1 e 1 0 ]
-"122
+"123
 [v _Establecer_Hora_Fecha Establecer_Hora_Fecha `(uc  1 e 1 0 ]
-"176
+"177
 [v _init_rtc init_rtc `(v  1 e 1 0 ]
-"180
+"181
 [v _pines_ConfigurarHora pines_ConfigurarHora `(v  1 e 1 0 ]
-"187
+"188
 [v _configurarHora configurarHora `(v  1 e 1 0 ]
-"217
+"218
 [v _Reloj_Calendario Reloj_Calendario `(v  1 e 1 0 ]
 "27 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\sensores.c
 [v _sensor_distancia sensor_distancia `(i  1 e 2 0 ]
@@ -651,42 +651,42 @@
 {
 "102
 } 0
-"187 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
+"188 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
 [v _configurarHora configurarHora `(v  1 e 1 0 ]
 {
-"215
+"216
 } 0
-"217
+"218
 [v _Reloj_Calendario Reloj_Calendario `(v  1 e 1 0 ]
 {
-"219
-[v Reloj_Calendario@Time Time `[15]uc  1 s 15 Time ]
 "220
+[v Reloj_Calendario@Time Time `[15]uc  1 s 15 Time ]
+"221
 [v Reloj_Calendario@Date_var Date_var `[17]uc  1 s 17 Date_var ]
-"246
+"247
 } 0
-"81
+"82
 [v _BCD_a_Decimal BCD_a_Decimal `(uc  1 e 1 0 ]
 {
 [v BCD_a_Decimal@numero numero `uc  1 a 1 wreg ]
 [v BCD_a_Decimal@numero numero `uc  1 a 1 wreg ]
-"83
-[v BCD_a_Decimal@numero numero `uc  1 a 1 1 ]
 "84
+[v BCD_a_Decimal@numero numero `uc  1 a 1 1 ]
+"85
 } 0
-"8
+"9
 [v _RTC_Clock_Write RTC_Clock_Write `(v  1 e 1 0 ]
 {
-[v RTC_Clock_Write@sec sec `uc  1 a 1 wreg ]
-[v RTC_Clock_Write@sec sec `uc  1 a 1 wreg ]
-[v RTC_Clock_Write@min min `uc  1 p 1 2 ]
-[v RTC_Clock_Write@hour hour `uc  1 p 1 3 ]
+[v RTC_Clock_Write@v_sec v_sec `uc  1 a 1 wreg ]
+[v RTC_Clock_Write@v_sec v_sec `uc  1 a 1 wreg ]
+[v RTC_Clock_Write@v_min v_min `uc  1 p 1 2 ]
+[v RTC_Clock_Write@v_hour v_hour `uc  1 p 1 3 ]
 [v RTC_Clock_Write@AM_PM AM_PM `uc  1 p 1 4 ]
-"10
-[v RTC_Clock_Write@sec sec `uc  1 a 1 5 ]
-"17
+"11
+[v RTC_Clock_Write@v_sec v_sec `uc  1 a 1 5 ]
+"18
 } 0
-"19
+"20
 [v _RTC_Calendar_Write RTC_Calendar_Write `(v  1 e 1 0 ]
 {
 [v RTC_Calendar_Write@day day `uc  1 a 1 wreg ]
@@ -695,9 +695,9 @@
 [v RTC_Calendar_Write@month month `uc  1 p 1 3 ]
 [v RTC_Calendar_Write@year year `uc  1 p 1 4 ]
 [v RTC_Calendar_Write@day day `uc  1 a 1 5 ]
-"28
+"29
 } 0
-"122
+"123
 [v _Establecer_Hora_Fecha Establecer_Hora_Fecha `(uc  1 e 1 0 ]
 {
 [v Establecer_Hora_Fecha@x x `uc  1 a 1 wreg ]
@@ -705,14 +705,14 @@
 [v Establecer_Hora_Fecha@y y `uc  1 p 1 8 ]
 [v Establecer_Hora_Fecha@parametro parametro `uc  1 p 1 9 ]
 [v Establecer_Hora_Fecha@x x `uc  1 a 1 12 ]
-"174
+"175
 } 0
-"112
+"113
 [v _Parpadeo Parpadeo `(v  1 e 1 0 ]
 {
-"114
+"115
 [v Parpadeo@j j `uc  1 a 1 1 ]
-"120
+"121
 } 0
 "118 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\LCD.c
 [v _LCD_xy LCD_xy `(v  1 e 1 0 ]
@@ -726,23 +726,23 @@
 [v LCD_xy@row row `uc  1 a 1 3 ]
 "127
 } 0
-"93 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
+"94 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
 [v _Anti_rebote Anti_rebote `(b  1 e 0 0 ]
 {
-"96
+"97
 [v Anti_rebote@i i `uc  1 a 1 2 ]
-"95
+"96
 [v Anti_rebote@contador contador `uc  1 a 1 1 ]
-"110
+"111
 } 0
-"88
+"89
 [v _Decimal_a_BCD Decimal_a_BCD `(uc  1 e 1 0 ]
 {
 [v Decimal_a_BCD@numero numero `uc  1 a 1 wreg ]
 [v Decimal_a_BCD@numero numero `uc  1 a 1 wreg ]
-"90
-[v Decimal_a_BCD@numero numero `uc  1 a 1 10 ]
 "91
+[v Decimal_a_BCD@numero numero `uc  1 a 1 10 ]
+"92
 } 0
 "7 D:\mplab\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -882,10 +882,10 @@
 [v mostrar_estadistica@valor_usart valor_usart `*.39uc  1 p 2 31 ]
 "150
 } 0
-"74 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
+"75 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
 [v _obtener_tiempo_fecha obtener_tiempo_fecha `(*.39uc  1 e 2 0 ]
 {
-"79
+"80
 } 0
 "3 D:\mplab\pic\sources\c99\common\strcat.c
 [v _strcat strcat `(*.39uc  1 e 2 0 ]
@@ -906,25 +906,25 @@
 [v strcpy@src src `*.39Cuc  1 p 2 6 ]
 "9
 } 0
-"51 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
+"52 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
 [v _RTC_obtener_hora RTC_obtener_hora `(v  1 e 1 0 ]
 {
-"53
+"54
 [v RTC_obtener_hora@AM_PM AM_PM `uc  1 a 1 26 ]
-"67
+"68
 } 0
-"30
+"31
 [v _RTC_Read_Clock RTC_Read_Clock `(v  1 e 1 0 ]
 {
 [v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 wreg ]
 [v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 wreg ]
 [v RTC_Read_Clock@read_clock_address read_clock_address `uc  1 a 1 3 ]
-"38
+"39
 } 0
-"69
+"70
 [v _RTC_obtener_fecha RTC_obtener_fecha `(v  1 e 1 0 ]
 {
-"72
+"73
 } 0
 "9 D:\mplab\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -1124,13 +1124,13 @@
 [v ___aodiv@divisor divisor `o  1 p 8 8 ]
 "43
 } 0
-"40 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
+"41 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
 [v _RTC_Read_Calendar RTC_Read_Calendar `(v  1 e 1 0 ]
 {
 [v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 wreg ]
 [v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 wreg ]
 [v RTC_Read_Calendar@read_calendar_address read_calendar_address `uc  1 a 1 3 ]
-"49
+"50
 } 0
 "84 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\I2C_Source_File.c
 [v _I2C_Stop I2C_Stop `(uc  1 e 1 0 ]
@@ -1329,10 +1329,10 @@
 {
 "118
 } 0
-"180 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
+"181 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
 [v _pines_ConfigurarHora pines_ConfigurarHora `(v  1 e 1 0 ]
 {
-"185
+"186
 } 0
 "30 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\LCD.c
 [v _inicializar_lcd inicializar_lcd `(v  1 e 1 0 ]
@@ -1347,10 +1347,10 @@
 [v LCD_Command@cmd cmd `uc  1 a 1 1 ]
 "54
 } 0
-"176 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
+"177 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\RTC.c
 [v _init_rtc init_rtc `(v  1 e 1 0 ]
 {
-"178
+"179
 } 0
 "28 C:\Users\ASUS\Desktop\R\PIC-AC\Active_environment\Active_environment\I2C_Source_File.c
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]

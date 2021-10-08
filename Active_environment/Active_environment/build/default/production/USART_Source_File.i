@@ -12,7 +12,12 @@
 
 
 # 1 "./USART_Header_File.h" 1
-# 11 "./USART_Header_File.h"
+
+
+
+
+
+
 # 1 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\proc\\pic18f4550.h" 1 3
 # 44 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\proc\\pic18f4550.h" 3
 # 1 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\__at.h" 1 3
@@ -5467,7 +5472,7 @@ extern volatile __bit nW __attribute__((address(0x7E3A)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 12 "./USART_Header_File.h" 2
+# 8 "./USART_Header_File.h" 2
 # 1 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5628,7 +5633,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 13 "./USART_Header_File.h" 2
+# 9 "./USART_Header_File.h" 2
 # 1 "D:\\mplab\\pic\\include\\c99\\string.h" 1 3
 # 25 "D:\\mplab\\pic\\include\\c99\\string.h" 3
 # 1 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5684,7 +5689,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 14 "./USART_Header_File.h" 2
+# 10 "./USART_Header_File.h" 2
 
 void USART_Init(long);
 void USART_TxChar(char);
