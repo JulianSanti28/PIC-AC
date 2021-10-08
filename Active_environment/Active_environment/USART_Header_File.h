@@ -1,4 +1,5 @@
 
+
 /*!
 \file   USART_Header_File.h
 \date   2021-10-04
@@ -17,6 +18,10 @@ The copyright notices above do not evidence any actual or
 intended publication of this material.
  ******************************************************************************
  */
+
+
+// This is a guard condition so that contents of this file are not included
+// more than once.  
 
 #ifndef USART_HEADER_FILE_H
 #define	USART_HEADER_FILE_H

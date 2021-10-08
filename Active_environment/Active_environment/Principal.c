@@ -66,11 +66,11 @@ void main(void) { //Método main
             mostrar_hora(); 
         }
     }
-}//Fin método main
+}//Fin metodo main
 
 
 /*
- *@bref Inicializa los osciladores y el pull-up con los valores que requerimos para la implementación.
+ *@bref Inicializa los osciladores y el pull-up con los valores que requerimos para la implementacionn.
  *@return void
  */
 void mostrar_estadisticas(){
@@ -106,14 +106,14 @@ void mostrar_hora(){
 
 void establecer_valores(int mostrar_emoji){
     s_dist = sensor_distancia(); //Almacenando el valor de distancia retornado por la función
-    s_temp = sensor_temperatura(); //Almacenando el valor de temperatura retornado por la función
-    s_luz = sensor_luz(); //Almacenando el valor de luz retornado por la función
+    s_temp = sensor_temperatura(); //Almacenando el valor de temperatura retornado por la funcion
+    s_luz = sensor_luz(); //Almacenando el valor de luz retornado por la funcion
     encender_leds(validar(s_temp, s_dist, s_luz, mostrar_emoji)); //Enciende o no los leds dependiendo del estado de cada sensor
 }
 
 void iniciar_pic() {
     OSCILADOR_INTERNO = OCHO_MHZ;
-    OSCILADOR_DEL_SISTEMA = 0b10; //?
+    OSCILADOR_DEL_SISTEMA = 0b10; 
     OSCCON = OCHO_mHz;
     PULL_UP = ACTIVADO;
     init_rtc(); 

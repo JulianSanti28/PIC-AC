@@ -7,14 +7,7 @@
 # 1 "J:/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "I2C_Source_File.c" 2
-
-
-
-
-
-
-
-
+# 19 "I2C_Source_File.c"
 # 1 "./I2C_Master_File.h" 1
 # 12 "./I2C_Master_File.h"
 # 1 "J:/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
@@ -5652,7 +5645,7 @@ char I2C_Write(unsigned char);
 void I2C_Ack();
 void I2C_Nack();
 char I2C_Read(char flag);
-# 9 "I2C_Source_File.c" 2
+# 19 "I2C_Source_File.c" 2
 
 
 

@@ -7,11 +7,7 @@
 # 1 "J:/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "RTC.c" 2
-
-
-
-
-
+# 20 "RTC.c"
 # 1 "./RTC.h" 1
 # 15 "./RTC.h"
 # 1 "J:/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
@@ -6031,7 +6027,7 @@ uint8_t i;
 void init_rtc();
 void pines_ConfigurarHora(void);
 
-void RTC_Clock_Write(char sec, char min, char hour, char AM_PM);
+void RTC_Clock_Write(char v_sec, char v_min, char v_hour, char AM_PM);
 void RTC_Calendar_Write(char day, char date, char month, char year);
 char * obtener_tiempo_fecha();
 void RTC_Read_Clock(char read_clock_address);
@@ -6047,17 +6043,18 @@ uint8_t BCD_a_Decimal (uint8_t numero);
 uint8_t Decimal_a_BCD (uint8_t numero);
 void Parpadeo (void);
 __bit Anti_rebote (void);
-# 6 "RTC.c" 2
+# 20 "RTC.c" 2
 
 
-void RTC_Clock_Write(char sec, char min, char hour, char AM_PM)
+
+void RTC_Clock_Write(char v_sec, char v_min, char v_hour, char AM_PM)
                          {
     hour = (hour | AM_PM);
     I2C_Start(0xD0);
     I2C_Write(0);
-    I2C_Write(sec);
-    I2C_Write(min);
-    I2C_Write(hour);
+    I2C_Write(v_sec);
+    I2C_Write(v_min);
+    I2C_Write(v_hour);
     I2C_Stop();
 }
 
@@ -6147,8 +6144,7 @@ __bit Anti_rebote(void)
     if (contador > 2)
     {
         return 1;
-    }
-    else
+    } else
     {
         return 0;
     }
@@ -6200,7 +6196,7 @@ uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro)
 
         LCD_xy(x, y);
         LCD_Char("  ");
-        LCD_xy(x, y+1);
+        LCD_xy(x, y + 1);
         LCD_Char("  ");
         Parpadeo();
 
@@ -6235,11 +6231,19 @@ void configurarHora(void) {
         if (Anti_rebote())
         {
             i = 0;
+
+            hours = Establecer_Hora_Fecha(1, 6, hours);
+            minutes = Establecer_Hora_Fecha(1, 9, minutes);
+            day = Establecer_Hora_Fecha(2, 6, day);
+            month = Establecer_Hora_Fecha(2, 9, month);
+            year = Establecer_Hora_Fecha(2, 14, year);
+
             hours = Establecer_Hora_Fecha(1, 6, hours);
             minutes = Establecer_Hora_Fecha(1, 9, minutes);
             day = Establecer_Hora_Fecha(2, 6, day);
             month = Establecer_Hora_Fecha(2, 9, month);
             year = Establecer_Hora_Fecha(2,14, year);
+
             while (Anti_rebote());
             minutes = Decimal_a_BCD(minutes);
             hours = Decimal_a_BCD(hours);

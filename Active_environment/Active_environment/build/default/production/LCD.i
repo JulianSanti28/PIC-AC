@@ -5721,6 +5721,10 @@ void inicializar_lcd() {
     LCD_Command(0x06);
 }
 
+
+
+
+
 void LCD_Command(unsigned char cmd) {
     LATD = (LATD & 0x0f) | (0xF0 & cmd);
     LATD0 = 0;
@@ -5769,7 +5773,7 @@ void LCD_String(const char *msg) {
     }
 
 }
-# 98 "LCD.c"
+# 102 "LCD.c"
 void LCD_String_xy(char row, char pos, const char *msg) {
     char location = 0;
     if (row <= 1) {

@@ -5978,7 +5978,7 @@ int temp_ant = 0, dist_ant = 0 , lum_ant = 0;
 
 
 # 1 "./USART_Header_File.h" 1
-# 13 "./USART_Header_File.h"
+# 31 "./USART_Header_File.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -6034,7 +6034,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 13 "./USART_Header_File.h" 2
+# 31 "./USART_Header_File.h" 2
 
 
 void USART_Init(long);
@@ -6082,7 +6082,7 @@ uint8_t i;
 void init_rtc();
 void pines_ConfigurarHora(void);
 
-void RTC_Clock_Write(char sec, char min, char hour, char AM_PM);
+void RTC_Clock_Write(char v_sec, char v_min, char v_hour, char AM_PM);
 void RTC_Calendar_Write(char day, char date, char month, char year);
 char * obtener_tiempo_fecha();
 void RTC_Read_Clock(char read_clock_address);
@@ -6146,6 +6146,7 @@ void mostrar_estadisticas(){
     }
 }
 
+
 void mostrar_hora(){
     LCD_Clear();
     while (1) {
@@ -6159,6 +6160,8 @@ void mostrar_hora(){
         }
     }
 }
+
+
 void establecer_valores(int mostrar_emoji){
     s_dist = sensor_distancia();
     s_temp = sensor_temperatura();
@@ -6235,7 +6238,7 @@ void iniciar_emoticones() {
 
 
 }
-# 189 "Principal.c"
+# 192 "Principal.c"
 void imprimir(int dist, int temp, int luz) {
 
 
