@@ -74,7 +74,7 @@ void encender_leds(int valor) {
  */
 
 
-int validar(int temp, int distancia, int luz) {
+int validar(int temp, int distancia, int luz, int mostrar_emoji) {
     int contador = 0;
     // verde valores  normales ; amarillo 1  fallando ; rojo 2 o + fallando
     if (temp < TEMP_BAJA || temp > TEMP_ALTA) { //Mayor a 30 grados y Menor a 17 es un estado no Ã³ptimo
@@ -86,7 +86,11 @@ int validar(int temp, int distancia, int luz) {
             temp_ant = temp;
         }
 
-        mostrar_emoticon(5);
+        if (mostrar_emoji == 1) {
+            mostrar_emoticon(5);
+        }
+
+
         contador++;
     }
     if (distancia < DISTANCIA_OPTIMA) {//optimo 65 70 //distancia > 100 ||
@@ -98,12 +102,14 @@ int validar(int temp, int distancia, int luz) {
             dist_ant = distancia;
         }
 
-        mostrar_emoticon(6);
+          if (mostrar_emoji == 1) {
+            mostrar_emoticon(6);
+        }
+
         contador++;
     }
     if (luz > LUZ_ALTA_OPTIMA || luz < LUZ_BAJA_OPTIMA) {
-        mostrar_emoticon(7);
-        contador++;
+
 
         if (luz != lum_ant) {
             char valor_usart[30];
@@ -111,9 +117,18 @@ int validar(int temp, int distancia, int luz) {
             mostrar_estadistica(3, valor_usart);
             lum_ant = luz;
         }
+
+
+          if (mostrar_emoji == 1) {
+            mostrar_emoticon(7);
+        }
+
+
+        contador++;
     }
 
-    if (contador == 0) {
+    /*Cuando todos los valores estén bien*/
+    if (contador == 0 && mostrar_emoji == 1) {
         mostrar_emoticon(4);
     }
 

@@ -5969,7 +5969,7 @@ void init_ports(void);
 # 28 "./Leds.h" 2
 # 56 "./Leds.h"
 void delay_ms(unsigned int delay);
-int validar(int temp,int distancia,int luz);
+int validar(int temp, int distancia, int luz, int mostrar_emoji);
 void encender_leds(int valor);
 void init_leds(void);
 void mostrar_estadistica(int sensor, char *valor_usart);
@@ -6106,7 +6106,7 @@ int s_dist = 0, s_temp = 0, s_luz = 0;
 void imprimir(int dist, int temp, int luz);
 void iniciar_emoticones();
 void iniciar_pic();
-void establecer_valores();
+void establecer_valores(int mostrar_emoji);
 void mostrar_hora();
 void mostrar_estadisticas();
 
@@ -6135,7 +6135,7 @@ void mostrar_estadisticas(){
     LCD_Clear();
     iniciar_emoticones();
     while (1) {
-        establecer_valores();
+        establecer_valores(1);
         imprimir(s_dist, s_temp, s_luz);
         if(!PORTAbits.RA4){
             _delay((unsigned long)((200)*(8000000/4000.0)));
@@ -6145,10 +6145,11 @@ void mostrar_estadisticas(){
         }
     }
 }
+
 void mostrar_hora(){
     LCD_Clear();
     while (1) {
-        establecer_valores();
+        establecer_valores(0);
         configurarHora();
         if(!PORTAbits.RA4){
             _delay((unsigned long)((120)*(8000000/4000.0)));
@@ -6158,11 +6159,11 @@ void mostrar_hora(){
         }
     }
 }
-void establecer_valores(){
+void establecer_valores(int mostrar_emoji){
     s_dist = sensor_distancia();
     s_temp = sensor_temperatura();
     s_luz = sensor_luz();
-    encender_leds(validar(s_temp, s_dist, s_luz));
+    encender_leds(validar(s_temp, s_dist, s_luz, mostrar_emoji));
 }
 
 void iniciar_pic() {
@@ -6234,7 +6235,7 @@ void iniciar_emoticones() {
 
 
 }
-# 188 "Principal.c"
+# 189 "Principal.c"
 void imprimir(int dist, int temp, int luz) {
 
 

@@ -5693,7 +5693,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 28 "./Leds.h" 2
 # 56 "./Leds.h"
 void delay_ms(unsigned int delay);
-int validar(int temp,int distancia,int luz);
+int validar(int temp, int distancia, int luz, int mostrar_emoji);
 void encender_leds(int valor);
 void init_leds(void);
 void mostrar_estadistica(int sensor, char *valor_usart);
@@ -6101,7 +6101,7 @@ void encender_leds(int valor) {
     }
 }
 # 77 "Leds.c"
-int validar(int temp, int distancia, int luz) {
+int validar(int temp, int distancia, int luz, int mostrar_emoji) {
     int contador = 0;
 
     if (temp < 17 || temp > 30) {
@@ -6113,7 +6113,11 @@ int validar(int temp, int distancia, int luz) {
             temp_ant = temp;
         }
 
-        mostrar_emoticon(5);
+        if (mostrar_emoji == 1) {
+            mostrar_emoticon(5);
+        }
+
+
         contador++;
     }
     if (distancia < 40) {
@@ -6125,12 +6129,14 @@ int validar(int temp, int distancia, int luz) {
             dist_ant = distancia;
         }
 
-        mostrar_emoticon(6);
+          if (mostrar_emoji == 1) {
+            mostrar_emoticon(6);
+        }
+
         contador++;
     }
     if (luz > 60 || luz < 10) {
-        mostrar_emoticon(7);
-        contador++;
+
 
         if (luz != lum_ant) {
             char valor_usart[30];
@@ -6138,9 +6144,18 @@ int validar(int temp, int distancia, int luz) {
             mostrar_estadistica(3, valor_usart);
             lum_ant = luz;
         }
+
+
+          if (mostrar_emoji == 1) {
+            mostrar_emoticon(7);
+        }
+
+
+        contador++;
     }
 
-    if (contador == 0) {
+
+    if (contador == 0 && mostrar_emoji == 1) {
         mostrar_emoticon(4);
     }
 
