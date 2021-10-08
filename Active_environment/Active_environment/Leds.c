@@ -72,8 +72,6 @@ void encender_leds(int valor) {
  *@param luz Lectura del porcentaje de luminisidad  según el sensor de luz.
  *@return int Valores fuera de rango, 0 si no existe ningun valor fuera de rango, 1 si existe un valor fuera de rango, 2 si existe dos valores fuera de rango.
  */
-
-
 int validar(int temp, int distancia, int luz, int mostrar_emoji) {
     int contador = 0;
     // verde valores  normales ; amarillo 1  fallando ; rojo 2 o + fallando

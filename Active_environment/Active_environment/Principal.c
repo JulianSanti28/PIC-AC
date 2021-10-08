@@ -68,11 +68,11 @@ void main(void) { //Método main
     }
 }//Fin método main
 
+
 /*
  *@bref Inicializa los osciladores y el pull-up con los valores que requerimos para la implementación.
  *@return void
  */
-
 void mostrar_estadisticas(){
     LCD_Clear(); 
     iniciar_emoticones(); //Carga los emoticones a usar
@@ -88,6 +88,7 @@ void mostrar_estadisticas(){
     }
 }
 
+
 void mostrar_hora(){
     LCD_Clear(); 
     while (1) {
@@ -101,6 +102,8 @@ void mostrar_hora(){
         }
     }
 }
+
+
 void establecer_valores(int mostrar_emoji){
     s_dist = sensor_distancia(); //Almacenando el valor de distancia retornado por la función
     s_temp = sensor_temperatura(); //Almacenando el valor de temperatura retornado por la función

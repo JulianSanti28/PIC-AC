@@ -39,6 +39,10 @@ void inicializar_lcd() {
     LCD_Command(0x06); /*increment cursor (shift cursor to right)*/
 }
 
+/*
+ *@bref Recibe un comando pre-establecido que ejecuta el LCD. Estos comandos son netamente para el maejo del cursor dentro del LCD
+ *@return void
+ */
 void LCD_Command(unsigned char cmd) {
     ldata = (ldata & 0x0f) | (0xF0 & cmd); /*Send higher nibble of command first to PORT*/
     RS = 0; /*Command Register is selected i.e.RS=0*/

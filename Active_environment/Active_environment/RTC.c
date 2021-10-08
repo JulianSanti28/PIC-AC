@@ -1,6 +1,20 @@
-/*
- * PIC18F4550 interfacing with RTC DS1307
- * http://www.electronicwings.com
+/*!
+\file   Leds.h
+\date   2021-10-04
+\author AndrÃ©s MuÃ±oz <andresdmunoz@unicauca.edu.co> 104618021296
+        Paula PeÃ±a <ppena@unicauca.edu.co> 104618021314
+        JuliÃ¡n Martinez <juliansmartinez@unicauca.edu.co> 104618021321
+\brief  ConfiguraciÃ³n leds y sus elementos.
+\par Copyright
+Information contained herein is proprietary to and constitutes valuable
+confidential trade secrets of unicauca, and
+is subject to restrictions on use and disclosure.
+\par
+Copyright (c) unicauca 2021. All rights reserved.
+\par
+The copyright notices above do not evidence any actual or
+intended publication of this material.
+ ******************************************************************************
  */
 
 #include "RTC.h"
@@ -102,8 +116,7 @@ __bit Anti_rebote(void) // Función antirebote Pulsador_1 (RB2).
     if (contador > 2) // Si "contador" es mayor a 2.  
     {
         return 1; // Retornamos 1.
-    }
-    else // De lo contrario.
+    } else // De lo contrario.
     {
         return 0; // Retornamos 0.
     }
@@ -155,10 +168,10 @@ uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro) // Funció
 
         LCD_xy(x, y); // Cursos de la pantalla LCD en columna "x", fila "y".                    
         LCD_Char("  "); // Inprimimos en la pantalla LCD 2 espacios vacios.
-        LCD_xy(x, y+1); // Cursos de la pantalla LCD en columna "x", fila "y".                    
+        LCD_xy(x, y + 1); // Cursos de la pantalla LCD en columna "x", fila "y".                    
         LCD_Char("  "); // Inprimimos en la pantalla LCD 2 espacios vacios.
         Parpadeo(); // Llamamos a la función Parpadeo().
-        
+
         LCD_xy(x, y); // Cursos de la pantalla LCD en columna "x", fila "y".
         LCD_Char(parametro / 10 + '0'); // Imprimimos en la pantalla LCD las decenas de la variable "parametro". 
         LCD_Char(parametro % 10 + '0'); // Imprimimos en la pantalla LCD las unidades de la variable "parametro". 
@@ -194,7 +207,7 @@ void configurarHora(void) {
             minutes = Establecer_Hora_Fecha(1, 9, minutes); //  Llamamos a la función Establecer_Hora_Fecha con x=10; y=1; parametro=minutes.
             day = Establecer_Hora_Fecha(2, 6, day); //  Llamamos a la función Establecer_Hora_Fecha con x=7; y=2; parametro=day.
             month = Establecer_Hora_Fecha(2, 9, month); //  Llamamos a la función Establecer_Hora_Fecha con x=10; y=2; parametro=month.
-            year = Establecer_Hora_Fecha(2,14, year); //  Llamamos a la función Establecer_Hora_Fecha con x=15; y=2; parametro=year..
+            year = Establecer_Hora_Fecha(2, 14, year); //  Llamamos a la función Establecer_Hora_Fecha con x=15; y=2; parametro=year..
             while (Anti_rebote()); // Esperamos mientras Anti_rebote() sea 1.
             minutes = Decimal_a_BCD(minutes); // Llamamos a la función Decimal_a_BCD(numero=minutes).
             hours = Decimal_a_BCD(hours); // Llamamos a la función Decimal_a_BCD(numero=hours).
@@ -206,7 +219,7 @@ void configurarHora(void) {
             RTC_Calendar_Write(0x01, day, month, year);
             __delay_ms(200); // Retardo de 200 ms.
         }
-    
+
     RTC_Read_Clock(0); /*gives second,minute and hour*/
     RTC_Read_Calendar(3); /*gives day, date, month, year*/
 
@@ -239,10 +252,10 @@ void Reloj_Calendario(void) //Función de visualización de HORA Y FECHA.
     Date_var[10] = month % 10 + '0'; // Guardamos las unidades de la variable "month" en la posición 10 del arreglo "Date".
     Date_var[14] = year / 10 + '0'; // Guardamos las decenas de la variable "year" en la posición 14 del arreglo "Date".
     Date_var[15] = year % 10 + '0'; // Guardamos las unidades de la variable "year" en la posición 15 del arreglo "Date".
-    
+
     LCD_String_xy(1, 0, Time);
-    
-    LCD_String_xy(2, 0, Date_var); 
+
+    LCD_String_xy(2, 0, Date_var);
 }
 
 
