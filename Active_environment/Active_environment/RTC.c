@@ -1,3 +1,21 @@
+/*!
+\file   RTC.c
+\date   2021-10-04
+\author AndrÃ©s MuÃ±oz <andresdmunoz@unicauca.edu.co> 104618021296
+        Paula PeÃ±a <ppena@unicauca.edu.co> 104618021314
+		JuliÃ¡n Martinez <juliansmartinez@unicauca.edu.co> 104618021321
+\brief  rtc del proyecto.
+\par Copyright
+Information contained herein is proprietary to and constitutes valuable
+confidential trade secrets of unicauca, and
+is subject to restrictions on use and disclosure.
+\par
+Copyright (c) unicauca 2021. All rights reserved.
+\par
+The copyright notices above do not evidence any actual or
+intended publication of this material.
+ ******************************************************************************
+ */
 /*
  * PIC18F4550 interfacing with RTC DS1307
  * http://www.electronicwings.com
@@ -5,6 +23,15 @@
 
 #include "RTC.h"
 
+/*
+*@RTC_Clock_Write
+*@brief escribe sobre el LCD la hora en formato HH:MM:SS
+*@param sec segundos 
+*@param min minutos 
+*@param hour horas 
+*@param AM_PM antes del meridiano o despues del meridiano
+*@return void
+*/
 void RTC_Clock_Write(char sec, char min, char hour, char AM_PM)
 /* function for clock */ {
     hour = (hour | AM_PM); /* whether it is AM or PM */
@@ -16,45 +43,76 @@ void RTC_Clock_Write(char sec, char min, char hour, char AM_PM)
     I2C_Stop(); /* stop I2C communication */
 }
 
+/*
+*@RTC_Calendar_Write
+*@brief escribe sobre el LCD la fecha en formato DD:MM:YYYY
+*@param day dia 
+*@param date cadena de texto "date" 
+*@param month mes 
+*@param year aÃ±o
+*@return void
+*/
 void RTC_Calendar_Write(char day, char date, char month, char year) {
-    I2C_Start(device_id_write); /* start I2C comm. with device slave address */
-    I2C_Write(3); /* write on 3 location for day value */
-    I2C_Write(day); /* write day value on 03 location */
-    I2C_Write(date); /* write date value on 04 location */
-    I2C_Write(month); /* write month value on 05 location */
-    I2C_Write(year); /* write year value on 06 location */
+    I2C_Start(device_id_write); /* iniciar la comunicaciÃ³n I2C. con direcciÃ³n slave del dispositivo */
+    I2C_Write(3); /* escribe el valor del dia en la posicion 3  */
+    I2C_Write(day); /* escribe el valor del dia en la posicion 3 */
+    I2C_Write(date); /* escribe el valor de date  en la posicion 4  */
+    I2C_Write(month); /* escribe el valor del mes  en la posicion 5  */
+    I2C_Write(year); /* escribe el valor de aÃ±o en la posicion 6  */
     I2C_Stop();
 
 }
 
+/*
+*@RTC_Calendar_Write
+*@brief 
+*@param day dia 
+*@param date cadena de texto "date" 
+*@param month mes 
+*@param year aÃ±o
+*@return void
+*/
 void RTC_Read_Clock(char read_clock_address) {
     I2C_Start(device_id_write);
-    I2C_Write(read_clock_address); /* address from where time needs to be read*/
+    I2C_Write(read_clock_address); /* direccion donde la hora necesita ser leida */
     I2C_Repeated_Start(device_id_read);
-    sec = I2C_Read(0); /*read data and send ack for continuous reading*/
-    min = I2C_Read(0); /*read data and send ack for continuous reading*/
-    hour = I2C_Read(1); /*read data and send nack for indicating stop reading*/
+    sec = I2C_Read(0); /* leer data y enviar ack para seguir leyendo */
+    min = I2C_Read(0); /*leer data y enviar ack para seguir leyendo*/
+    hour = I2C_Read(1); /*leer data y enviar nack para indicar que pare de leer */
     I2C_Stop();
 }
-
+/*
+*@RTC_Read_Calendar
+*@brief escribe sobre el LCD la fecha en formato DD:MM:YYYY
+*@param day dia 
+*@param date cadena de texto "date" 
+*@param month mes 
+*@param year aÃ±o
+*@return void
+*/
 void RTC_Read_Calendar(char read_calendar_address) {
     I2C_Start(device_id_write);
-    I2C_Write(read_calendar_address); /* address from where time needs to be read*/
+    I2C_Write(read_calendar_address); /* direccion donde la hora necesita ser leida*/
     I2C_Repeated_Start(device_id_read);
-    Day = I2C_Read(0); /*read data and send ack for continuous reading*/
-    Date = I2C_Read(0); /*read data and send ack for continuous reading*/
-    Month = I2C_Read(0); /*read data and send ack for continuous reading*/
-    Year = I2C_Read(1); /*read data and send nack for indicating stop reading*/
+    Day = I2C_Read(0); /*leer data y enviar ack para seguir leyendo*/
+    Date = I2C_Read(0); /*leer data y enviar ack para seguir leyendo*/
+    Month = I2C_Read(0); /*leer data y enviar ack para seguir leyendo*/
+    Year = I2C_Read(1); /*leer data y enviar nack para indicar que pare de leer*/
     I2C_Stop();
 }
 
+/*
+*@RTC_obtener_hora
+*@brief escribe sobre el LCD la fecha en formato DD:MM:YYYY con los datos de la funcion read_clock
+*@return void
+*/
 void RTC_obtener_hora() {
     char Clock_type = 0x06;
     char AM_PM = 0x05;
-    RTC_Read_Clock(0); /*gives second,minute and hour*/
+    RTC_Read_Clock(0); /*da segundos, minutos y hora */
     I2C_Stop();
-    if (hour & (1 << Clock_type)) { /* check clock is 12hr or 24hr */
-        if (hour & (1 << AM_PM)) { /* check AM or PM */
+    if (hour & (1 << Clock_type)) { /* check si el reloj es 12h o 24h  */
+        if (hour & (1 << AM_PM)) { /* check AM o PM */
             hour = hour & (0x1f);
             sprintf(time, "Time: %x:%x:%x PM", hour, min, sec); /*%x for reading BCD format from RTC DS1307*/
         } else {
@@ -65,35 +123,51 @@ void RTC_obtener_hora() {
         sprintf(time, "Time: %x:%x:%x ", hour, min, sec);
     }
 }
-
+/*
+*@RTC_obtener_fecha
+*@brief lee la fecha de la funcion read_calendar y la escribe en el LCD 
+*@return void 
+*/
 void RTC_obtener_fecha() {
     RTC_Read_Calendar(3); /*gives day, date, month, year*/
     sprintf(date, "Date: %x/%x/%x ", Date, Month, Year);
 }
 
+/*
+*@obtener_tiempo_fecha
+*@brief obtiene fecha y hora en un apuntador
+*@return char -> fecha y hora
+*/
 char * obtener_tiempo_fecha() {
     I2C_Init();
     RTC_obtener_hora();
     RTC_obtener_fecha();
     return strcat(date, time);
 }
-
-uint8_t BCD_a_Decimal(uint8_t numero) // Función que convierte un número BCD a decimal.
+/*
+*@BCD_a_Decimal
+*@brief Funcion que convierte un numero BCD a decimal
+*@return int8
+*/
+uint8_t BCD_a_Decimal(uint8_t numero) .
 {
-    return ((numero >> 4) * 10 + (numero & 0x0F)); // Retornamos la variable "numero" desplazado 4 posiciones a la izquierda, multiplicado por 10 más "numero" &&  1111.
+    return ((numero >> 4) * 10 + (numero & 0x0F)); //  la variable "numero" desplazado 4 posiciones a la izquierda, multiplicado por 10 mï¿½s "numero" &&  1111.
 }
 
-/*==========================================================================================================
- ===========================================================================================================*/
-uint8_t Decimal_a_BCD(uint8_t numero) // Función que convierte un número decimal a BCD. 
+/*
+*@Decimal_a_BCD
+*@brief Funcion que convierte un numero decimal a BCD  
+*@return int8
+*/
+uint8_t Decimal_a_BCD(uint8_t numero) // Funciï¿½n que convierte un nï¿½mero decimal a BCD. 
 {
     return (((numero / 10) << 4) + (numero % 10)); // Retornamos la decena de la variable "numero" desplazado 4 bits a la derecha y las unidades de la variable "numero" en el nibble menos significativo
 }
 
-__bit Anti_rebote(void) // Función antirebote Pulsador_1 (RB2).
+__bit Anti_rebote(void) // Funciï¿½n antirebote Pulsador_1 (RB2).
 {
     uint8_t contador = 0; // Variable tipo entero de 8 bits.
-    for (uint8_t i = 0; i < 5; i++) // Bucle for para generar como máximo 50ms de retardo.
+    for (uint8_t i = 0; i < 5; i++) // Bucle for para generar como mï¿½ximo 50ms de retardo.
     {
         if (Pulsador_1 == 0) // Si Pulsador_1 fue presionado.
             contador++; // Incrementamos en una unidad la variable "contador".
@@ -109,7 +183,7 @@ __bit Anti_rebote(void) // Función antirebote Pulsador_1 (RB2).
     }
 }
 
-void Parpadeo(void) // Función Parpadeo().
+void Parpadeo(void) // Funciï¿½n Parpadeo().
 {
     uint8_t j = 0; // Variable entera de 8 bits.
     while (j < 100 && Pulsador_1 && Pulsador_2)// Mientras j sea menor que 100 y Pulsador_1 y Pulsador_2 sean igual a 1.
@@ -119,9 +193,9 @@ void Parpadeo(void) // Función Parpadeo().
     }
 }
 
-uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro) // Función para establecer Hora y Fecha.
+uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro) // Funciï¿½n para establecer Hora y Fecha.
 {
-    while (Anti_rebote()); // Mientras la  función Anti_rebote() devuelva un 1.
+    while (Anti_rebote()); // Mientras la  funciï¿½n Anti_rebote() devuelva un 1.
     while (1) // Bucle infinito.
     {
         while (!Pulsador_2) // Mientras Pulsador_2 este presionado. pin RB2.  
@@ -143,7 +217,7 @@ uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro) // Funció
             {
                 parametro = 1; // parametro = 1.
             }
-            if (i == 4 && parametro > 99) // Si i=4 y "parametro" es mayor a 99 (año).
+            if (i == 4 && parametro > 99) // Si i=4 y "parametro" es mayor a 99 (aï¿½o).
             {
                 parametro = 0; // parametro = 0.
             }
@@ -157,15 +231,15 @@ uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro) // Funció
         LCD_Char("  "); // Inprimimos en la pantalla LCD 2 espacios vacios.
         LCD_xy(x, y+1); // Cursos de la pantalla LCD en columna "x", fila "y".                    
         LCD_Char("  "); // Inprimimos en la pantalla LCD 2 espacios vacios.
-        Parpadeo(); // Llamamos a la función Parpadeo().
+        Parpadeo(); // Llamamos a la funciï¿½n Parpadeo().
         
         LCD_xy(x, y); // Cursos de la pantalla LCD en columna "x", fila "y".
         LCD_Char(parametro / 10 + '0'); // Imprimimos en la pantalla LCD las decenas de la variable "parametro". 
         LCD_Char(parametro % 10 + '0'); // Imprimimos en la pantalla LCD las unidades de la variable "parametro". 
-        Parpadeo(); // Llamamos a la función Parpadeo().
+        Parpadeo(); // Llamamos a la funciï¿½n Parpadeo().
 
         if (!Pulsador_1) // Si el Pulsador_1 es presionado.
-            if (Anti_rebote()) // Si la función Anti_rebote() devuelve un 1.
+            if (Anti_rebote()) // Si la funciï¿½n Anti_rebote() devuelve un 1.
             {
                 i++; // Incrementamos el valor de i en una unidad.
                 return parametro; // Retornamos el valor de la variable "parametro".
@@ -174,7 +248,7 @@ uint8_t Establecer_Hora_Fecha(uint8_t x, uint8_t y, uint8_t parametro) // Funció
 }
 
 void init_rtc() {
-    I2C_Init(); // Inicializamos la comunicación I2C con una frecuencia de 100KHz. para el DS1307.
+    I2C_Init(); // Inicializamos la comunicaciï¿½n I2C con una frecuencia de 100KHz. para el DS1307.
 }
 
 void pines_ConfigurarHora(void) {
@@ -187,20 +261,20 @@ void pines_ConfigurarHora(void) {
 void configurarHora(void) {
 
     if (!Pulsador_1) // Si Pulsador_1 es presionado.
-        if (Anti_rebote()) // Si la función Anti_rebote() devuelve un 1.
+        if (Anti_rebote()) // Si la funciï¿½n Anti_rebote() devuelve un 1.
         {
             i = 0; // La variable i = 0.          
-            hours = Establecer_Hora_Fecha(1, 6, hours); //  Llamamos a la función Establecer_Hora_Fecha con x=7; y=1; parametro=hours.
-            minutes = Establecer_Hora_Fecha(1, 9, minutes); //  Llamamos a la función Establecer_Hora_Fecha con x=10; y=1; parametro=minutes.
-            day = Establecer_Hora_Fecha(2, 6, day); //  Llamamos a la función Establecer_Hora_Fecha con x=7; y=2; parametro=day.
-            month = Establecer_Hora_Fecha(2, 9, month); //  Llamamos a la función Establecer_Hora_Fecha con x=10; y=2; parametro=month.
-            year = Establecer_Hora_Fecha(2,14, year); //  Llamamos a la función Establecer_Hora_Fecha con x=15; y=2; parametro=year..
+            hours = Establecer_Hora_Fecha(1, 6, hours); //  Llamamos a la funciï¿½n Establecer_Hora_Fecha con x=7; y=1; parametro=hours.
+            minutes = Establecer_Hora_Fecha(1, 9, minutes); //  Llamamos a la funciï¿½n Establecer_Hora_Fecha con x=10; y=1; parametro=minutes.
+            day = Establecer_Hora_Fecha(2, 6, day); //  Llamamos a la funciï¿½n Establecer_Hora_Fecha con x=7; y=2; parametro=day.
+            month = Establecer_Hora_Fecha(2, 9, month); //  Llamamos a la funciï¿½n Establecer_Hora_Fecha con x=10; y=2; parametro=month.
+            year = Establecer_Hora_Fecha(2,14, year); //  Llamamos a la funciï¿½n Establecer_Hora_Fecha con x=15; y=2; parametro=year..
             while (Anti_rebote()); // Esperamos mientras Anti_rebote() sea 1.
-            minutes = Decimal_a_BCD(minutes); // Llamamos a la función Decimal_a_BCD(numero=minutes).
-            hours = Decimal_a_BCD(hours); // Llamamos a la función Decimal_a_BCD(numero=hours).
-            day = Decimal_a_BCD(day); // Llamamos a la función Decimal_a_BCD(numero=day).
-            month = Decimal_a_BCD(month); // Llamamos a la función Decimal_a_BCD(numero=mes). 
-            year = Decimal_a_BCD(year); // Llamamos a la función Decimal_a_BCD(numero=año).
+            minutes = Decimal_a_BCD(minutes); // Llamamos a la funciï¿½n Decimal_a_BCD(numero=minutes).
+            hours = Decimal_a_BCD(hours); // Llamamos a la funciï¿½n Decimal_a_BCD(numero=hours).
+            day = Decimal_a_BCD(day); // Llamamos a la funciï¿½n Decimal_a_BCD(numero=day).
+            month = Decimal_a_BCD(month); // Llamamos a la funciï¿½n Decimal_a_BCD(numero=mes). 
+            year = Decimal_a_BCD(year); // Llamamos a la funciï¿½n Decimal_a_BCD(numero=aï¿½o).
 
             RTC_Clock_Write(0x00, minutes, hours, 0x05);
             RTC_Calendar_Write(0x01, day, month, year);
@@ -210,35 +284,35 @@ void configurarHora(void) {
     RTC_Read_Clock(0); /*gives second,minute and hour*/
     RTC_Read_Calendar(3); /*gives day, date, month, year*/
 
-    Reloj_Calendario(); // Llamamos a la función Reloj_Calendario().x|
+    Reloj_Calendario(); // Llamamos a la funciï¿½n Reloj_Calendario().x|
     __delay_ms(50); // Retardo de 50 ms.
 }
 
-void Reloj_Calendario(void) //Función de visualización de HORA Y FECHA.
+void Reloj_Calendario(void) //Funciï¿½n de visualizaciï¿½n de HORA Y FECHA.
 {
-    static char Time[] = "TIME: 00:00:00"; // Arreglo estático char "Time". 
-    static char Date_var[] = "DATE: 00/00/2000"; // Arreglo estático char "Date".
+    static char Time[] = "TIME: 00:00:00"; // Arreglo estï¿½tico char "Time". 
+    static char Date_var[] = "DATE: 00/00/2000"; // Arreglo estï¿½tico char "Date".
 
-    seconds = BCD_a_Decimal(sec); // Llamamos a la función de conversión de BCD a Decimal.
-    minutes = BCD_a_Decimal(min); // Llamamos a la función de conversión de BCD a Decimal.
-    hours = BCD_a_Decimal(hour); // Llamamos a la función de conversión de BCD a Decimal.
-    day = BCD_a_Decimal(Date); // Llamamos a la función de conversión de BCD a Decimal.
-    month = BCD_a_Decimal(Month); // Llamamos a la función de conversión de BCD a Decimal.
-    year = BCD_a_Decimal(Year); // Llamamos a la función de conversión de BCD a Decimal.
+    seconds = BCD_a_Decimal(sec); // Llamamos a la funciï¿½n de conversiï¿½n de BCD a Decimal.
+    minutes = BCD_a_Decimal(min); // Llamamos a la funciï¿½n de conversiï¿½n de BCD a Decimal.
+    hours = BCD_a_Decimal(hour); // Llamamos a la funciï¿½n de conversiï¿½n de BCD a Decimal.
+    day = BCD_a_Decimal(Date); // Llamamos a la funciï¿½n de conversiï¿½n de BCD a Decimal.
+    month = BCD_a_Decimal(Month); // Llamamos a la funciï¿½n de conversiï¿½n de BCD a Decimal.
+    year = BCD_a_Decimal(Year); // Llamamos a la funciï¿½n de conversiï¿½n de BCD a Decimal.
 
-    Time[6] = hours / 10 + '0'; // Guardamos las decenas de la variable "hours" en la posición 6 del arreglo "Time".
-    Time[7] = hours % 10 + '0'; // Guardamos las unidades de la variable "hours" en la posición 7 del arreglo "Time".
-    Time[9] = minutes / 10 + '0'; // Guardamos las decenas de la variable "minutes" en la posición 9 del arreglo "Time".
-    Time[10] = minutes % 10 + '0'; // Guardamos las unidades de la variable "minutes" en la posición 10 del arreglo "Time".
-    Time[12] = seconds / 10 + '0'; // Guardamos las decenas de la variable "seconds" en la posición 12 del arreglo "Time".
-    Time[13] = seconds % 10 + '0'; // Guardamos las unidades de la variable "secods" en la posición 13 del arreglo "Time".
+    Time[6] = hours / 10 + '0'; // Guardamos las decenas de la variable "hours" en la posiciï¿½n 6 del arreglo "Time".
+    Time[7] = hours % 10 + '0'; // Guardamos las unidades de la variable "hours" en la posiciï¿½n 7 del arreglo "Time".
+    Time[9] = minutes / 10 + '0'; // Guardamos las decenas de la variable "minutes" en la posiciï¿½n 9 del arreglo "Time".
+    Time[10] = minutes % 10 + '0'; // Guardamos las unidades de la variable "minutes" en la posiciï¿½n 10 del arreglo "Time".
+    Time[12] = seconds / 10 + '0'; // Guardamos las decenas de la variable "seconds" en la posiciï¿½n 12 del arreglo "Time".
+    Time[13] = seconds % 10 + '0'; // Guardamos las unidades de la variable "secods" en la posiciï¿½n 13 del arreglo "Time".
 
-    Date_var[6] = day / 10 + '0'; // Guardamos las decenas de la variable "day" en la posición 6 del arreglo "Date".
-    Date_var[7] = day % 10 + '0'; // Guardamos las unidades de la variable "day" en la posición 7 del arreglo "Date".
-    Date_var[9] = month / 10 + '0'; // Guardamos las decenas de la variable "month" en la posición 9 del arreglo "Date".
-    Date_var[10] = month % 10 + '0'; // Guardamos las unidades de la variable "month" en la posición 10 del arreglo "Date".
-    Date_var[14] = year / 10 + '0'; // Guardamos las decenas de la variable "year" en la posición 14 del arreglo "Date".
-    Date_var[15] = year % 10 + '0'; // Guardamos las unidades de la variable "year" en la posición 15 del arreglo "Date".
+    Date_var[6] = day / 10 + '0'; // Guardamos las decenas de la variable "day" en la posiciï¿½n 6 del arreglo "Date".
+    Date_var[7] = day % 10 + '0'; // Guardamos las unidades de la variable "day" en la posiciï¿½n 7 del arreglo "Date".
+    Date_var[9] = month / 10 + '0'; // Guardamos las decenas de la variable "month" en la posiciï¿½n 9 del arreglo "Date".
+    Date_var[10] = month % 10 + '0'; // Guardamos las unidades de la variable "month" en la posiciï¿½n 10 del arreglo "Date".
+    Date_var[14] = year / 10 + '0'; // Guardamos las decenas de la variable "year" en la posiciï¿½n 14 del arreglo "Date".
+    Date_var[15] = year % 10 + '0'; // Guardamos las unidades de la variable "year" en la posiciï¿½n 15 del arreglo "Date".
     
     LCD_String_xy(1, 0, Time);
     
