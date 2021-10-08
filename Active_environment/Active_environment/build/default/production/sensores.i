@@ -6006,7 +6006,13 @@ int sensor_temperatura(void) {
     val_temp = (int) value_adc * 0.4887;
     return val_temp;
 }
-# 91 "sensores.c"
+
+
+
+
+
+
+
 int sensor_luz(void) {
 
     TRISAbits.TRISA1 = 1;

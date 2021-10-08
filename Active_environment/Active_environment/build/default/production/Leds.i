@@ -6040,7 +6040,7 @@ uint8_t i;
 void init_rtc();
 void pines_ConfigurarHora(void);
 
-void RTC_Clock_Write(char sec, char min, char hour, char AM_PM);
+void RTC_Clock_Write(char v_sec, char v_min, char v_hour, char AM_PM);
 void RTC_Calendar_Write(char day, char date, char month, char year);
 char * obtener_tiempo_fecha();
 void RTC_Read_Clock(char read_clock_address);
@@ -6059,7 +6059,7 @@ __bit Anti_rebote (void);
 # 22 "Leds.c" 2
 
 # 1 "./USART_Header_File.h" 1
-# 15 "./USART_Header_File.h"
+# 33 "./USART_Header_File.h"
 void USART_Init(long);
 void USART_TxChar(char);
 void USART_SendString(const char *);
@@ -6100,7 +6100,7 @@ void encender_leds(int valor) {
         LATB3 = 1;
     }
 }
-# 77 "Leds.c"
+# 75 "Leds.c"
 int validar(int temp, int distancia, int luz, int mostrar_emoji) {
     int contador = 0;
 

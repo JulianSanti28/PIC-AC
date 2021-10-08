@@ -31,8 +31,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54 ./RTC.h
 [; ;./RTC.h: 54: char * obtener_tiempo_fecha();
 [v _obtener_tiempo_fecha `(*uc ~T0 @X0 0 e? ]
-"17 ./USART_Header_File.h
-[; ;./USART_Header_File.h: 17: void USART_SendString(const char *);
+"35 ./USART_Header_File.h
+[; ;./USART_Header_File.h: 35: void USART_SendString(const char *);
 [v _USART_SendString `(v ~T0 @X0 0 ef1`*Cuc ]
 "54 J:/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;J:/MPLAB/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
@@ -774,8 +774,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Leds.c: 65: }
 [e :UE 371 ]
 }
-"77
-[; ;Leds.c: 77: int validar(int temp, int distancia, int luz, int mostrar_emoji) {
+"75
+[; ;Leds.c: 75: int validar(int temp, int distancia, int luz, int mostrar_emoji) {
 [v _validar `(i ~T0 @X0 1 ef4`i`i`i`i ]
 {
 [e :U _validar ]
@@ -784,216 +784,216 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _luz `i ~T0 @X0 1 r3 ]
 [v _mostrar_emoji `i ~T0 @X0 1 r4 ]
 [f ]
-"78
-[; ;Leds.c: 78:     int contador = 0;
+"76
+[; ;Leds.c: 76:     int contador = 0;
 [v _contador `i ~T0 @X0 1 a ]
 [e = _contador -> 0 `i ]
-"80
-[; ;Leds.c: 80:     if (temp < 17 || temp > 30) {
+"78
+[; ;Leds.c: 78:     if (temp < 17 || temp > 30) {
 [e $ ! || < _temp -> 17 `i > _temp -> 30 `i 379  ]
 {
-"82
-[; ;Leds.c: 82:         if (temp != temp_ant) {
+"80
+[; ;Leds.c: 80:         if (temp != temp_ant) {
 [e $ ! != _temp _temp_ant 380  ]
 {
-"83
-[; ;Leds.c: 83:             char valor_usart[30];
+"81
+[; ;Leds.c: 81:             char valor_usart[30];
 [v _valor_usart `uc ~T0 @X0 -> 30 `i a ]
-"84
-[; ;Leds.c: 84:             sprintf(valor_usart, "%d", temp);
+"82
+[; ;Leds.c: 82:             sprintf(valor_usart, "%d", temp);
 [e ( _sprintf (1 , (. , &U _valor_usart :s 1C _temp ]
-"85
-[; ;Leds.c: 85:             mostrar_estadistica(1, valor_usart);
+"83
+[; ;Leds.c: 83:             mostrar_estadistica(1, valor_usart);
 [e ( _mostrar_estadistica (2 , -> 1 `i &U _valor_usart ]
-"86
-[; ;Leds.c: 86:             temp_ant = temp;
+"84
+[; ;Leds.c: 84:             temp_ant = temp;
 [e = _temp_ant _temp ]
-"87
-[; ;Leds.c: 87:         }
+"85
+[; ;Leds.c: 85:         }
 }
 [e :U 380 ]
-"89
-[; ;Leds.c: 89:         if (mostrar_emoji == 1) {
+"87
+[; ;Leds.c: 87:         if (mostrar_emoji == 1) {
 [e $ ! == _mostrar_emoji -> 1 `i 381  ]
 {
-"90
-[; ;Leds.c: 90:             mostrar_emoticon(5);
+"88
+[; ;Leds.c: 88:             mostrar_emoticon(5);
 [e ( _mostrar_emoticon (1 -> -> 5 `i `uc ]
-"91
-[; ;Leds.c: 91:         }
+"89
+[; ;Leds.c: 89:         }
 }
 [e :U 381 ]
-"94
-[; ;Leds.c: 94:         contador++;
+"92
+[; ;Leds.c: 92:         contador++;
 [e ++ _contador -> 1 `i ]
-"95
-[; ;Leds.c: 95:     }
+"93
+[; ;Leds.c: 93:     }
 }
 [e :U 379 ]
-"96
-[; ;Leds.c: 96:     if (distancia < 40) {
+"94
+[; ;Leds.c: 94:     if (distancia < 40) {
 [e $ ! < _distancia -> 40 `i 382  ]
 {
-"98
-[; ;Leds.c: 98:         if (distancia != dist_ant) {
+"96
+[; ;Leds.c: 96:         if (distancia != dist_ant) {
 [e $ ! != _distancia _dist_ant 383  ]
 {
-"99
-[; ;Leds.c: 99:             char valor_usart[30];
+"97
+[; ;Leds.c: 97:             char valor_usart[30];
 [v _valor_usart `uc ~T0 @X0 -> 30 `i a ]
-"100
-[; ;Leds.c: 100:             sprintf(valor_usart, "%d", distancia);
+"98
+[; ;Leds.c: 98:             sprintf(valor_usart, "%d", distancia);
 [e ( _sprintf (1 , (. , &U _valor_usart :s 2C _distancia ]
-"101
-[; ;Leds.c: 101:             mostrar_estadistica(2, valor_usart);
+"99
+[; ;Leds.c: 99:             mostrar_estadistica(2, valor_usart);
 [e ( _mostrar_estadistica (2 , -> 2 `i &U _valor_usart ]
-"102
-[; ;Leds.c: 102:             dist_ant = distancia;
+"100
+[; ;Leds.c: 100:             dist_ant = distancia;
 [e = _dist_ant _distancia ]
-"103
-[; ;Leds.c: 103:         }
+"101
+[; ;Leds.c: 101:         }
 }
 [e :U 383 ]
-"105
-[; ;Leds.c: 105:           if (mostrar_emoji == 1) {
+"103
+[; ;Leds.c: 103:           if (mostrar_emoji == 1) {
 [e $ ! == _mostrar_emoji -> 1 `i 384  ]
 {
-"106
-[; ;Leds.c: 106:             mostrar_emoticon(6);
+"104
+[; ;Leds.c: 104:             mostrar_emoticon(6);
 [e ( _mostrar_emoticon (1 -> -> 6 `i `uc ]
-"107
-[; ;Leds.c: 107:         }
+"105
+[; ;Leds.c: 105:         }
 }
 [e :U 384 ]
-"109
-[; ;Leds.c: 109:         contador++;
+"107
+[; ;Leds.c: 107:         contador++;
 [e ++ _contador -> 1 `i ]
-"110
-[; ;Leds.c: 110:     }
+"108
+[; ;Leds.c: 108:     }
 }
 [e :U 382 ]
-"111
-[; ;Leds.c: 111:     if (luz > 60 || luz < 10) {
+"109
+[; ;Leds.c: 109:     if (luz > 60 || luz < 10) {
 [e $ ! || > _luz -> 60 `i < _luz -> 10 `i 385  ]
 {
-"114
-[; ;Leds.c: 114:         if (luz != lum_ant) {
+"112
+[; ;Leds.c: 112:         if (luz != lum_ant) {
 [e $ ! != _luz _lum_ant 386  ]
 {
-"115
-[; ;Leds.c: 115:             char valor_usart[30];
+"113
+[; ;Leds.c: 113:             char valor_usart[30];
 [v _valor_usart `uc ~T0 @X0 -> 30 `i a ]
-"116
-[; ;Leds.c: 116:             sprintf(valor_usart, "%d", luz);
+"114
+[; ;Leds.c: 114:             sprintf(valor_usart, "%d", luz);
 [e ( _sprintf (1 , (. , &U _valor_usart :s 3C _luz ]
-"117
-[; ;Leds.c: 117:             mostrar_estadistica(3, valor_usart);
+"115
+[; ;Leds.c: 115:             mostrar_estadistica(3, valor_usart);
 [e ( _mostrar_estadistica (2 , -> 3 `i &U _valor_usart ]
-"118
-[; ;Leds.c: 118:             lum_ant = luz;
+"116
+[; ;Leds.c: 116:             lum_ant = luz;
 [e = _lum_ant _luz ]
-"119
-[; ;Leds.c: 119:         }
+"117
+[; ;Leds.c: 117:         }
 }
 [e :U 386 ]
-"122
-[; ;Leds.c: 122:           if (mostrar_emoji == 1) {
+"120
+[; ;Leds.c: 120:           if (mostrar_emoji == 1) {
 [e $ ! == _mostrar_emoji -> 1 `i 387  ]
 {
-"123
-[; ;Leds.c: 123:             mostrar_emoticon(7);
+"121
+[; ;Leds.c: 121:             mostrar_emoticon(7);
 [e ( _mostrar_emoticon (1 -> -> 7 `i `uc ]
-"124
-[; ;Leds.c: 124:         }
+"122
+[; ;Leds.c: 122:         }
 }
 [e :U 387 ]
-"127
-[; ;Leds.c: 127:         contador++;
+"125
+[; ;Leds.c: 125:         contador++;
 [e ++ _contador -> 1 `i ]
-"128
-[; ;Leds.c: 128:     }
+"126
+[; ;Leds.c: 126:     }
 }
 [e :U 385 ]
-"131
-[; ;Leds.c: 131:     if (contador == 0 && mostrar_emoji == 1) {
+"129
+[; ;Leds.c: 129:     if (contador == 0 && mostrar_emoji == 1) {
 [e $ ! && == _contador -> 0 `i == _mostrar_emoji -> 1 `i 388  ]
 {
-"132
-[; ;Leds.c: 132:         mostrar_emoticon(4);
+"130
+[; ;Leds.c: 130:         mostrar_emoticon(4);
 [e ( _mostrar_emoticon (1 -> -> 4 `i `uc ]
-"133
-[; ;Leds.c: 133:     }
+"131
+[; ;Leds.c: 131:     }
 }
 [e :U 388 ]
-"136
-[; ;Leds.c: 136:     return contador;
+"134
+[; ;Leds.c: 134:     return contador;
 [e ) _contador ]
 [e $UE 378  ]
-"137
-[; ;Leds.c: 137: }
+"135
+[; ;Leds.c: 135: }
 [e :UE 378 ]
 }
-"139
-[; ;Leds.c: 139: void mostrar_estadistica(int sensor, char *valor_usart) {
+"137
+[; ;Leds.c: 137: void mostrar_estadistica(int sensor, char *valor_usart) {
 [v _mostrar_estadistica `(v ~T0 @X0 1 ef2`i`*uc ]
 {
 [e :U _mostrar_estadistica ]
 [v _sensor `i ~T0 @X0 1 r1 ]
 [v _valor_usart `*uc ~T0 @X0 1 r2 ]
 [f ]
-"141
-[; ;Leds.c: 141:     if (sensor == 1) {
+"139
+[; ;Leds.c: 139:     if (sensor == 1) {
 [e $ ! == _sensor -> 1 `i 390  ]
 {
-"144
-[; ;Leds.c: 144:         char mensaje_usart[100];
+"142
+[; ;Leds.c: 142:         char mensaje_usart[100];
 [v _mensaje_usart `uc ~T0 @X0 -> 100 `i a ]
-"145
-[; ;Leds.c: 145:         sprintf(mensaje_usart, "%s Alerta de Temperatura: %s G \r\n", obtener_tiempo_fecha(), valor_usart);
+"143
+[; ;Leds.c: 143:         sprintf(mensaje_usart, "%s Alerta de Temperatura: %s G \r\n", obtener_tiempo_fecha(), valor_usart);
 [e ( _sprintf (1 , , (. , &U _mensaje_usart :s 4C ( _obtener_tiempo_fecha ..  _valor_usart ]
-"146
-[; ;Leds.c: 146:         USART_SendString(mensaje_usart);
+"144
+[; ;Leds.c: 144:         USART_SendString(mensaje_usart);
 [e ( _USART_SendString (1 -> &U _mensaje_usart `*Cuc ]
-"148
-[; ;Leds.c: 148:     }
+"146
+[; ;Leds.c: 146:     }
 }
 [e :U 390 ]
-"149
-[; ;Leds.c: 149:     if (sensor == 2) {
+"147
+[; ;Leds.c: 147:     if (sensor == 2) {
 [e $ ! == _sensor -> 2 `i 391  ]
 {
-"151
-[; ;Leds.c: 151:         char mensaje_usart[100];
+"149
+[; ;Leds.c: 149:         char mensaje_usart[100];
 [v _mensaje_usart `uc ~T0 @X0 -> 100 `i a ]
-"152
-[; ;Leds.c: 152:         sprintf(mensaje_usart, "%s Alerta de Distancia: %s Cm \r\n", obtener_tiempo_fecha(), valor_usart);
+"150
+[; ;Leds.c: 150:         sprintf(mensaje_usart, "%s Alerta de Distancia: %s Cm \r\n", obtener_tiempo_fecha(), valor_usart);
 [e ( _sprintf (1 , , (. , &U _mensaje_usart :s 5C ( _obtener_tiempo_fecha ..  _valor_usart ]
-"153
-[; ;Leds.c: 153:         USART_SendString(mensaje_usart);
+"151
+[; ;Leds.c: 151:         USART_SendString(mensaje_usart);
 [e ( _USART_SendString (1 -> &U _mensaje_usart `*Cuc ]
-"155
-[; ;Leds.c: 155:     }
+"153
+[; ;Leds.c: 153:     }
 }
 [e :U 391 ]
-"156
-[; ;Leds.c: 156:     if (sensor == 3) {
+"154
+[; ;Leds.c: 154:     if (sensor == 3) {
 [e $ ! == _sensor -> 3 `i 392  ]
 {
-"158
-[; ;Leds.c: 158:         char mensaje_usart[100];
+"156
+[; ;Leds.c: 156:         char mensaje_usart[100];
 [v _mensaje_usart `uc ~T0 @X0 -> 100 `i a ]
-"159
-[; ;Leds.c: 159:         sprintf(mensaje_usart, "%s Alerta de Luminosidad: %s Porciento \r\n", obtener_tiempo_fecha(), valor_usart);
+"157
+[; ;Leds.c: 157:         sprintf(mensaje_usart, "%s Alerta de Luminosidad: %s Porciento \r\n", obtener_tiempo_fecha(), valor_usart);
 [e ( _sprintf (1 , , (. , &U _mensaje_usart :s 6C ( _obtener_tiempo_fecha ..  _valor_usart ]
-"160
-[; ;Leds.c: 160:         USART_SendString(mensaje_usart);
+"158
+[; ;Leds.c: 158:         USART_SendString(mensaje_usart);
 [e ( _USART_SendString (1 -> &U _mensaje_usart `*Cuc ]
-"162
-[; ;Leds.c: 162:     }
+"160
+[; ;Leds.c: 160:     }
 }
 [e :U 392 ]
-"165
-[; ;Leds.c: 165: }
+"163
+[; ;Leds.c: 163: }
 [e :UE 389 ]
 }
 [p f _sprintf 8650880 ]

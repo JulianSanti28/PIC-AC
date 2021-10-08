@@ -871,32 +871,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;sensores.c: 82: }
 [e :UE 383 ]
 }
-"91
-[; ;sensores.c: 91: int sensor_luz(void) {
+"90
+[; ;sensores.c: 90: int sensor_luz(void) {
 [v _sensor_luz `(i ~T0 @X0 1 ef ]
 {
 [e :U _sensor_luz ]
 [f ]
-"93
-[; ;sensores.c: 93:     TRISAbits.TRISA1 = 1;
+"92
+[; ;sensores.c: 92:     TRISAbits.TRISA1 = 1;
 [e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
-"95
-[; ;sensores.c: 95:     adc_init10Bits(1);
+"94
+[; ;sensores.c: 94:     adc_init10Bits(1);
 [e ( _adc_init10Bits (1 -> 1 `i ]
-"97
-[; ;sensores.c: 97:     val_intensidad = adc_read10Bits();
+"96
+[; ;sensores.c: 96:     val_intensidad = adc_read10Bits();
 [e = _val_intensidad -> ( _adc_read10Bits ..  `us ]
-"98
-[; ;sensores.c: 98:     val_intensidad = (val_intensidad * 5) / 1024;
+"97
+[; ;sensores.c: 97:     val_intensidad = (val_intensidad * 5) / 1024;
 [e = _val_intensidad -> / * -> _val_intensidad `ui -> -> 5 `i `ui -> -> 1024 `i `ui `us ]
-"99
-[; ;sensores.c: 99:     val_luminosidad = (val_intensidad * 100) / 5;
+"98
+[; ;sensores.c: 98:     val_luminosidad = (val_intensidad * 100) / 5;
 [e = _val_luminosidad -> / * -> _val_intensidad `ui -> -> 100 `i `ui -> -> 5 `i `ui `i ]
-"101
-[; ;sensores.c: 101:     return val_luminosidad;
+"100
+[; ;sensores.c: 100:     return val_luminosidad;
 [e ) _val_luminosidad ]
 [e $UE 384  ]
-"102
-[; ;sensores.c: 102: }
+"101
+[; ;sensores.c: 101: }
 [e :UE 384 ]
 }

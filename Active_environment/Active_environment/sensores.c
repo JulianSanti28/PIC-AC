@@ -87,7 +87,6 @@ int sensor_temperatura(void) {
 @param void
 @return porcentaje de luminocidad del entorno casteado a entero.
 */
-
 int sensor_luz(void) {
 
     TRISAbits.TRISA1 = 1; //entrada puerto A1 
