@@ -5624,7 +5624,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 25 "Principal.c" 2
+# 24 "Principal.c" 2
+
 # 1 "D:\\mplab\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "D:\\mplab\\pic\\include\\c99\\stdio.h" 3
 # 1 "D:\\mplab\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5763,7 +5764,8 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 26 "Principal.c" 2
+# 25 "Principal.c" 2
+
 
 # 1 "./fuses.h" 1
 # 30 "./fuses.h"
@@ -5827,11 +5829,12 @@ char *tempnam(const char *, const char *);
 
 
 #pragma config EBTRB = OFF
-# 28 "Principal.c" 2
+# 27 "Principal.c" 2
+
 # 1 "./LCD.h" 1
 # 32 "./LCD.h"
 # 1 "./fuses.h" 1
-# 33 "./LCD.h" 2
+# 32 "./LCD.h" 2
 # 42 "./LCD.h"
 void inicializar_lcd();
 void LCD_Command(unsigned char );
@@ -5842,7 +5845,8 @@ void LCD_Clear();
 void LCD_Custom_Char(unsigned char loc, unsigned char *msg);
 void mostrar_emoticon(char i);
 void LCD_xy(char row, char pos);
-# 29 "Principal.c" 2
+# 28 "Principal.c" 2
+
 # 1 "./sensores.h" 1
 # 29 "./sensores.h"
 # 1 "./fuses.h" 1
@@ -5955,19 +5959,21 @@ void init_ports(void);
     uint16_t val_intensidad;
     int val_luminosidad = 0;
     int sensor_Luz(void);
-# 30 "Principal.c" 2
+# 29 "Principal.c" 2
+
 # 1 "./Leds.h" 1
 # 28 "./Leds.h"
 # 1 "./fuses.h" 1
-# 29 "./Leds.h" 2
+# 28 "./Leds.h" 2
 # 56 "./Leds.h"
 void delay_ms(unsigned int delay);
-int validar(int temp,int distancia,int luz);
+int validar(int temp, int distancia, int luz, int mostrar_emoji);
 void encender_leds(int valor);
 void init_leds(void);
 void mostrar_estadistica(int sensor, char *valor_usart);
 int temp_ant = 0, dist_ant = 0 , lum_ant = 0;
-# 31 "Principal.c" 2
+# 30 "Principal.c" 2
+
 
 # 1 "./USART_Header_File.h" 1
 
@@ -6039,7 +6045,8 @@ void USART_Init(long);
 void USART_TxChar(char);
 void USART_SendString(const char *);
 char USART_RxChar();
-# 33 "Principal.c" 2
+# 32 "Principal.c" 2
+
 # 1 "./RTC.h" 1
 # 20 "./RTC.h"
 # 1 "./I2C_Master_File.h" 1
@@ -6095,7 +6102,7 @@ uint8_t BCD_a_Decimal (uint8_t numero);
 uint8_t Decimal_a_BCD (uint8_t numero);
 void Parpadeo (void);
 __bit Anti_rebote (void);
-# 34 "Principal.c" 2
+# 33 "Principal.c" 2
 # 45 "Principal.c"
 int estado;
 int s_dist = 0, s_temp = 0, s_luz = 0;
@@ -6103,7 +6110,7 @@ int s_dist = 0, s_temp = 0, s_luz = 0;
 void imprimir(int dist, int temp, int luz);
 void iniciar_emoticones();
 void iniciar_pic();
-void establecer_valores();
+void establecer_valores(int mostrar_emoji);
 void mostrar_hora();
 void mostrar_estadisticas();
 
@@ -6132,7 +6139,7 @@ void mostrar_estadisticas(){
     LCD_Clear();
     iniciar_emoticones();
     while (1) {
-        establecer_valores();
+        establecer_valores(1);
         imprimir(s_dist, s_temp, s_luz);
         if(!PORTAbits.RA4){
             _delay((unsigned long)((200)*(8000000/4000.0)));
@@ -6142,10 +6149,11 @@ void mostrar_estadisticas(){
         }
     }
 }
+
 void mostrar_hora(){
     LCD_Clear();
     while (1) {
-        establecer_valores();
+        establecer_valores(0);
         configurarHora();
         if(!PORTAbits.RA4){
             _delay((unsigned long)((120)*(8000000/4000.0)));
@@ -6155,11 +6163,11 @@ void mostrar_hora(){
         }
     }
 }
-void establecer_valores(){
+void establecer_valores(int mostrar_emoji){
     s_dist = sensor_distancia();
     s_temp = sensor_temperatura();
     s_luz = sensor_luz();
-    encender_leds(validar(s_temp, s_dist, s_luz));
+    encender_leds(validar(s_temp, s_dist, s_luz, mostrar_emoji));
 }
 
 void iniciar_pic() {
@@ -6231,7 +6239,7 @@ void iniciar_emoticones() {
 
 
 }
-# 188 "Principal.c"
+# 189 "Principal.c"
 void imprimir(int dist, int temp, int luz) {
 
 

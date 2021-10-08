@@ -5626,7 +5626,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 31 "./LCD.h" 2
+# 30 "./LCD.h" 2
+
 
 # 1 "./fuses.h" 1
 # 30 "./fuses.h"
@@ -5690,7 +5691,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config EBTRB = OFF
-# 33 "./LCD.h" 2
+# 32 "./LCD.h" 2
 # 42 "./LCD.h"
 void inicializar_lcd();
 void LCD_Command(unsigned char );
@@ -5714,7 +5715,7 @@ void inicializar_lcd() {
 
     LCD_Command(0x28);
 
-    LCD_Command(0x01);
+    LCD_Command(0b0000000001);
     LCD_Command(0x0c);
     LCD_Command(0x06);
 }
@@ -5804,7 +5805,7 @@ void LCD_xy(char row, char pos) {
 
 
 void LCD_Clear() {
-    LCD_Command(0x01);
+    LCD_Command(0b0000000001);
 }
 
 

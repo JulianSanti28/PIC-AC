@@ -54,7 +54,7 @@ extern "C" {
 
 
 void delay_ms(unsigned int delay);
-int validar(int temp,int distancia,int luz);
+int validar(int temp, int distancia, int luz, int mostrar_emoji);
 void encender_leds(int valor);
 void init_leds(void); 
 void mostrar_estadistica(int sensor, char *valor_usart);

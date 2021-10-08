@@ -5626,7 +5626,8 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 33 "D:/mplab/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
-# 28 "./Leds.h" 2
+# 27 "./Leds.h" 2
+
 # 1 "./fuses.h" 1
 # 30 "./fuses.h"
 #pragma config PLLDIV = 1
@@ -5689,19 +5690,20 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config EBTRB = OFF
-# 29 "./Leds.h" 2
+# 28 "./Leds.h" 2
 # 56 "./Leds.h"
 void delay_ms(unsigned int delay);
-int validar(int temp,int distancia,int luz);
+int validar(int temp, int distancia, int luz, int mostrar_emoji);
 void encender_leds(int valor);
 void init_leds(void);
 void mostrar_estadistica(int sensor, char *valor_usart);
 int temp_ant = 0, dist_ant = 0 , lum_ant = 0;
-# 21 "Leds.c" 2
+# 20 "Leds.c" 2
+
 # 1 "./LCD.h" 1
 # 32 "./LCD.h"
 # 1 "./fuses.h" 1
-# 33 "./LCD.h" 2
+# 32 "./LCD.h" 2
 # 42 "./LCD.h"
 void inicializar_lcd();
 void LCD_Command(unsigned char );
@@ -5712,7 +5714,8 @@ void LCD_Clear();
 void LCD_Custom_Char(unsigned char loc, unsigned char *msg);
 void mostrar_emoticon(char i);
 void LCD_xy(char row, char pos);
-# 22 "Leds.c" 2
+# 21 "Leds.c" 2
+
 # 1 "./RTC.h" 1
 # 16 "./RTC.h"
 # 1 "D:\\mplab\\pic\\include\\c99\\stdio.h" 1 3
@@ -6053,22 +6056,16 @@ uint8_t BCD_a_Decimal (uint8_t numero);
 uint8_t Decimal_a_BCD (uint8_t numero);
 void Parpadeo (void);
 __bit Anti_rebote (void);
-# 23 "Leds.c" 2
+# 22 "Leds.c" 2
+
 # 1 "./USART_Header_File.h" 1
 # 11 "./USART_Header_File.h"
 void USART_Init(long);
 void USART_TxChar(char);
 void USART_SendString(const char *);
 char USART_RxChar();
-# 24 "Leds.c" 2
-
-
-
-
-
-
-
-
+# 23 "Leds.c" 2
+# 32 "Leds.c"
 void init_leds(void) {
 
     TRISB6 = 0;
@@ -6104,7 +6101,7 @@ void encender_leds(int valor) {
     }
 }
 # 77 "Leds.c"
-int validar(int temp, int distancia, int luz) {
+int validar(int temp, int distancia, int luz, int mostrar_emoji) {
     int contador = 0;
 
     if (temp < 17 || temp > 30) {
@@ -6116,7 +6113,11 @@ int validar(int temp, int distancia, int luz) {
             temp_ant = temp;
         }
 
-        mostrar_emoticon(5);
+        if (mostrar_emoji == 1) {
+            mostrar_emoticon(5);
+        }
+
+
         contador++;
     }
     if (distancia < 40) {
@@ -6128,12 +6129,14 @@ int validar(int temp, int distancia, int luz) {
             dist_ant = distancia;
         }
 
-        mostrar_emoticon(6);
+          if (mostrar_emoji == 1) {
+            mostrar_emoticon(6);
+        }
+
         contador++;
     }
     if (luz > 60 || luz < 10) {
-        mostrar_emoticon(7);
-        contador++;
+
 
         if (luz != lum_ant) {
             char valor_usart[30];
@@ -6141,9 +6144,18 @@ int validar(int temp, int distancia, int luz) {
             mostrar_estadistica(3, valor_usart);
             lum_ant = luz;
         }
+
+
+          if (mostrar_emoji == 1) {
+            mostrar_emoticon(7);
+        }
+
+
+        contador++;
     }
 
-    if (contador == 0) {
+
+    if (contador == 0 && mostrar_emoji == 1) {
         mostrar_emoticon(4);
     }
 

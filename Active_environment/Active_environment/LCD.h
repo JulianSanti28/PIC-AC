@@ -37,7 +37,7 @@ extern "C" {
 #define EN LATD1                    /*El PIN 1 de PORTB se asigna para habilitar el Pin de la pantalla LCD*/
 #define ldata LATD                  /*PORTB (PB4-PB7) está asignado para salida de datos LCD*/ 
 #define LCD_Port TRISD   
-#define CMD_CLEAR_LCD 0x01
+#define CMD_CLEAR_LCD 0b0000000001
     
 void inicializar_lcd();             /*Inicializa el LCD*/
 void LCD_Command(unsigned char );   /*Enviar comando a la pantalla LCD*/

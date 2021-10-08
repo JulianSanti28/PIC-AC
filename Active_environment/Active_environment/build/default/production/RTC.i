@@ -5999,7 +5999,7 @@ char I2C_Read(char flag);
 # 1 "./LCD.h" 1
 # 32 "./LCD.h"
 # 1 "./fuses.h" 1
-# 33 "./LCD.h" 2
+# 32 "./LCD.h" 2
 # 42 "./LCD.h"
 void inicializar_lcd();
 void LCD_Command(unsigned char );

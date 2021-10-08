@@ -48,7 +48,7 @@ int s_dist = 0, s_temp = 0, s_luz = 0; //Variables para carga de información
 void imprimir(int dist, int temp, int luz);
 void iniciar_emoticones();
 void iniciar_pic();
-void establecer_valores(); 
+void establecer_valores(int mostrar_emoji); 
 void mostrar_hora(); 
 void mostrar_estadisticas(); 
 
@@ -77,7 +77,7 @@ void mostrar_estadisticas(){
     LCD_Clear(); 
     iniciar_emoticones(); //Carga los emoticones a usar
     while (1) {
-        establecer_valores(); 
+        establecer_valores(1); 
         imprimir(s_dist, s_temp, s_luz);
         if(!SELECTOR){ //si el selector es presionado 
             __delay_ms(200);
@@ -87,10 +87,11 @@ void mostrar_estadisticas(){
         }
     }
 }
+
 void mostrar_hora(){
     LCD_Clear(); 
     while (1) {
-        establecer_valores(); 
+        establecer_valores(0); 
         configurarHora(); 
         if(!SELECTOR){ //si el selector es presionado 
             __delay_ms(120);
@@ -100,11 +101,11 @@ void mostrar_hora(){
         }
     }
 }
-void establecer_valores(){
+void establecer_valores(int mostrar_emoji){
     s_dist = sensor_distancia(); //Almacenando el valor de distancia retornado por la función
     s_temp = sensor_temperatura(); //Almacenando el valor de temperatura retornado por la función
     s_luz = sensor_luz(); //Almacenando el valor de luz retornado por la función
-    encender_leds(validar(s_temp, s_dist, s_luz)); //Enciende o no los leds dependiendo del estado de cada sensor
+    encender_leds(validar(s_temp, s_dist, s_luz, mostrar_emoji)); //Enciende o no los leds dependiendo del estado de cada sensor
 }
 
 void iniciar_pic() {
